@@ -1,0 +1,52 @@
+import { Grade, Hold, Problem } from "@/utils/types";
+
+export const DEFAULT_PROBLEM: Problem = {
+  id: 0,
+  name: "",
+  author: "",
+  date: "",
+  feet: true,
+  holds: {},
+};
+
+export const DEFAULT_MODE: Hold = "hold";
+
+export const HOLD_TYPES: Hold[] = ["start", "hold", "foot"];
+
+export const GRADES: Grade[] = [
+  "4a",
+  "4b",
+  "4c",
+  "5a",
+  "5b",
+  "5c",
+  "6a",
+  "6a+",
+  "6b",
+  "6b+",
+  "6c",
+  "6c+",
+  "7a",
+  "7a+",
+  "7b",
+  "7b+",
+  "7c",
+  "7c+",
+  "8a",
+  "8a+",
+  "8b",
+  "8b+",
+  "8c",
+  "8c+",
+  "9a",
+  "9a+",
+  "9b",
+  "9b+",
+  "9c",
+];
+
+export const TOTAL_HOLDS = 320;
+
+export const ALL_HOLD_IDS = Array.from({ length: TOTAL_HOLDS }, (_, i) =>
+  (i + 1).toString(),
+);
