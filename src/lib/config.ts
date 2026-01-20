@@ -1,4 +1,4 @@
-import { Grade, Hold, Problem } from "@/utils/types";
+import { Grade, Hold, Problem } from "@/lib/types";
 
 export const DEFAULT_PROBLEM: Problem = {
   id: 0,

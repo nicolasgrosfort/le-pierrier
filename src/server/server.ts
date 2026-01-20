@@ -1,10 +1,10 @@
 // server.js
-import { generateProblems } from "@/utils/helpers";
 import {
   ClientToServerEvents,
   Problem,
   ServerToClientEvents,
-} from "@/utils/types";
+} from "@/lib/types";
+import { generateProblems } from "@/lib/utils";
 import { createServer } from "http";
 import { Server } from "socket.io";
 

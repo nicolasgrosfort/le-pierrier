@@ -1,5 +1,5 @@
-import { ALL_HOLD_IDS, GRADES, HOLD_TYPES } from "@/utils/config";
-import { Hold, Problem } from "@/utils/types";
+import { ALL_HOLD_IDS, GRADES, HOLD_TYPES } from "@/lib/config";
+import { Hold, Problem } from "@/lib/types";
 
 function pickRandom<T>(array: T[], count: number): T[] {
   const shuffled = [...array].sort(() => Math.random() - 0.5);

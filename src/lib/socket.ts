@@ -1,4 +1,4 @@
-import { ClientToServerEvents, ServerToClientEvents } from "@/utils/types";
+import { ClientToServerEvents, ServerToClientEvents } from "@/lib/types";
 import { io, Socket } from "socket.io-client";
 
 let socket: Socket<ServerToClientEvents, ClientToServerEvents>;

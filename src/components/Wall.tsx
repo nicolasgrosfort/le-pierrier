@@ -1,10 +1,10 @@
 "use client";
 
-import { DEFAULT_MODE, DEFAULT_PROBLEM } from "@/utils/config";
-import { Hold, Problem } from "@/utils/types";
+import { DEFAULT_MODE, DEFAULT_PROBLEM } from "@/lib/config";
+import { Hold, Problem } from "@/lib/types";
 import panzoom from "@panzoom/panzoom";
 import { useEffect, useRef, useState } from "react";
-import { getSocket } from "../utils/socket";
+import { getSocket } from "../lib/socket";
 
 export default function Wall() {
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -87,8 +87,8 @@ export default function Wall() {
   // };
 
   return (
-    <>
-      <button
+    <div className="h-full">
+      {/* <button
         onClick={() => {
           const nextProblemIndex = (currentProblemId + 1) % 10; // Assuming 10 problems
           const socket = getSocket();
@@ -96,13 +96,13 @@ export default function Wall() {
         }}
       >
         Next
-      </button>
+      </button> */}
       <svg
         ref={svgRef}
         width={1500}
         height={960}
         viewBox="0 0 1500 960"
-        style={{ touchAction: "none", maxWidth: "100%" }}
+        className="touch-none max-w-full h-full"
         // onClick={handleOnClick}
       >
         <g id="map" className="map">
@@ -4115,6 +4115,6 @@ export default function Wall() {
           </g>
         </g>
       </svg>
-    </>
+    </div>
   );
 }
