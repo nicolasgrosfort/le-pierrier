@@ -24,12 +24,7 @@ export type Grade =
   | "8b"
   | "8b+"
   | "8c"
-  | "8c+"
-  | "9a"
-  | "9a+"
-  | "9b"
-  | "9b+"
-  | "9c";
+  | "8c+";
 
 export type Problem = {
   name: string;

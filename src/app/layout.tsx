@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Caprasimo, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-sans",
+const geistSans = Caprasimo({
+  variable: "--font-serif",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -23,12 +24,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="h-dvh w-dvw">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full h-full`}
-      >
-        {children}
-      </body>
+    <html
+      lang="fr"
+      className={`h-dvh w-dvw ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+    >
+      <body className="w-full h-full font-mono">{children}</body>
     </html>
   );
 }

@@ -87,7 +87,7 @@ export default function Wall() {
   // };
 
   return (
-    <div className="h-full">
+    <div className="h-full overflow-visible!">
       {/* <button
         onClick={() => {
           const nextProblemIndex = (currentProblemId + 1) % 10; // Assuming 10 problems

@@ -38,11 +38,6 @@ export const GRADES: Grade[] = [
   "8b+",
   "8c",
   "8c+",
-  "9a",
-  "9a+",
-  "9b",
-  "9b+",
-  "9c",
 ];
 
 export const TOTAL_HOLDS = 320;
