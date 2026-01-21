@@ -1,7 +1,5 @@
 import { Db, Grade, HoldType, Mode, Problem } from "@/lib/types";
 
-export const IP_ADDRESS = "192.168.1.206";
-
 export const TRANSLATE_STEP = 0.1;
 export const SCALE_STEP = 0.001;
 export const ROTATE_STEP = 0.01;

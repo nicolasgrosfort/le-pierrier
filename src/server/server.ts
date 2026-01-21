@@ -1,14 +1,25 @@
 import { DEFAULT_DATA } from "@/lib/config";
 import { ClientToServerEvents, Db, ServerToClientEvents } from "@/lib/types";
+import express from "express";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
 const db = await JSONFilePreset<Db>("src/db/db.json", DEFAULT_DATA);
-
-const httpServer = createServer();
+const app = express();
+const httpServer = createServer(app);
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
   cors: { origin: "*" },
+});
+
+app.use(express.static("dist"));
+
+app.get("/", (_, res) => {
+  res.sendFile("dist/index.html");
+});
+
+app.get("/wall", (_, res) => {
+  res.sendFile("dist/wall/index.html");
 });
 
 io.on("connection", (socket) => {
@@ -94,6 +105,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3001, () => {
-  console.log("Socket.IO server running on port 3001");
+httpServer.listen(3000, "0.0.0.0", () => {
+  console.log("Server (HTTP + Socket.IO) running on port 3000");
 });
