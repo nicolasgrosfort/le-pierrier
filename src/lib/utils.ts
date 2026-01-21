@@ -45,7 +45,6 @@ export function generateProblems(total = 10): Problem[] {
       author: "Setter",
       date: randomRecentDate(),
       grade: randomItem(GRADES),
-      rate: Math.floor(Math.random() * 5) + 1,
       feet: Math.random() > 0.5 ? "feet-hand" : "free-feet",
       holds: generateRandomHolds(),
     };

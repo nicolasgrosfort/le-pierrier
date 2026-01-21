@@ -2608,6 +2608,13 @@ loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lowdb@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/lowdb/-/lowdb-7.0.1.tgz#7354a684547d76206b1c730b9434604235b125e5"
+  integrity sha512-neJAj8GwF0e8EpycYIDFqEPcx9Qz4GUho20jWFR7YiFeXzF1YMLdxB36PypcTSPMA+4+LvgyMacYhlr18Zlymw==
+  dependencies:
+    steno "^4.0.2"
+
 lru-cache@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-5.1.1.tgz#1da27e6710271947695daf6848e847f01d84b920"
@@ -3244,6 +3251,11 @@ stable-hash@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/stable-hash/-/stable-hash-0.0.5.tgz#94e8837aaeac5b4d0f631d2972adef2924b40269"
   integrity sha512-+L3ccpzibovGXFK+Ap/f8LOS0ahMrHTf3xu7mMLSpEGU0EO9ucaysSylKo9eRDFNhWve/y275iPmIZ4z39a9iA==
+
+steno@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/steno/-/steno-4.0.2.tgz#9bd9b0ffc226a1f9436f29132c8b8e7199d22c50"
+  integrity sha512-yhPIQXjrlt1xv7dyPQg2P17URmXbuM5pdGkpiMB3RenprfiBlvK415Lctfe0eshk90oA7/tNq7WEiMK8RSP39A==
 
 stop-iteration-iterator@^1.1.0:
   version "1.1.0"

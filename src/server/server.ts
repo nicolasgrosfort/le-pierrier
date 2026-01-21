@@ -1,15 +1,10 @@
-import {
-  ClientToServerEvents,
-  Problem,
-  ServerToClientEvents,
-} from "@/lib/types";
-import { generateProblems } from "@/lib/utils";
-
+import { ClientToServerEvents, Db, ServerToClientEvents } from "@/lib/types";
 import { createServer } from "http";
+import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
-const problems: Problem[] = generateProblems(1);
-let currentProblemId = problems[0]?.id || undefined;
+const defaultData: Db = { problems: [], currentProblemId: undefined };
+const db = await JSONFilePreset<Db>("src/db/db.json", defaultData);
 
 const httpServer = createServer();
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
@@ -19,14 +14,16 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  socket.emit("problems", problems);
-  const currentProblem = problems.find((p) => p.id === currentProblemId);
+  socket.emit("problems", db.data.problems);
+  const currentProblem = db.data.problems.find(
+    (p) => p.id === db.data.currentProblemId,
+  );
   if (currentProblem) {
     socket.emit("problem", currentProblem);
   }
 
   socket.on("problems", () => {
-    socket.emit("problems", problems);
+    socket.emit("problems", db.data.problems);
   });
 
   socket.on("problem", (nextProblem) => {
@@ -34,38 +31,51 @@ io.on("connection", (socket) => {
       return;
     }
 
-    currentProblemId = nextProblem?.id;
-    const index = problems.findIndex((p) => p.id === currentProblemId);
+    db.data.currentProblemId = nextProblem?.id;
+    db.write();
+
+    const index = db.data.problems.findIndex(
+      (p) => p.id === db.data.currentProblemId,
+    );
+
     if (index !== -1) {
-      problems[index] = nextProblem;
+      db.data.problems[index] = nextProblem;
+      db.write();
     }
+
     io.emit("problem", nextProblem);
-    io.emit("problems", problems);
+    io.emit("problems", db.data.problems);
   });
 
   socket.on("create", (newProblem) => {
-    problems.push(newProblem);
+    db.data.problems.push(newProblem);
+    db.data.currentProblemId = newProblem.id;
+    db.write();
+
     io.emit("create", newProblem);
     io.emit("problem", newProblem);
-    io.emit("problems", problems);
+    io.emit("problems", db.data.problems);
   });
 
   socket.on("delete", (id) => {
-    const index = problems.findIndex((p) => p.id === id);
+    const index = db.data.problems.findIndex((p) => p.id === id);
     if (index !== -1) {
-      problems.splice(index, 1);
-      io.emit("delete", id);
-      io.emit("problems", problems);
+      db.data.problems.splice(index, 1);
+      db.write();
 
-      if (problems.length > 0) {
-        const newCurrentProblem = problems[0];
-        currentProblemId = newCurrentProblem.id;
-        console.log(currentProblemId);
+      io.emit("delete", id);
+      io.emit("problems", db.data.problems);
+
+      if (db.data.problems.length > 0) {
+        const newCurrentProblem = db.data.problems[0];
+        db.data.currentProblemId = newCurrentProblem.id;
         io.emit("problem", newCurrentProblem);
       } else {
-        currentProblemId = undefined;
+        db.data.currentProblemId = undefined;
         io.emit("problem", undefined);
       }
+
+      db.write();
     }
   });
 

@@ -38,7 +38,6 @@ export type Problem = {
   grade: Grade;
   author: string;
   date: string;
-  rate?: number;
   feet: Feet;
   holds: {
     [key: string]: Hold;
@@ -57,4 +56,9 @@ export type ClientToServerEvents = {
   problems: (problems: Problem[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
+};
+
+export type Db = {
+  problems: Problem[];
+  currentProblemId?: UUID;
 };

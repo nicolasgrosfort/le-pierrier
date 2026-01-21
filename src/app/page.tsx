@@ -1,5 +1,6 @@
 "use client";
 
+import { StoreProvider } from "@/app/providers/store";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { SocketSync } from "@/components/socket-sync";
@@ -13,7 +14,7 @@ export default function Page() {
   const panzoomRef = useRef<PanZoom | null>(null);
 
   return (
-    <>
+    <StoreProvider>
       <div className="grid grid-cols-[100%_100%] md:grid-cols-[1fr_360px] h-full overflow-x-scroll snap-x snap-mandatory">
         <main className="grid grid-rows-[auto_1fr_auto] h-full overflow-visible snap-start">
           <Header />
@@ -23,6 +24,6 @@ export default function Page() {
         <Sidebar />
       </div>
       <SocketSync />
-    </>
+    </StoreProvider>
   );
 }
