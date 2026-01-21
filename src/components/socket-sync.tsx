@@ -7,7 +7,7 @@ import { useAtom } from "jotai";
 import { useEffect } from "react";
 
 export const SocketSync = () => {
-  const [, setProblem] = useAtom<Problem>(_problem);
+  const [, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setProblems] = useAtom<Problem[]>(_problems);
   const [, setIsConnected] = useAtom<boolean>(_isConnected);
 
@@ -27,7 +27,7 @@ export const SocketSync = () => {
       setProblems(nextProblems);
     });
 
-    socket.on("problem", (nextProblem: Problem) => {
+    socket.on("problem", (nextProblem: Problem | undefined) => {
       setProblem(nextProblem);
     });
 

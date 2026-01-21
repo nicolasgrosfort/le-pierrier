@@ -18,6 +18,7 @@ import {
   MountainSnow,
   Pencil,
   Plus,
+  Save,
   Trash2,
   Undo2,
   X,
@@ -39,7 +40,7 @@ const ExploreProblems = () => {
   const [wantDelete, setWantDelete] = useState<boolean>(false);
 
   const [problems] = useAtom<Problem[]>(_problems);
-  const [problem] = useAtom<Problem>(_problem);
+  const [problem] = useAtom<Problem | undefined>(_problem);
   const [, setMode] = useAtom<Mode>(_mode);
 
   const filteredProblems = gradesFilter.length
@@ -86,12 +87,53 @@ const ExploreProblems = () => {
     setMode("explore");
   };
 
+  if (!problem) {
+    return (
+      <>
+        <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
+          <div className="flex flex-row gap-2 items-center justify-between">
+            <h2 className="font-serif text-xl truncate w-full">Bienvenue !</h2>
+          </div>
+          <div className="flex flex-col gap-1">
+            <div className="flex gap-2 items-center justify-between">
+              <span className="text-sm font-medium">
+                Créé un nouveau bloc pour commencer à utiliser le pierrier.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-4">
+          <div className="flex gap-2 overflow-y-auto justify-end">
+            <button
+              className="text-xs underline cursor-pointer flex gap-2 items-center"
+              onClick={handleCreate}
+            >
+              Créer un nouveau bloc
+              <Plus size={14} />
+            </button>
+          </div>
+        </div>
+        <div className="flex justify-between gap-4 p-4 shrink-0">
+          <span className="font-medium text-sm p-2 flex gap-2 items-center">
+            {problems.length} blocs <MountainSnow size={18} />
+          </span>
+          <button
+            className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+            onClick={handleCreate}
+          >
+            Nouveau bloc <Plus size={18} />
+          </button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
         <div className="flex flex-row gap-2 items-center justify-between">
           <h2 className="font-serif text-xl truncate w-full">
-            {problem.name || "Bloc sans nom"}
+            {problem?.name || "Bloc sans nom"}
           </h2>
           <Grade grade={problem.grade} />
         </div>
@@ -117,7 +159,7 @@ const ExploreProblems = () => {
               <span className="text-xs font-semibold ">T&apos;es sûr ?</span>
               <div className="flex gap-4">
                 <button
-                  className="text-xs underline cursor-pointer flex gap-2 items-center ml-4"
+                  className="text-xs underline cursor-pointer flex gap-2 items-center"
                   onClick={() => setWantDelete(false)}
                 >
                   Annuler
@@ -208,7 +250,7 @@ const ExploreProblems = () => {
 
 const HandleProblem = () => {
   const [hold, setHold] = useAtom<Hold>(_hold);
-  const [problem, setProblem] = useAtom<Problem>(_problem);
+  const [problem, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setMode] = useAtom<Mode>(_mode);
 
   const handleProblem = (nextProblem: Problem) => {
@@ -217,6 +259,14 @@ const HandleProblem = () => {
     socket.connect();
     socket.emit("problem", nextProblem);
   };
+
+  useEffect(() => {
+    if (!problem) {
+      setMode("explore");
+    }
+  }, [problem, setMode]);
+
+  if (!problem) return;
 
   return (
     <>
@@ -321,12 +371,18 @@ const HandleProblem = () => {
           />
         </div>
       </div>
-      <div className="flex justify-end gap-4 p-4 shrink-0">
+      <div className="flex justify-between gap-4 p-4 shrink-0">
         <button
           className="font-medium text-sm flex gap-2 items-center cursor-pointer p-2"
           onClick={() => setMode("explore")}
         >
           Retour <Undo2 size={18} />
+        </button>
+        <button
+          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+          onClick={() => setMode("explore")}
+        >
+          Terminer <Save size={18} />
         </button>
       </div>
     </>

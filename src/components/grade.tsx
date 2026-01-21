@@ -1,12 +1,16 @@
+import { DEFAULT_GRADE } from "@/lib/config";
 import { Grade as GradeType } from "@/lib/types";
 import { blobFromSeed } from "@/lib/utils";
 
 type GradeProps = {
-  grade: GradeType;
+  grade?: GradeType;
   inverse?: boolean;
 };
 
-export const Grade = ({ grade, inverse = false }: GradeProps) => {
+export const Grade = ({
+  grade = DEFAULT_GRADE,
+  inverse = false,
+}: GradeProps) => {
   return (
     <div
       className={`w-8 h-8 ${inverse ? "bg-background text-foreground" : "bg-foreground text-background"} flex items-center justify-center border`}

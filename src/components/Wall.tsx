@@ -26,6 +26,8 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
       el.classList.remove("start", "hold", "foot");
     });
 
+    if (!problem) return;
+
     Object.entries(problem.holds).forEach(([holdId, type]) => {
       svgRef.current
         ?.querySelectorAll<SVGElement>(`[data-name='${holdId}']`)
@@ -54,7 +56,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
   }, [panzoomRef, svgRef]);
 
   const handleOnClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-    if (mode !== "handle") return;
+    if (!problem || mode !== "handle") return;
 
     const target = e.target as SVGElement;
     const targetId = target.dataset.name;

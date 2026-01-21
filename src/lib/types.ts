@@ -46,23 +46,15 @@ export type Problem = {
 };
 
 export type ServerToClientEvents = {
-  current: (problem: Problem["id"]) => void;
-  problem: (problem: Problem) => void;
+  problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
-  // selectProblem: (index: number) => void;
-  // addProblem: (problem: Problem) => void;
-  // deleteProblem: (index: number) => void;
 };
 
 export type ClientToServerEvents = {
-  current: (problem: Problem["id"]) => void;
-  problem: (problem: Problem) => void;
+  problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
-  // selectProblem: (index: number) => void;
-  // addProblem: (problem: Problem) => void;
-  // deleteProblem: (index: number) => void;
 };
