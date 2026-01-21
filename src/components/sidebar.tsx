@@ -40,7 +40,7 @@ const ExploreProblems = () => {
   const [wantDelete, setWantDelete] = useState<boolean>(false);
 
   const [problems] = useAtom<Problem[]>(_problems);
-  const [problem] = useAtom<Problem | undefined>(_problem);
+  const [problem, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setMode] = useAtom<Mode>(_mode);
 
   const filteredProblems = gradesFilter.length
@@ -57,7 +57,6 @@ const ExploreProblems = () => {
   }, [problem, gradesFilter]);
 
   const handleCreate = () => {
-    setMode("handle");
     const socket = getSocket();
     const newProblem: Problem = {
       id: createUUID(),
@@ -68,6 +67,8 @@ const ExploreProblems = () => {
       holds: {},
       grade: DEFAULT_GRADE,
     };
+    setProblem(newProblem);
+    setMode("handle");
     socket.connect();
     socket.emit("create", newProblem);
   };
