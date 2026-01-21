@@ -1,3 +1,7 @@
+import panzoom from "@panzoom/panzoom";
+
+export type PanZoom = ReturnType<typeof panzoom>;
+
 export type Hold = "start" | "hold" | "foot";
 
 export type Grade =
@@ -28,7 +32,7 @@ export type Grade =
 
 export type Problem = {
   name: string;
-  grade?: Grade;
+  grade: Grade;
   author: string;
   date: string;
   rate?: number;
@@ -41,7 +45,8 @@ export type Problem = {
 
 export type ServerToClientEvents = {
   current: (problem: Problem["id"]) => void;
-  // problems: (problems: Problem[]) => void;
+  problem: (problem: Problem) => void;
+  problems: (problems: Problem[]) => void;
   // selectProblem: (index: number) => void;
   // addProblem: (problem: Problem) => void;
   // deleteProblem: (index: number) => void;
@@ -49,7 +54,8 @@ export type ServerToClientEvents = {
 
 export type ClientToServerEvents = {
   current: (problem: Problem["id"]) => void;
-  // problems: (problems: Problem[]) => void;
+  problem: (problem: Problem) => void;
+  problems: (problems: Problem[]) => void;
   // selectProblem: (index: number) => void;
   // addProblem: (problem: Problem) => void;
   // deleteProblem: (index: number) => void;

@@ -1,5 +1,7 @@
 import { Grade, Hold, Problem } from "@/lib/types";
 
+export const DEFAULT_HOLD: Hold = "start";
+
 export const DEFAULT_PROBLEM: Problem = {
   id: 0,
   name: "",
@@ -8,8 +10,6 @@ export const DEFAULT_PROBLEM: Problem = {
   feet: true,
   holds: {},
 };
-
-export const DEFAULT_MODE: Hold = "hold";
 
 export const HOLD_TYPES: Hold[] = ["start", "hold", "foot"];
 
