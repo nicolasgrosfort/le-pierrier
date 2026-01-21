@@ -22,7 +22,7 @@ import {
   Undo2,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
   const [mode] = useAtom<Mode>(_mode);
@@ -49,6 +49,11 @@ const ExploreProblems = () => {
   const sortedProblems = [...filteredProblems].sort(
     (a, b) => GRADES.indexOf(a.grade!) - GRADES.indexOf(b.grade!),
   );
+
+  useEffect(() => {
+    const id = setTimeout(() => setWantDelete(false), 0);
+    return () => clearTimeout(id);
+  }, [problem, gradesFilter]);
 
   const handleCreate = () => {
     setMode("handle");
