@@ -1,5 +1,6 @@
 import { DEFAULT_DATA } from "@/lib/config";
 import { ClientToServerEvents, Db, ServerToClientEvents } from "@/lib/types";
+import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
@@ -9,7 +10,10 @@ const db = await JSONFilePreset<Db>("src/db/db.json", DEFAULT_DATA);
 const app = express();
 const httpServer = createServer(app);
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
-  cors: { origin: "*" },
+  cors: {
+    origin: ["http://localhost:3000", "http://localhost:3001"],
+    credentials: true,
+  },
 });
 
 app.use(express.static("dist"));
@@ -20,6 +24,22 @@ app.get("/", (_, res) => {
 
 app.get("/wall", (_, res) => {
   res.sendFile("dist/wall/index.html");
+});
+
+io.use((socket, next) => {
+  const key = socket.handshake.auth?.key;
+
+  if (!key) {
+    return next(new Error("Missing auth key"));
+  }
+
+  if (key !== process.env.SOCKET_KEY) {
+    return next(new Error("Invalid auth key"));
+  }
+
+  socket.data.key = key;
+
+  next();
 });
 
 io.on("connection", (socket) => {

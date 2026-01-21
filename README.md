@@ -18,15 +18,37 @@ brew install node
 brew install yarn
 ```
 
-## Run the project
+## Development
+
+Use : `http://localhost:3001`
 
 ```bash
-yarn && yarn dev:all
+yarn dev:all
 ```
 
-### To make the project work on your local network
+### Setup the environment variables
 
-Go to `./src/lib/config.ts` and change the `IP_ADDRESS` constant to your computer's local IP address.
+Copy the `exemple.env` file to a new `.env` file and change the `SOCKET_KEY` value to a secret key of your choice.
+
+```bash
+cp exemple.env .env
+```
+
+## Production
+
+Use : `http://localhost:3000`
+
+```bash
+yarn build:all
+```
+
+### Deploy on the server
+
+Copy files on the server and run:
+
+```bash
+yarn prod:all
+```
 
 ## Usage
 

@@ -20,3 +20,10 @@ export function blobFromSeed(seed: string) {
 
   return `${p()}% ${p()}% ${p()}% ${p()}% / ${p()}% ${p()}% ${p()}% ${p()}%`;
 }
+
+export const getKeyFromUrl = () => {
+  if (typeof window === "undefined") return null;
+
+  const params = new URLSearchParams(window.location.search);
+  return params.get("key");
+};
