@@ -7,7 +7,7 @@ import { generateProblems } from "@/lib/utils";
 import { createServer } from "http";
 import { Server } from "socket.io";
 
-const problems: Problem[] = generateProblems(100);
+const problems: Problem[] = generateProblems(1);
 let currentProblemId = problems[0].id;
 
 const httpServer = createServer();
@@ -51,11 +51,12 @@ io.on("connection", (socket) => {
       problems.splice(index, 1);
       io.emit("delete", id);
       io.emit("problems", problems);
-      if (currentProblemId === id) {
-        const newCurrentProblem = problems[0];
-        currentProblemId = newCurrentProblem.id;
-        io.emit("problem", newCurrentProblem);
-      }
+
+      const newCurrentProblem = problems[0];
+      currentProblemId = newCurrentProblem.id;
+
+      console.log(currentProblemId);
+      io.emit("problem", newCurrentProblem);
     }
   });
 

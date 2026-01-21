@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "socket": "tsx src/server/server.ts"
+    "socket": "nodemon"
   },
   "dependencies": {
     "@panzoom/panzoom": "^4.6.1",
@@ -15,6 +15,7 @@
     "jotai": "^2.16.2",
     "lucide-react": "^0.562.0",
     "next": "16.1.4",
+    "nodemon": "^3.1.11",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "socket.io": "^4.8.3",
