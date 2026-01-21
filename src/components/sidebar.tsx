@@ -15,8 +15,6 @@ export const Sidebar = () => {
   const [problems] = useAtom<Problem[]>(_problems);
   const [problem] = useAtom<Problem>(_problem);
 
-  console.log("Sidebar render", { problems, problem });
-
   const filteredProblems = gradesFilter.length
     ? problems.filter((p) => gradesFilter.includes(p.grade))
     : problems;
@@ -41,7 +39,9 @@ export const Sidebar = () => {
           </div>
           <div className="flex gap-2 items-center justify-between">
             <span className="text-xs">{problem.date}</span>
-            <span className="text-xs underline">Modifier</span>
+            <button className="text-xs underline cursor-pointer">
+              Modifier
+            </button>
           </div>
         </div>
       </div>
@@ -76,7 +76,10 @@ export const Sidebar = () => {
         </div>
       </div>
       <div className="flex-1 flex flex-col border-b p-6 min-h-0">
-        <h3 className="font-medium text-sm mb-4 shrink-0">Blocs</h3>
+        <div className="flex justify-between items-center">
+          <h3 className="font-medium text-sm mb-4 shrink-0">Blocs</h3>
+          <span className="text-xs">[{sortedProblems.length}]</span>
+        </div>
         <div className="flex flex-col gap-2 overflow-y-auto">
           {sortedProblems.length > 0 ? (
             sortedProblems.map((_problem) => (
@@ -93,7 +96,7 @@ export const Sidebar = () => {
       </div>
       <div className="flex justify-between gap-4 p-4 shrink-0">
         <span className="font-medium text-sm p-2 flex gap-2 items-center">
-          123 blocs <MountainSnow size={18} />
+          {problems.length} blocs <MountainSnow size={18} />
         </span>
         <button className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2">
           Nouveau bloc <Plus size={18} />
