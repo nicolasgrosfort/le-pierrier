@@ -7,17 +7,20 @@
       "date": "2026-01-21",
       "feet": "feet-hand",
       "holds": {
-        "29": "start",
+        "2": "start",
+        "29": "foot",
         "64": "start",
-        "73": "foot",
+        "73": "hold",
         "89": "hold",
         "93": "hold",
-        "98": "foot",
-        "101": "foot",
+        "98": "hold",
+        "101": "hold",
+        "162": "foot",
         "206": "hold",
         "236": "hold",
         "237": "hold",
-        "314": "start"
+        "293": "foot",
+        "314": "foot"
       },
       "grade": "4a"
     },
@@ -43,5 +46,5 @@
       "grade": "6c+"
     }
   ],
-  "currentProblemId": "c422173a-8386-4e70-ab66-52b3059892b1"
+  "currentProblemId": "b263c9a8-6683-4493-97b0-d394a43c6def"
 }
