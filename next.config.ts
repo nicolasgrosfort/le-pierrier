@@ -2,11 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+  distDir: "dist",
   trailingSlash: true,
-  images: { unoptimized: true },
   typedRoutes: true,
   devIndicators: false,
-  distDir: "dist",
+  images: { unoptimized: true },
   async rewrites() {
     return [
       {
