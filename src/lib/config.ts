@@ -1,6 +1,6 @@
 import { Grade, HoldType, Mode, Problem } from "@/lib/types";
 
-export const IP_ADDRESS = "192.168.1.206wha";
+export const IP_ADDRESS = "192.168.1.206";
 
 export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
