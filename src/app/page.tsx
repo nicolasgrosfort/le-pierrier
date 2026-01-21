@@ -14,7 +14,7 @@ export default function Page() {
 
   return (
     <div className="grid grid-cols-[1fr_auto] h-full">
-      <main className="grid grid-rows-[auto_1fr_auto] h-full overflow-hidden">
+      <main className="grid grid-rows-[auto_1fr_auto] h-full overflow-visible">
         <Header />
         <Wall svgRef={svgRef} panzoomRef={panzoomRef} />
         <Toolbar panzoomRef={panzoomRef} />

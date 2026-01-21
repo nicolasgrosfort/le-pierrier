@@ -36,7 +36,7 @@ export const Toolbar = ({ panzoomRef }: ToolbarProps) => {
   return (
     <div className="z-10 flex justify-between p-4">
       <div />
-      <div className="p-2 px-4 border flex gap-8 bg-background">
+      <div className="p-2 px-4 border flex gap-8  bg-background/80 overflow-hidden backdrop-blur">
         {isConnected ? <Wifi size={18} /> : <WifiOff size={18} />}
         <button className="cursor-pointer" onClick={() => setIsId(!isId)}>
           {isId ? <Bug size={18} /> : <BugOff size={18} />}

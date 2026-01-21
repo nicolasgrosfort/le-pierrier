@@ -27,7 +27,7 @@ export const Sidebar = () => {
   const [mode] = useAtom<Mode>(_mode);
 
   return (
-    <nav className="border-l border-black w-90 h-full flex flex-col z-10 bg-background overflow-hidden">
+    <nav className="border-l border-black w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden">
       {mode === "explore" ? <ExploreProblems /> : <HandleProblem />}
     </nav>
   );
