@@ -335,7 +335,6 @@ const HandleProblem = () => {
               handleProblem({ ...problem, name: nextName });
             }}
             placeholder="Ex: Le Pilier du Pierrier"
-            autofocus
           />
           <InputField
             type="text"
