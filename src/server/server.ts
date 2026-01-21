@@ -1,14 +1,10 @@
+import { DEFAULT_DATA } from "@/lib/config";
 import { ClientToServerEvents, Db, ServerToClientEvents } from "@/lib/types";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
-const defaultData: Db = {
-  holds: [],
-  problems: [],
-  currentProblemId: undefined,
-};
-const db = await JSONFilePreset<Db>("src/db/db.json", defaultData);
+const db = await JSONFilePreset<Db>("src/db/db.json", DEFAULT_DATA);
 
 const httpServer = createServer();
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
@@ -20,6 +16,8 @@ io.on("connection", (socket) => {
 
   socket.emit("holds", db.data.holds);
   socket.emit("problems", db.data.problems);
+  socket.emit("transform", db.data.transform);
+
   const currentProblem = db.data.problems.find(
     (p) => p.id === db.data.currentProblemId,
   );
@@ -29,6 +27,13 @@ io.on("connection", (socket) => {
 
   socket.on("problems", () => {
     socket.emit("problems", db.data.problems);
+  });
+
+  socket.on("transform", (transform) => {
+    db.data.transform = transform;
+    db.write();
+
+    io.emit("transform", transform);
   });
 
   socket.on("problem", (nextProblem) => {

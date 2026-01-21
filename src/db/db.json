@@ -1,4 +1,10 @@
 {
+  "transform": {
+    "x": 0,
+    "y": 0,
+    "scale": 1,
+    "rotate": 0
+  },
   "currentProblemId": "b263c9a8-6683-4493-97b0-d394a43c6def",
   "problems": [
     {

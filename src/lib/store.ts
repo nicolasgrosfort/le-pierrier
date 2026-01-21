@@ -1,5 +1,12 @@
 import { DEFAULT_HOLD_TYPE, DEFAULT_MODE } from "@/lib/config";
-import { Hold, HoldType, Mode, PanZoom, Problem } from "@/lib/types";
+import {
+  Hold,
+  HoldType,
+  Mode,
+  PanZoom,
+  Problem,
+  WallTransform,
+} from "@/lib/types";
 import { atom } from "jotai";
 import { RefObject } from "react";
 
@@ -16,4 +23,11 @@ export const _isId = atom<boolean>(false);
 export const _panzoomRef = atom<RefObject<PanZoom | null>>({ current: null });
 export const _wallRef = atom<RefObject<SVGSVGElement | null>>({
   current: null,
+});
+
+export const _wallTransform = atom<WallTransform>({
+  x: 0,
+  y: 0,
+  scale: 1,
+  rotate: 0,
 });

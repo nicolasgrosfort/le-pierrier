@@ -33,6 +33,13 @@ export type Grade =
   | "8c"
   | "8c+";
 
+export type WallTransform = {
+  x: number;
+  y: number;
+  scale: number;
+  rotate: number;
+};
+
 export type Hold = {
   id: number;
   x: number;
@@ -64,6 +71,7 @@ export type ServerToClientEvents = {
   holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
+  transform: (transform: WallTransform) => void;
 };
 
 export type ClientToServerEvents = {
@@ -72,10 +80,12 @@ export type ClientToServerEvents = {
   holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
+  transform: (transform: WallTransform) => void;
 };
 
 export type Db = {
   holds: Hold[];
   problems: Problem[];
+  transform: WallTransform;
   currentProblemId?: UUID;
 };

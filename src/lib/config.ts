@@ -1,6 +1,10 @@
-import { Grade, HoldType, Mode, Problem } from "@/lib/types";
+import { Db, Grade, HoldType, Mode, Problem } from "@/lib/types";
 
 export const IP_ADDRESS = "192.168.1.206";
+
+export const TRANSLATE_STEP = 0.1;
+export const SCALE_STEP = 0.001;
+export const ROTATE_STEP = 0.01;
 
 export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
@@ -35,10 +39,12 @@ export const GRADES: Grade[] = [
   "8c+",
 ];
 
-export const TOTAL_HOLDS = 320;
-export const ALL_HOLD_IDS = Array.from({ length: TOTAL_HOLDS }, (_, i) =>
-  (i + 1).toString(),
-);
+export const DEFAULT_DATA: Db = {
+  holds: [],
+  problems: [],
+  transform: { x: 0, y: 0, scale: 1, rotate: 0 },
+  currentProblemId: undefined,
+};
 
 export const FEET_LABEL: Record<Problem["feet"], string> = {
   "feet-hand": "Pieds-mains",

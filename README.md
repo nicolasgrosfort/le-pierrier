@@ -27,3 +27,15 @@ yarn && yarn dev:all
 ### To make the project work on your local network
 
 Go to `./src/lib/config.ts` and change the `IP_ADDRESS` constant to your computer's local IP address.
+
+## Usage
+
+The `/` page is the wall-control interface.
+The `/wall` page is the wall display interface.
+
+### Transforming the wall view
+
+- Use the arrow keys to translate the view.
+- Use the `+` and `-` keys to zoom in and out.
+- Use the `r` and `l` keys to rotate the view.
+- Use the `0` key to reset the view.
