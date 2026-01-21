@@ -1,13 +1,11 @@
 "use client";
 
-import { DEFAULT_PROBLEM } from "@/lib/config";
-import { _isId } from "@/lib/store";
-import { PanZoom, Problem } from "@/lib/types";
+import { _isId, _problem } from "@/lib/store";
+import { PanZoom } from "@/lib/types";
 import panzoom from "@panzoom/panzoom";
 import clsx from "clsx";
 import { useAtom } from "jotai";
-import { RefObject, useEffect, useState } from "react";
-import { getSocket } from "../lib/socket";
+import { RefObject, useEffect, useLayoutEffect } from "react";
 
 type WallProps = {
   svgRef: RefObject<SVGSVGElement | null>;
@@ -16,38 +14,19 @@ type WallProps = {
 
 export default function Wall({ svgRef, panzoomRef }: WallProps) {
   const [isId] = useAtom(_isId);
+  const [problem] = useAtom(_problem);
 
-  const [currentProblemId, setCurrentProblemId] = useState<Problem["id"]>(
-    DEFAULT_PROBLEM.id,
-  );
-
-  useEffect(() => {
-    const socket = getSocket();
-    socket.connect();
-
-    socket.on("current", (nextProblemId: Problem["id"]) => {
-      console.log("Current problem ID", nextProblemId);
-
-      setCurrentProblemId(nextProblemId);
-
-      // svgRef.current?.querySelectorAll("#holds *").forEach((el) => {
-      //   el.classList.remove("hold");
-      // });
-
-      // for (const hold in problem.holds) {
-      //   svgRef.current
-      //     ?.querySelector<SVGElement>(`[data-name='${hold}']`)
-      //     ?.classList.add(problem.holds[hold]);
-      // }
-
-      // setCurrentProblem(problem);
+  useLayoutEffect(() => {
+    svgRef.current?.querySelectorAll("#holds *").forEach((el) => {
+      el.classList.remove("start", "hold", "foot");
     });
 
-    return () => {
-      socket.off("current");
-      socket.disconnect();
-    };
-  }, []);
+    Object.entries(problem.holds).forEach(([holdId, type]) => {
+      svgRef.current
+        ?.querySelector<SVGElement>(`[data-name='${holdId}']`)
+        ?.classList.add(type);
+    });
+  }, [problem, svgRef]);
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -67,7 +46,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
       panzoomRef.current?.destroy();
       panzoomRef.current = null;
     };
-  }, []);
+  }, [panzoomRef, svgRef]);
 
   // const handleOnClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
   //   const target = e.target as SVGElement;
@@ -93,22 +72,14 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
   // };
 
   return (
-    <div className="h-full overflow-visible!">
-      {/* <button
-        onClick={() => {
-          const nextProblemIndex = (currentProblemId + 1) % 10; // Assuming 10 problems
-          const socket = getSocket();
-          socket.emit("current", nextProblemIndex);
-        }}
-      >
-        Next
-      </button> */}
+    <div className="h-full w-full relative overflow-visible!">
       <svg
         ref={svgRef}
         width={1500}
         height={960}
         viewBox="0 0 1500 960"
-        className="touch-none max-w-full h-full"
+        className="touch-none absolute inset-0 w-full h-full object-contain"
+        style={{ objectFit: "contain", objectPosition: "center" }}
         // onClick={handleOnClick}
       >
         <g id="map" className="map">

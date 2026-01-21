@@ -1,64 +1,95 @@
 "use client";
 
 import { Grade } from "@/components/grade";
+import { ProblemItem } from "@/components/problem-item";
 import { GRADES } from "@/lib/config";
-import { _problems } from "@/lib/store";
-import { Problem } from "@/lib/types";
+import { _problem, _problems } from "@/lib/store";
+import { Grade as GradeType, Problem } from "@/lib/types";
 import { useAtom } from "jotai";
 import { MountainSnow, Plus } from "lucide-react";
+import { useState } from "react";
 
 export const Sidebar = () => {
+  const [gradesFilter, setGradesFilter] = useState<GradeType[]>([]);
+
   const [problems] = useAtom<Problem[]>(_problems);
+  const [problem] = useAtom<Problem>(_problem);
+
+  const filteredProblems = gradesFilter.length
+    ? problems.filter((p) => gradesFilter.includes(p.grade))
+    : problems;
+
+  const sortedProblems = [...filteredProblems].sort(
+    (a, b) => GRADES.indexOf(a.grade!) - GRADES.indexOf(b.grade!),
+  );
 
   return (
-    <nav className="border-l border-black min-w-[320px] h-full flex flex-col z-10 bg-background">
-      <div className="flex flex-col gap-2 border-b p-6">
+    <nav className="border-l border-black min-w-[320px] h-full flex flex-col z-10 bg-background overflow-hidden">
+      <div className="flex flex-col gap-2 border-b p-6 shrink-0">
         <div className="flex flex-row gap-2 items-center justify-between">
-          <h2 className="font-serif text-xl">Échauffement</h2>
-          <Grade grade="4a" />
+          <h2 className="font-serif text-xl">{problem.name}</h2>
+          <Grade grade={problem.grade} />
         </div>
         <div className="flex flex-col gap-1">
           <div className="flex gap-2 items-center justify-between">
-            <span className="text-sm font-medium">Nicolas</span>
-            <span className="text-sm font-medium">8 prises</span>
+            <span className="text-sm font-medium">{problem.author}</span>
+            <span className="text-sm font-medium">
+              {Object.keys(problem.holds).length} prises
+            </span>
           </div>
           <div className="flex gap-2 items-center justify-between">
-            <span className="text-xs">12.12.2026</span>
+            <span className="text-xs">{problem.date}</span>
             <span className="text-xs underline">Modifier</span>
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 border-b p-6">
-        <h3 className="font-medium text-sm">Cotations</h3>
+      <div className="flex flex-col gap-4 border-b p-6 shrink-0">
+        <div className="flex justify-between">
+          <h3 className="font-medium text-sm">Cotations</h3>
+          {gradesFilter.length > 0 && (
+            <button
+              className="text-xs underline cursor-pointer"
+              onClick={() => setGradesFilter([])}
+            >
+              Effacer
+            </button>
+          )}
+        </div>
         <div className="grid grid-cols-8 gap-1">
-          {GRADES.map((grade, id) => (
-            <button key={grade}>
-              <Grade inverse={id !== 0} grade={grade} />
+          {GRADES.map((grade) => (
+            <button
+              key={grade}
+              className="cursor-pointer"
+              onClick={() => {
+                setGradesFilter((current) =>
+                  current.includes(grade)
+                    ? current.filter((g) => g !== grade)
+                    : [...current, grade],
+                );
+              }}
+            >
+              <Grade inverse={!gradesFilter.includes(grade)} grade={grade} />
             </button>
           ))}
         </div>
       </div>
-      <div className="flex-1 flex flex-col gap-4 border-b p-6">
-        <h3 className="font-medium text-sm">Blocs</h3>
-        <div className="flex flex-col gap-2">
-          {problems.length > 0 ? (
-            problems.map((problem) => (
-              <div key={problem.id} className="border p-2">
-                <div className="flex justify-between leading-none">
-                  <div className="">
-                    <h4 className="font-serif">{problem.name}</h4>
-                    <span className="text-xs">{problem.author}</span>
-                  </div>
-                  <Grade grade={problem.grade} />
-                </div>
-              </div>
+      <div className="flex-1 flex flex-col border-b p-6 min-h-0">
+        <h3 className="font-medium text-sm mb-4 shrink-0">Blocs</h3>
+        <div className="flex flex-col gap-2 overflow-y-auto">
+          {sortedProblems.length > 0 ? (
+            sortedProblems.map((_problem) => (
+              <ProblemItem
+                problem={_problem}
+                key={_problem.id}
+                selected={_problem.id === problem.id}
+              />
             ))
           ) : (
             <span className="text-sm italic">Aucun bloc pour le moment...</span>
           )}
         </div>
       </div>
-      <div className="flex justify-between gap-4 p-4">
+      <div className="flex justify-between gap-4 p-4 shrink-0">
         <span className="font-medium text-sm p-2 flex gap-2 items-center">
           123 blocs <MountainSnow size={18} />
         </span>

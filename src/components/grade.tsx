@@ -12,7 +12,7 @@ export const Grade = ({ grade, inverse = false }: GradeProps) => {
       className={`w-8 h-8 ${inverse ? "bg-background text-foreground" : "bg-foreground text-background"} flex items-center justify-center border`}
       style={{ borderRadius: blobFromSeed(grade) }}
     >
-      <span className="font-medium">{grade}</span>
+      <span className="font-medium text-sm">{grade}</span>
     </div>
   );
 };

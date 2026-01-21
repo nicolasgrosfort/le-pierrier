@@ -22,3 +22,15 @@
 #ids * {
   pointer-events: none;
 }
+
+.hold {
+  fill: var(--hands);
+}
+
+.start {
+  fill: var(--start);
+}
+
+.foot {
+  fill: var(--feet);
+}

@@ -7,6 +7,7 @@ export const DEFAULT_PROBLEM: Problem = {
   name: "",
   author: "",
   date: "",
+  grade: "4a",
   feet: true,
   holds: {},
 };

@@ -8,7 +8,7 @@ import { generateProblems } from "@/lib/utils";
 import { createServer } from "http";
 import { Server } from "socket.io";
 
-const problems: Problem[] = generateProblems(10);
+const problems: Problem[] = generateProblems(100);
 let currentProblemIndex = 0;
 
 const httpServer = createServer();
@@ -20,10 +20,21 @@ io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
   socket.emit("current", currentProblemIndex);
+  socket.emit("problems", problems);
+  socket.emit("problem", problems[currentProblemIndex]);
 
   socket.on("current", (nextProblemIndex) => {
     currentProblemIndex = nextProblemIndex;
     io.emit("current", nextProblemIndex);
+  });
+
+  socket.on("problems", () => {
+    socket.emit("problems", problems);
+  });
+
+  socket.on("problem", (nextProblem) => {
+    problems[nextProblem.id - 1] = nextProblem;
+    io.emit("problem", nextProblem);
   });
 
   // socket.emit("current", problems[currentProblemIndex]);
