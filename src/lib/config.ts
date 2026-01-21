@@ -4,6 +4,8 @@ export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
 export const DEFAULT_HOLD: Hold = "start";
 
+export const HOLD_TYPES: Hold[] = ["start", "hold", "foot"];
+
 export const DEFAULT_PROBLEM: Problem = {
   id: "" as UUID,
   name: "",
@@ -13,8 +15,6 @@ export const DEFAULT_PROBLEM: Problem = {
   feet: "feet-hand",
   holds: {},
 };
-
-export const HOLD_TYPES: Hold[] = ["start", "hold", "foot"];
 
 export const GRADES: Grade[] = [
   "4a",
@@ -44,7 +44,11 @@ export const GRADES: Grade[] = [
 ];
 
 export const TOTAL_HOLDS = 320;
-
 export const ALL_HOLD_IDS = Array.from({ length: TOTAL_HOLDS }, (_, i) =>
   (i + 1).toString(),
 );
+
+export const FEET_LABEL: Record<Problem["feet"], string> = {
+  "feet-hand": "Pieds-mains",
+  "free-feet": "Pieds-libres",
+};
