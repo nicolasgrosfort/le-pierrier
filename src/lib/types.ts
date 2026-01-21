@@ -35,18 +35,15 @@ export type Grade =
 
 export type Hold = {
   id: number;
-  file_number: string;
   x: number;
   y: number;
   w: number;
   h: number;
   a: number;
-  is_polygon: boolean;
-  is_line: boolean;
   pxs?: number[];
   pys?: number[];
-  color: string;
-  drawable: boolean;
+  fill: string;
+  stroke: string;
 };
 
 export type Problem = {

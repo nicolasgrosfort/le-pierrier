@@ -44,3 +44,9 @@ export const FEET_LABEL: Record<Problem["feet"], string> = {
   "feet-hand": "Pieds-mains",
   "free-feet": "Pieds-libres",
 };
+
+export const HOLD_TYPE_COLORS: Record<HoldType, string> = {
+  start: "fuchsia",
+  hold: "yellow",
+  foot: "cyan",
+};

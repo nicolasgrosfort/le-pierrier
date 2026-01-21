@@ -18,6 +18,7 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
+  socket.emit("holds", db.data.holds);
   socket.emit("problems", db.data.problems);
   const currentProblem = db.data.problems.find(
     (p) => p.id === db.data.currentProblemId,
