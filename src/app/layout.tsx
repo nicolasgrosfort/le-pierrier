@@ -1,5 +1,5 @@
 import { SocketSync } from "@/components/socket-sync";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Caprasimo, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Le Pierrier",
@@ -29,7 +34,7 @@ export default function RootLayout({
       lang="fr"
       className={`h-dvh w-dvw ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-hidden`}
     >
-      <body className="w-full h-full font-mono">
+      <body className="w-full h-full font-mono overflow-visible">
         <SocketSync>{children}</SocketSync>
       </body>
     </html>

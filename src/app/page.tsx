@@ -5,7 +5,7 @@ import Wall from "@/components/wall";
 
 export default function Page() {
   return (
-    <div className="grid grid-cols-[100%_100%] md:grid-cols-[1fr_360px] h-full md:overflow-x-scroll snap-x snap-mandatory">
+    <div className="grid grid-cols-[100%_100%] md:grid-cols-[1fr_auto] h-full overflow-x-scroll overflow-y-hidden md:overflow-visible snap-x snap-mandatory">
       <main className="grid grid-rows-[auto_1fr_auto] h-full overflow-visible snap-start">
         <Header />
         <Wall />

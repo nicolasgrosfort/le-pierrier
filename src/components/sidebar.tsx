@@ -7,7 +7,13 @@ import { ProblemItem } from "@/components/problem-item";
 import { ToggleGroup } from "@/components/toggle-group";
 import { DEFAULT_GRADE, FEET_LABEL, GRADES } from "@/lib/config";
 import { getSocket } from "@/lib/socket";
-import { _holdType, _mode, _problem, _problems } from "@/lib/store";
+import {
+  _holdType,
+  _isConnected,
+  _mode,
+  _problem,
+  _problems,
+} from "@/lib/store";
 import { Grade as GradeType, Mode, Problem } from "@/lib/types";
 import { createUUID } from "@/lib/utils";
 import { useAtom } from "jotai";
@@ -26,10 +32,13 @@ import {
 import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
-  const [mode] = useAtom<Mode>(_mode);
+  const [mode] = useAtom(_mode);
+  const [isConnected] = useAtom(_isConnected);
+
+  if (!isConnected) return;
 
   return (
-    <nav className="md:border-l sborder-black w-full h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
+    <nav className="md:border-l sborder-black w-full md:w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
       {mode === "explore" ? <ExploreProblems /> : <HandleProblem />}
     </nav>
   );
