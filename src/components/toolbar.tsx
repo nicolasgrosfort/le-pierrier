@@ -61,7 +61,7 @@ export const Toolbar = () => {
         </button>
       </div>
       <div className="">
-        <span className="font-medium text-sm p-2 flex items-center gap-6">
+        <span className="font-medium text-xs p-2 flex items-center gap-6">
           <span className="flex gap-2 items-center">
             Départ <span className="h-3 w-3 rounded-lg border bg-start" />
           </span>
