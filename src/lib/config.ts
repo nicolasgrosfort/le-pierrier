@@ -1,5 +1,7 @@
 import { Grade, Hold, Mode, Problem } from "@/lib/types";
 
+export const IP_ADDRESS = "localhost";
+
 export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
 export const DEFAULT_HOLD: Hold = "start";

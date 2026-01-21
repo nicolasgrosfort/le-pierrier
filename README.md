@@ -23,3 +23,7 @@ brew install yarn
 ```bash
 yarn && yarn dev:all
 ```
+
+### To make the project work on your local network
+
+Go to `./src/lib/config.ts` and change the `IP_ADDRESS` constant to your computer's local IP address.
