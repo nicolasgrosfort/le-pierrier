@@ -1,5 +1,6 @@
-import { Grade, Hold, Problem, UUID } from "@/lib/types";
+import { Grade, Hold, Mode, Problem, UUID } from "@/lib/types";
 
+export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
 export const DEFAULT_HOLD: Hold = "start";
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { _isId, _problem } from "@/lib/store";
+import { getSocket } from "@/lib/socket";
+import { _hold, _isId, _mode, _problem } from "@/lib/store";
 import { PanZoom } from "@/lib/types";
 import panzoom from "@panzoom/panzoom";
 import clsx from "clsx";
@@ -14,17 +15,21 @@ type WallProps = {
 
 export default function Wall({ svgRef, panzoomRef }: WallProps) {
   const [isId] = useAtom(_isId);
-  const [problem] = useAtom(_problem);
+  const [hold] = useAtom(_hold);
+  const [mode] = useAtom(_mode);
+  const [problem, setProblem] = useAtom(_problem);
 
   useLayoutEffect(() => {
-    svgRef.current?.querySelectorAll("#holds *").forEach((el) => {
+    if (!svgRef.current) return;
+
+    svgRef.current.querySelectorAll<SVGElement>("[data-name]").forEach((el) => {
       el.classList.remove("start", "hold", "foot");
     });
 
     Object.entries(problem.holds).forEach(([holdId, type]) => {
       svgRef.current
-        ?.querySelector<SVGElement>(`[data-name='${holdId}']`)
-        ?.classList.add(type);
+        ?.querySelectorAll<SVGElement>(`[data-name='${holdId}']`)
+        .forEach((el) => el.classList.add(type));
     });
   }, [problem, svgRef]);
 
@@ -48,28 +53,31 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
     };
   }, [panzoomRef, svgRef]);
 
-  // const handleOnClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
-  //   const target = e.target as SVGElement;
-  //   const targetId = target.dataset.name;
+  const handleOnClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
+    if (mode !== "handle") return;
 
-  //   if (!targetId) return;
+    const target = e.target as SVGElement;
+    const targetId = target.dataset.name;
 
-  //   const holds = { ...currentProblem?.holds };
+    if (!targetId) return;
 
-  //   if (holds[targetId]) {
-  //     delete holds[targetId];
-  //   } else {
-  //     holds[targetId] = mode;
-  //   }
+    const holds = { ...problem?.holds };
 
-  //   const nextProblem = {
-  //     ...currentProblem,
-  //     holds,
-  //   };
+    if (holds[targetId]) {
+      delete holds[targetId];
+    } else {
+      holds[targetId] = hold;
+    }
 
-  //   const socket = getSocket();
-  //   // socket.emit("current", nextProblem);
-  // };
+    const nextProblem = {
+      ...problem,
+      holds,
+    };
+
+    setProblem(nextProblem);
+    const socket = getSocket();
+    socket.emit("problem", nextProblem);
+  };
 
   return (
     <div className="h-full w-full relative overflow-visible!">
@@ -80,12 +88,11 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
         viewBox="0 0 1500 960"
         className="touch-none absolute inset-0 w-full h-full object-contain"
         style={{ objectFit: "contain", objectPosition: "center" }}
-        // onClick={handleOnClick}
+        onClick={handleOnClick}
       >
         <g id="map" className="map">
           <g id="wall">
             <path
-              id="wall_2"
               d="M852 924.65L864.469 481M852 924.65L864.48 480.44L1453.5 924.65L852 924.65Z"
               stroke="#151515"
               fill="#f5f5f5"
@@ -94,7 +101,6 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
               strokeLinejoin="round"
             />
             <path
-              id="wall_3"
               d="M939 307L931.5 325L864.469 481M939 307L1453.5 630.55V924.65L864.48 480.44L939 307Z"
               stroke="#151515"
               fill="#f5f5f5"
@@ -103,7 +109,6 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
               strokeLinejoin="round"
             />
             <path
-              id="wall_4"
               d="M939 307L871.6 227.25L864.469 481L931.5 325L939 307ZM939 307L864.48 480.44"
               stroke="#151515"
               fill="#f5f5f5"
@@ -112,7 +117,6 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
               strokeLinejoin="round"
             />
             <path
-              id="wall_5"
               d="M852 924.65H213.4L167.65 897.4L121.9 870.15L104.4 863.65L113.7 10.3501L129.5 5.75H736.2L871.6 227.25L864.469 481L852 924.65ZM852 924.65L864.48 480.44"
               stroke="#151515"
               fill="#f5f5f5"
@@ -121,7 +125,6 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
               strokeLinejoin="round"
             />
             <path
-              id="wall_6"
               d="M113.5 10L56 536.69L80.5 825.7L104.2 863.3L113.5 10Z"
               stroke="#151515"
               fill="#f5f5f5"
@@ -131,7 +134,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
             />
           </g>
           <g id="grips" className="grips">
-            <g id="29" data-name="29">
+            <g id="29">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -140,36 +143,36 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="29"
               />
             </g>
-            <g id="314" data-name="314">
+            <g id="314">
               <path
-                id="314-c"
                 d="M485.5 873.5L485 784L555 834.5L485.5 873.5Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                data-name="314"
               />
               <path
-                id="314-r"
                 d="M526.5 914.5L555 834.5L485.5 873.5L526.5 914.5Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                data-name="314"
               />
               <path
-                id="314-l"
                 d="M485 784L415 837L485.5 873.5L485 784Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                data-name="314"
               />
             </g>
-            <g id="320" data-name="320">
+            <g id="320">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -179,7 +182,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="320"
               />
             </g>
-            <g id="327" data-name="327">
+            <g id="327">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -189,7 +192,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="327"
               />
             </g>
-            <g id="321" data-name="321">
+            <g id="321">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -199,7 +202,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="321"
               />
             </g>
-            <g id="323" data-name="323">
+            <g id="323">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -209,7 +212,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="323"
               />
             </g>
-            <g id="322" data-name="322">
+            <g id="322">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -219,7 +222,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="322"
               />
             </g>
-            <g id="326" data-name="326">
+            <g id="326">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
@@ -229,37 +232,37 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
                 data-name="326"
               />
             </g>
-            <g id="193" data-name="193">
+            <g id="193">
               <path
-                id="194"
                 d="M761.5 798L804 826.5L765.5 857L761.5 798Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinejoin="round"
+                data-name="193"
               />
               <path
-                id="195"
                 d="M716 834L761.5 798L765.5 857L716 834Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinejoin="round"
+                data-name="193"
               />
               <path
-                id="197"
                 d="M731 882.5L716 834L765.5 857L731 882.5Z"
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinejoin="round"
+                data-name="193"
               />
               <path
-                id="196"
                 d="M761.5 798L765.5 857"
                 stroke="#151515"
                 strokeWidth="1"
                 strokeLinejoin="round"
+                data-name="193"
               />
             </g>
           </g>

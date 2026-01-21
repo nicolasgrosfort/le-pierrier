@@ -23,14 +23,21 @@
   pointer-events: none;
 }
 
-.hold {
-  fill: var(--hands);
+svg [data-name] {
+  cursor: pointer;
 }
 
-.start {
-  fill: var(--start);
+.hold,
+.hold * {
+  fill: var(--hands) !important;
 }
 
-.foot {
-  fill: var(--feet);
+.start,
+.start * {
+  fill: var(--start) !important;
+}
+
+.foot,
+.foot * {
+  fill: var(--feet) !important;
 }
