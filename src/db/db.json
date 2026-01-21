@@ -20,7 +20,28 @@
         "314": "start"
       },
       "grade": "4a"
+    },
+    {
+      "id": "c422173a-8386-4e70-ab66-52b3059892b1",
+      "name": "Trop facile ?",
+      "author": "Mélanie",
+      "date": "2026-01-22",
+      "feet": "free-feet",
+      "holds": {
+        "29": "foot",
+        "98": "hold",
+        "101": "start",
+        "154": "start",
+        "162": "hold",
+        "206": "hold",
+        "237": "hold",
+        "299": "hold",
+        "314": "foot",
+        "319": "start",
+        "327": "start"
+      },
+      "grade": "6c+"
     }
   ],
-  "currentProblemId": "b263c9a8-6683-4493-97b0-d394a43c6def"
+  "currentProblemId": "c422173a-8386-4e70-ab66-52b3059892b1"
 }
