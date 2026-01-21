@@ -2,6 +2,8 @@
 
 Topographie interactive.
 
+![Le Pierrier](./docs/2026-01-21-le-pierrier.png)
+
 ## Requirements
 
 - Node.js >= 22
