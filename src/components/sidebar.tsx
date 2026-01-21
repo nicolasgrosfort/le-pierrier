@@ -20,6 +20,7 @@ import {
   Plus,
   Trash2,
   Undo2,
+  X,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -27,7 +28,7 @@ export const Sidebar = () => {
   const [mode] = useAtom<Mode>(_mode);
 
   return (
-    <nav className="border-l border-black w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden">
+    <nav className="md:border-l sborder-black w-full h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
       {mode === "explore" ? <ExploreProblems /> : <HandleProblem />}
     </nav>
   );
@@ -151,10 +152,11 @@ const ExploreProblems = () => {
           <h3 className="font-medium text-sm">Filtres</h3>
           {gradesFilter.length > 0 && (
             <button
-              className="text-xs underline cursor-pointer"
+              className="text-xs underline cursor-pointer flex items-center gap-2"
               onClick={() => setGradesFilter([])}
             >
-              Effacer
+              Réinitialiser
+              <X size={14} />
             </button>
           )}
         </div>
@@ -251,7 +253,7 @@ const HandleProblem = () => {
       </div>
 
       <div className="flex flex-col gap-4 border-b p-6 shrink-0">
-        <h3 className="font-medium text-sm">Prises</h3>
+        <h3 className="font-semibold text-sm">Prises</h3>
 
         <ToggleGroup
           value={hold}
@@ -266,7 +268,7 @@ const HandleProblem = () => {
 
       <div className="flex-1 flex flex-col border-b p-6 min-h-0">
         <div className="flex justify-between items-center">
-          <h3 className="font-medium text-sm mb-4 shrink-0">Informations</h3>
+          <h3 className="font-semibold text-sm mb-4 shrink-0">Informations</h3>
         </div>
         <div className="flex flex-col gap-4 overflow-y-auto">
           <InputField

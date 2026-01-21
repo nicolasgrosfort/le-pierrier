@@ -34,7 +34,7 @@ export const Toolbar = ({ panzoomRef }: ToolbarProps) => {
   }, [panzoomRef]);
 
   return (
-    <div className="z-10 flex justify-between p-4">
+    <div className="z-10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 p-4">
       <div />
       <div className="p-2 px-4 border flex gap-8  bg-background/80 overflow-hidden backdrop-blur">
         {isConnected ? <Wifi size={18} /> : <WifiOff size={18} />}

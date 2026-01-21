@@ -23,7 +23,7 @@ export const InputField = ({
         value={value}
         autoFocus={autofocus}
         onChange={(e) => onChange && onChange(e.target.value)}
-        className="border p-2"
+        className="border p-2 text-sm font-medium"
         placeholder={placeholder}
       />
     </label>
