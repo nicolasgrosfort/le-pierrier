@@ -1,44 +1,51 @@
 "use client";
 
 import { getSocket } from "@/lib/socket";
-import { _hold, _isId, _mode, _problem } from "@/lib/store";
-import { PanZoom } from "@/lib/types";
+import {
+  _hold,
+  _isId,
+  _mode,
+  _panzoomRef,
+  _problem,
+  _wallRef,
+} from "@/lib/store";
 import panzoom from "@panzoom/panzoom";
 import clsx from "clsx";
 import { useAtom } from "jotai";
-import { RefObject, useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 
-type WallProps = {
-  svgRef: RefObject<SVGSVGElement | null>;
-  panzoomRef: RefObject<PanZoom | null>;
-};
+export default function Wall() {
+  const [problem, setProblem] = useAtom(_problem);
 
-export default function Wall({ svgRef, panzoomRef }: WallProps) {
   const [isId] = useAtom(_isId);
   const [hold] = useAtom(_hold);
   const [mode] = useAtom(_mode);
-  const [problem, setProblem] = useAtom(_problem);
+
+  const [wallRef] = useAtom(_wallRef);
+  const [panzoomRef] = useAtom(_panzoomRef);
 
   useLayoutEffect(() => {
-    if (!svgRef.current) return;
+    if (!wallRef.current) return;
 
-    svgRef.current.querySelectorAll<SVGElement>("[data-name]").forEach((el) => {
-      el.classList.remove("start", "hold", "foot");
-    });
+    wallRef.current
+      .querySelectorAll<SVGElement>("[data-name]")
+      .forEach((el) => {
+        el.classList.remove("start", "hold", "foot");
+      });
 
     if (!problem) return;
 
     Object.entries(problem.holds).forEach(([holdId, type]) => {
-      svgRef.current
+      wallRef.current
         ?.querySelectorAll<SVGElement>(`[data-name='${holdId}']`)
         .forEach((el) => el.classList.add(type));
     });
-  }, [problem, svgRef]);
+  }, [problem, wallRef]);
 
   useEffect(() => {
-    if (!svgRef.current) return;
+    if (!wallRef.current) return;
 
-    panzoomRef.current = panzoom(svgRef.current, {
+    panzoomRef.current = panzoom(wallRef.current, {
       maxZoom: 10,
       minZoom: 0.5,
       bounds: true,
@@ -53,7 +60,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
       panzoomRef.current?.destroy();
       panzoomRef.current = null;
     };
-  }, [panzoomRef, svgRef]);
+  }, [panzoomRef, wallRef]);
 
   const handleOnClick = (e: React.MouseEvent<SVGSVGElement, MouseEvent>) => {
     if (!problem || mode !== "handle") return;
@@ -84,7 +91,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
   return (
     <div className="h-full w-full relative overflow-visible!">
       <svg
-        ref={svgRef}
+        ref={wallRef}
         width={1500}
         height={960}
         viewBox="0 0 1500 960"

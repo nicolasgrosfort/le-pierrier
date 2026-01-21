@@ -6,7 +6,7 @@ import { Problem } from "@/lib/types";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 
-export const SocketSync = () => {
+export const SocketSync = ({ children }: { children: React.ReactNode }) => {
   const [, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setProblems] = useAtom<Problem[]>(_problems);
   const [, setIsConnected] = useAtom<boolean>(_isConnected);
@@ -33,9 +33,12 @@ export const SocketSync = () => {
 
     return () => {
       socket.off("problem");
+      socket.off("problems");
+      socket.off("connect");
+      socket.off("disconnect");
       socket.disconnect();
     };
   }, [setProblem, setProblems, setIsConnected]);
 
-  return null;
+  return children;
 };

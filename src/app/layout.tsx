@@ -1,3 +1,4 @@
+import { SocketSync } from "@/components/socket-sync";
 import type { Metadata } from "next";
 import { Caprasimo, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -28,7 +29,9 @@ export default function RootLayout({
       lang="fr"
       className={`h-dvh w-dvw ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-hidden`}
     >
-      <body className="w-full h-full font-mono">{children}</body>
+      <body className="w-full h-full font-mono">
+        <SocketSync>{children}</SocketSync>
+      </body>
     </html>
   );
 }

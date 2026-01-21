@@ -1,7 +1,6 @@
 "use client";
 
-import { _isConnected, _isId } from "@/lib/store";
-import { PanZoom } from "@/lib/types";
+import { _isConnected, _isId, _panzoomRef } from "@/lib/store";
 import { useAtom } from "jotai";
 import {
   Bug,
@@ -12,15 +11,13 @@ import {
   ZoomIn,
   ZoomOut,
 } from "lucide-react";
-import { RefObject, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-type ToolbarProps = {
-  panzoomRef: RefObject<PanZoom | null>;
-};
-
-export const Toolbar = ({ panzoomRef }: ToolbarProps) => {
+export const Toolbar = () => {
   const [isConnected] = useAtom<boolean>(_isConnected);
   const [isId, setIsId] = useAtom<boolean>(_isId);
+
+  const [panzoomRef] = useAtom(_panzoomRef);
 
   const [scale, setScale] = useState<number>(100);
 
