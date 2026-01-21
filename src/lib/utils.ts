@@ -23,6 +23,15 @@ function generateRandomHolds(min = 10, max = 30): Record<string, Hold> {
   );
 }
 
+function randomRecentDate(daysBack = 180): string {
+  const now = Date.now();
+  const past = now - daysBack * 24 * 60 * 60 * 1000;
+
+  return new Date(past + Math.random() * (now - past))
+    .toISOString()
+    .split("T")[0];
+}
+
 export function generateProblems(total = 10): Problem[] {
   return Array.from({ length: total }, (_, index) => {
     const id = index + 1;
@@ -31,10 +40,10 @@ export function generateProblems(total = 10): Problem[] {
       id,
       name: randomProblemName(id),
       author: "Setter",
-      date: new Date().toISOString().split("T")[0],
+      date: randomRecentDate(),
       grade: randomItem(GRADES),
       rate: Math.floor(Math.random() * 5) + 1,
-      feet: Math.random() > 0.5,
+      feet: Math.random() > 0.5 ? "feet-hand" : "free-feet",
       holds: generateRandomHolds(),
     };
   });

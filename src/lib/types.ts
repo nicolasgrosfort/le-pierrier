@@ -1,8 +1,9 @@
 import panzoom from "@panzoom/panzoom";
 
+export type Mode = "explore" | "handle";
 export type PanZoom = ReturnType<typeof panzoom>;
-
 export type Hold = "start" | "hold" | "foot";
+export type Feet = "feet-hand" | "free-feet";
 
 export type Grade =
   | "4a"
@@ -36,7 +37,7 @@ export type Problem = {
   author: string;
   date: string;
   rate?: number;
-  feet: boolean;
+  feet: Feet;
   holds: {
     [key: string]: Hold;
   };

@@ -36,6 +36,7 @@ io.on("connection", (socket) => {
     currentProblemIndex = nextProblem.id - 1;
     problems[currentProblemIndex] = nextProblem;
     io.emit("problem", nextProblem);
+    io.emit("problems", problems);
   });
 
   // socket.emit("current", problems[currentProblemIndex]);
