@@ -65,7 +65,7 @@ export default function Wall({ svgRef, panzoomRef }: WallProps) {
 
     const holds = { ...problem?.holds };
 
-    if (holds[targetId]) {
+    if (holds[targetId] === hold) {
       delete holds[targetId];
     } else {
       holds[targetId] = hold;
