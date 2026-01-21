@@ -8,11 +8,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "socket": "nodemon"
+    "socket": "nodemon",
+    "dev:all": "concurrently \"yarn socket\" \"yarn dev\""
   },
   "dependencies": {
     "@panzoom/panzoom": "^4.6.1",
     "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
     "jotai": "^2.16.2",
     "lowdb": "^7.0.1",
     "lucide-react": "^0.562.0",

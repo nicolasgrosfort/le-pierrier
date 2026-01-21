@@ -2,11 +2,23 @@
   "problems": [
     {
       "id": "b263c9a8-6683-4493-97b0-d394a43c6def",
-      "name": "",
-      "author": "",
+      "name": "Superbe",
+      "author": "Nicolas",
       "date": "2026-01-21",
       "feet": "feet-hand",
-      "holds": {},
+      "holds": {
+        "29": "start",
+        "64": "start",
+        "73": "foot",
+        "89": "hold",
+        "93": "hold",
+        "98": "foot",
+        "101": "foot",
+        "206": "hold",
+        "236": "hold",
+        "237": "hold",
+        "314": "start"
+      },
       "grade": "4a"
     }
   ],
