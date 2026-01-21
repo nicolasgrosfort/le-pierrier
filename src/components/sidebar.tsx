@@ -15,6 +15,8 @@ export const Sidebar = () => {
   const [problems] = useAtom<Problem[]>(_problems);
   const [problem] = useAtom<Problem>(_problem);
 
+  console.log("Sidebar render", { problems, problem });
+
   const filteredProblems = gradesFilter.length
     ? problems.filter((p) => gradesFilter.includes(p.grade))
     : problems;
@@ -24,10 +26,10 @@ export const Sidebar = () => {
   );
 
   return (
-    <nav className="border-l border-black min-w-[320px] h-full flex flex-col z-10 bg-background overflow-hidden">
+    <nav className="border-l border-black w-90 h-full flex flex-col z-10 bg-background overflow-hidden">
       <div className="flex flex-col gap-2 border-b p-6 shrink-0">
         <div className="flex flex-row gap-2 items-center justify-between">
-          <h2 className="font-serif text-xl">{problem.name}</h2>
+          <h2 className="font-serif text-xl truncate w-full">{problem.name}</h2>
           <Grade grade={problem.grade} />
         </div>
         <div className="flex flex-col gap-1">

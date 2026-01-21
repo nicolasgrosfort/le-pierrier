@@ -29,7 +29,7 @@ export function generateProblems(total = 10): Problem[] {
 
     return {
       id,
-      name: `Problem ${id}`,
+      name: randomProblemName(id),
       author: "Setter",
       date: new Date().toISOString().split("T")[0],
       grade: randomItem(GRADES),
@@ -54,4 +54,36 @@ export function blobFromSeed(seed: string) {
   const p = () => Math.floor(45 + r() * 50);
 
   return `${p()}% ${p()}% ${p()}% ${p()}% / ${p()}% ${p()}% ${p()}% ${p()}%`;
+}
+
+function randomNameWord() {
+  const words = [
+    "Étoile",
+    "Cascade",
+    "Volcan",
+    "Dragon",
+    "Montagne",
+    "Éclipse",
+    "Rivière",
+    "Tempête",
+    "Sérénité",
+    "Aurore",
+    "Mystère",
+    "Sable",
+    "Cristal",
+    "Nuage",
+    "Ombre",
+    "Feuille",
+    "Foudre",
+    "Brume",
+    "Horizon",
+    "Équinoxe",
+  ];
+  return words[Math.floor(Math.random() * words.length)];
+}
+
+function randomProblemName(id: number) {
+  const length = Math.floor(Math.random() * 3) + 2; // 2 à 4 mots
+  const words = Array.from({ length }, () => randomNameWord());
+  return `${words.join(" ")} #${id}`;
 }

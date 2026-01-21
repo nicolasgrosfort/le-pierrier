@@ -33,7 +33,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("problem", (nextProblem) => {
-    problems[nextProblem.id - 1] = nextProblem;
+    currentProblemIndex = nextProblem.id - 1;
+    problems[currentProblemIndex] = nextProblem;
     io.emit("problem", nextProblem);
   });
 
