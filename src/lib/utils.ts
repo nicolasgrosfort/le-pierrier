@@ -39,10 +39,9 @@ function randomRecentDate(daysBack = 180): string {
 
 export function generateProblems(total = 10): Problem[] {
   return Array.from({ length: total }, () => {
-    const id = createUUID();
     return {
-      id,
-      name: randomProblemName(id),
+      id: createUUID(),
+      name: randomProblemName(),
       author: "Setter",
       date: randomRecentDate(),
       grade: randomItem(GRADES),
@@ -95,8 +94,8 @@ function randomNameWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
 
-function randomProblemName(id: UUID) {
+function randomProblemName() {
   const length = Math.floor(Math.random() * 3) + 2; // 2 à 4 mots
   const words = Array.from({ length }, () => randomNameWord());
-  return `${words.join(" ")} #${id}`;
+  return `${words.join(" ")}`;
 }
