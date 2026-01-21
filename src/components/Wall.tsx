@@ -2,7 +2,7 @@
 
 import { getSocket } from "@/lib/socket";
 import {
-  _hold,
+  _holdType,
   _isId,
   _mode,
   _panzoomRef,
@@ -18,7 +18,7 @@ export default function Wall() {
   const [problem, setProblem] = useAtom(_problem);
 
   const [isId] = useAtom(_isId);
-  const [hold] = useAtom(_hold);
+  const [hold] = useAtom(_holdType);
   const [mode] = useAtom(_mode);
 
   const [wallRef] = useAtom(_wallRef);

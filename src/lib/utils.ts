@@ -1,5 +1,5 @@
 import { ALL_HOLD_IDS, GRADES, HOLD_TYPES } from "@/lib/config";
-import { Hold, Problem, UUID } from "@/lib/types";
+import { HoldType, Problem, UUID } from "@/lib/types";
 import { v4 as uuidv4 } from "uuid";
 
 export function createUUID(): UUID {
@@ -15,7 +15,7 @@ function randomItem<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function generateRandomHolds(min = 10, max = 30): Record<string, Hold> {
+function generateRandomHolds(min = 10, max = 30): Record<string, HoldType> {
   const count = Math.floor(Math.random() * (max - min + 1)) + min;
 
   const pickedIds = pickRandom(ALL_HOLD_IDS, count);

@@ -1,13 +1,14 @@
-import { DEFAULT_HOLD, DEFAULT_MODE } from "@/lib/config";
-import { Hold, Mode, PanZoom, Problem } from "@/lib/types";
+import { DEFAULT_HOLD_TYPE, DEFAULT_MODE } from "@/lib/config";
+import { Hold, HoldType, Mode, PanZoom, Problem } from "@/lib/types";
 import { atom } from "jotai";
 import { RefObject } from "react";
 
 export const _mode = atom<Mode>(DEFAULT_MODE);
+export const _holdType = atom<HoldType>(DEFAULT_HOLD_TYPE);
 
-export const _hold = atom<Hold>(DEFAULT_HOLD);
 export const _problem = atom<Problem | undefined>(undefined);
 export const _problems = atom<Problem[]>([]);
+export const _holds = atom<Hold[]>([]);
 
 export const _isConnected = atom<boolean>(false);
 export const _isId = atom<boolean>(false);

@@ -1,9 +1,10 @@
 import panzoom from "@panzoom/panzoom";
 
 export type UUID = string & { readonly __uuid: unique symbol };
-export type Mode = "explore" | "handle";
 export type PanZoom = ReturnType<typeof panzoom>;
-export type Hold = "start" | "hold" | "foot";
+
+export type Mode = "explore" | "handle";
+export type HoldType = "start" | "hold" | "foot";
 export type Feet = "feet-hand" | "free-feet";
 
 export type Grade =
@@ -32,6 +33,22 @@ export type Grade =
   | "8c"
   | "8c+";
 
+export type Hold = {
+  id: number;
+  file_number: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  a: number;
+  is_polygon: boolean;
+  is_line: boolean;
+  pxs?: number[];
+  pys?: number[];
+  color: string;
+  drawable: boolean;
+};
+
 export type Problem = {
   id: UUID;
   name: string;
@@ -40,13 +57,14 @@ export type Problem = {
   date: string;
   feet: Feet;
   holds: {
-    [key: string]: Hold;
+    [key: string]: HoldType;
   };
 };
 
 export type ServerToClientEvents = {
   problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
+  holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
 };
@@ -54,11 +72,13 @@ export type ServerToClientEvents = {
 export type ClientToServerEvents = {
   problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
+  holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
 };
 
 export type Db = {
+  holds: Hold[];
   problems: Problem[];
   currentProblemId?: UUID;
 };

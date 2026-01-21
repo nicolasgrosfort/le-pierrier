@@ -7,8 +7,8 @@ import { ProblemItem } from "@/components/problem-item";
 import { ToggleGroup } from "@/components/toggle-group";
 import { DEFAULT_GRADE, FEET_LABEL, GRADES } from "@/lib/config";
 import { getSocket } from "@/lib/socket";
-import { _hold, _mode, _problem, _problems } from "@/lib/store";
-import { Grade as GradeType, Hold, Mode, Problem } from "@/lib/types";
+import { _holdType, _mode, _problem, _problems } from "@/lib/store";
+import { Grade as GradeType, Mode, Problem } from "@/lib/types";
 import { createUUID } from "@/lib/utils";
 import { useAtom } from "jotai";
 import {
@@ -250,9 +250,9 @@ const ExploreProblems = () => {
 };
 
 const HandleProblem = () => {
-  const [hold, setHold] = useAtom<Hold>(_hold);
-  const [problem, setProblem] = useAtom<Problem | undefined>(_problem);
-  const [, setMode] = useAtom<Mode>(_mode);
+  const [hold, setHold] = useAtom(_holdType);
+  const [problem, setProblem] = useAtom(_problem);
+  const [, setMode] = useAtom(_mode);
 
   const handleProblem = (nextProblem: Problem) => {
     setProblem(nextProblem);

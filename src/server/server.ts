@@ -3,7 +3,11 @@ import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
-const defaultData: Db = { problems: [], currentProblemId: undefined };
+const defaultData: Db = {
+  holds: [],
+  problems: [],
+  currentProblemId: undefined,
+};
 const db = await JSONFilePreset<Db>("src/db/db.json", defaultData);
 
 const httpServer = createServer();

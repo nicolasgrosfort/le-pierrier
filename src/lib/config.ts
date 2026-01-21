@@ -1,12 +1,12 @@
-import { Grade, Hold, Mode, Problem } from "@/lib/types";
+import { Grade, HoldType, Mode, Problem } from "@/lib/types";
 
-export const IP_ADDRESS = "localhost";
+export const IP_ADDRESS = "192.168.1.206wha";
 
 export const DEFAULT_MODE: Mode = "explore";
 export const DEFAULT_GRADE: Grade = "4a";
-export const DEFAULT_HOLD: Hold = "start";
+export const DEFAULT_HOLD_TYPE: HoldType = "start";
 
-export const HOLD_TYPES: Hold[] = ["start", "hold", "foot"];
+export const HOLD_TYPES: HoldType[] = ["start", "hold", "foot"];
 
 export const GRADES: Grade[] = [
   "4a",

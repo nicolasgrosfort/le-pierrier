@@ -1,15 +1,16 @@
 "use client";
 
 import { getSocket } from "@/lib/socket";
-import { _isConnected, _problem, _problems } from "@/lib/store";
+import { _holds, _isConnected, _problem, _problems } from "@/lib/store";
 import { Problem } from "@/lib/types";
 import { useAtom } from "jotai";
 import { useEffect } from "react";
 
 export const SocketSync = ({ children }: { children: React.ReactNode }) => {
-  const [, setProblem] = useAtom<Problem | undefined>(_problem);
-  const [, setProblems] = useAtom<Problem[]>(_problems);
-  const [, setIsConnected] = useAtom<boolean>(_isConnected);
+  const [, setProblem] = useAtom(_problem);
+  const [, setProblems] = useAtom(_problems);
+  const [, setHolds] = useAtom(_holds);
+  const [, setIsConnected] = useAtom(_isConnected);
 
   useEffect(() => {
     const socket = getSocket();
@@ -21,6 +22,10 @@ export const SocketSync = ({ children }: { children: React.ReactNode }) => {
 
     socket.on("disconnect", () => {
       setIsConnected(false);
+    });
+
+    socket.on("holds", (nextHolds) => {
+      setHolds(nextHolds);
     });
 
     socket.on("problems", (nextProblems: Problem[]) => {
@@ -38,7 +43,7 @@ export const SocketSync = ({ children }: { children: React.ReactNode }) => {
       socket.off("disconnect");
       socket.disconnect();
     };
-  }, [setProblem, setProblems, setIsConnected]);
+  }, [setProblem, setProblems, setIsConnected, setHolds]);
 
   return children;
 };
