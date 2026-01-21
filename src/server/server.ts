@@ -1,4 +1,3 @@
-// server.js
 import {
   ClientToServerEvents,
   Problem,
@@ -9,7 +8,7 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 
 const problems: Problem[] = generateProblems(100);
-let currentProblemIndex = 0;
+let currentProblemId = problems[0].id;
 
 const httpServer = createServer();
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
@@ -19,56 +18,46 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  socket.emit("current", currentProblemIndex);
   socket.emit("problems", problems);
-  socket.emit("problem", problems[currentProblemIndex]);
-
-  socket.on("current", (nextProblemIndex) => {
-    currentProblemIndex = nextProblemIndex;
-    io.emit("current", nextProblemIndex);
-  });
+  socket.emit(
+    "problem",
+    problems.find((p) => p.id === currentProblemId) || problems[0],
+  );
 
   socket.on("problems", () => {
     socket.emit("problems", problems);
   });
 
   socket.on("problem", (nextProblem) => {
-    currentProblemIndex = nextProblem.id - 1;
-    problems[currentProblemIndex] = nextProblem;
+    currentProblemId = nextProblem.id;
+    const index = problems.findIndex((p) => p.id === currentProblemId);
+    if (index !== -1) {
+      problems[index] = nextProblem;
+    }
     io.emit("problem", nextProblem);
     io.emit("problems", problems);
   });
 
-  // socket.emit("current", problems[currentProblemIndex]);
-  // socket.emit("problems", problems);
+  socket.on("create", (newProblem) => {
+    problems.push(newProblem);
+    io.emit("create", newProblem);
+    io.emit("problem", newProblem);
+    io.emit("problems", problems);
+  });
 
-  // socket.on("current", (updatedProblem) => {
-  //   problems[currentProblemIndex] = updatedProblem;
-  //   io.emit("current", updatedProblem);
-  // });
-
-  // socket.on("selectProblem", (index) => {
-  //   if (index >= 0 && index < problems.length) {
-  //     currentProblemIndex = index;
-  //     io.emit("current", problems[currentProblemIndex]);
-  //   }
-  // });
-
-  // socket.on("addProblem", (newProblem) => {
-  //   problems.push(newProblem);
-  //   io.emit("problems", problems);
-  // });
-
-  // socket.on("deleteProblem", (index) => {
-  //   if (index >= 0 && index < problems.length) {
-  //     problems.splice(index, 1);
-  //     if (currentProblemIndex >= problems.length) {
-  //       currentProblemIndex = Math.max(0, problems.length - 1);
-  //     }
-  //     io.emit("problems", problems);
-  //     io.emit("current", problems[currentProblemIndex]);
-  //   }
-  // });
+  socket.on("delete", (id) => {
+    const index = problems.findIndex((p) => p.id === id);
+    if (index !== -1) {
+      problems.splice(index, 1);
+      io.emit("delete", id);
+      io.emit("problems", problems);
+      if (currentProblemId === id) {
+        const newCurrentProblem = problems[0];
+        currentProblemId = newCurrentProblem.id;
+        io.emit("problem", newCurrentProblem);
+      }
+    }
+  });
 
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);

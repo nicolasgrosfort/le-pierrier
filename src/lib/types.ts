@@ -1,5 +1,6 @@
 import panzoom from "@panzoom/panzoom";
 
+export type UUID = string & { readonly __uuid: unique symbol };
 export type Mode = "explore" | "handle";
 export type PanZoom = ReturnType<typeof panzoom>;
 export type Hold = "start" | "hold" | "foot";
@@ -32,6 +33,7 @@ export type Grade =
   | "8c+";
 
 export type Problem = {
+  id: UUID;
   name: string;
   grade: Grade;
   author: string;
@@ -41,13 +43,14 @@ export type Problem = {
   holds: {
     [key: string]: Hold;
   };
-  id: number;
 };
 
 export type ServerToClientEvents = {
   current: (problem: Problem["id"]) => void;
   problem: (problem: Problem) => void;
   problems: (problems: Problem[]) => void;
+  create: (problem: Problem) => void;
+  delete: (id: Problem["id"]) => void;
   // selectProblem: (index: number) => void;
   // addProblem: (problem: Problem) => void;
   // deleteProblem: (index: number) => void;
@@ -57,6 +60,8 @@ export type ClientToServerEvents = {
   current: (problem: Problem["id"]) => void;
   problem: (problem: Problem) => void;
   problems: (problems: Problem[]) => void;
+  create: (problem: Problem) => void;
+  delete: (id: Problem["id"]) => void;
   // selectProblem: (index: number) => void;
   // addProblem: (problem: Problem) => void;
   // deleteProblem: (index: number) => void;

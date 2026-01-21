@@ -1,5 +1,10 @@
 import { ALL_HOLD_IDS, GRADES, HOLD_TYPES } from "@/lib/config";
-import { Hold, Problem } from "@/lib/types";
+import { Hold, Problem, UUID } from "@/lib/types";
+import { v4 as uuidv4 } from "uuid";
+
+export function createUUID(): UUID {
+  return uuidv4() as UUID;
+}
 
 function pickRandom<T>(array: T[], count: number): T[] {
   const shuffled = [...array].sort(() => Math.random() - 0.5);
@@ -33,9 +38,8 @@ function randomRecentDate(daysBack = 180): string {
 }
 
 export function generateProblems(total = 10): Problem[] {
-  return Array.from({ length: total }, (_, index) => {
-    const id = index + 1;
-
+  return Array.from({ length: total }, () => {
+    const id = createUUID();
     return {
       id,
       name: randomProblemName(id),
@@ -91,7 +95,7 @@ function randomNameWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
 
-function randomProblemName(id: number) {
+function randomProblemName(id: UUID) {
   const length = Math.floor(Math.random() * 3) + 2; // 2 à 4 mots
   const words = Array.from({ length }, () => randomNameWord());
   return `${words.join(" ")} #${id}`;

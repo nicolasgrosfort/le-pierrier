@@ -5,10 +5,11 @@ import { GradeSelector } from "@/components/grade-selector";
 import { InputField } from "@/components/input-fiels";
 import { ProblemItem } from "@/components/problem-item";
 import { ToggleGroup } from "@/components/toggle-group";
-import { GRADES } from "@/lib/config";
+import { DEFAULT_GRADE, GRADES } from "@/lib/config";
 import { getSocket } from "@/lib/socket";
 import { _hold, _mode, _problem, _problems } from "@/lib/store";
 import { Grade as GradeType, Hold, Mode, Problem } from "@/lib/types";
+import { createUUID } from "@/lib/utils";
 import { useAtom } from "jotai";
 import {
   Flag,
@@ -46,6 +47,23 @@ const ExploreProblems = () => {
   const sortedProblems = [...filteredProblems].sort(
     (a, b) => GRADES.indexOf(a.grade!) - GRADES.indexOf(b.grade!),
   );
+
+  const handleCreate = () => {
+    setMode("handle");
+    const socket = getSocket();
+    const newProblem: Problem = {
+      id: createUUID(),
+      name: "",
+      author: "",
+      date: "",
+      feet: "feet-hand",
+      holds: {},
+      grade: DEFAULT_GRADE,
+    };
+    socket.connect();
+    socket.emit("create", newProblem);
+  };
+
   return (
     <>
       <div className="flex flex-col gap-2 border-b p-6 shrink-0">
@@ -114,7 +132,7 @@ const ExploreProblems = () => {
         </span>
         <button
           className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
-          onClick={() => setMode("handle")}
+          onClick={handleCreate}
         >
           Nouveau bloc <Plus size={18} />
         </button>
@@ -133,6 +151,13 @@ const HandleProblem = () => {
     const socket = getSocket();
     socket.connect();
     socket.emit("problem", nextProblem);
+  };
+
+  const handleDelete = (id: Problem["id"]) => {
+    const socket = getSocket();
+    socket.connect();
+    socket.emit("delete", id);
+    setMode("explore");
   };
 
   return (
@@ -179,6 +204,7 @@ const HandleProblem = () => {
               handleProblem({ ...problem, name: nextName });
             }}
             placeholder="Ex: Le Pilier du Pierrier"
+            autofocus
           />
           <InputField
             type="text"
@@ -216,7 +242,10 @@ const HandleProblem = () => {
         </div>
       </div>
       <div className="flex justify-between gap-4 p-4 shrink-0">
-        <button className="font-medium text-sm p-2 flex gap-2 items-center cursor-pointer">
+        <button
+          className="font-medium text-sm p-2 flex gap-2 items-center cursor-pointer"
+          onClick={handleDelete.bind(null, problem.id)}
+        >
           Supprimer <Trash2 size={18} />
         </button>
         <button

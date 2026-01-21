@@ -1,14 +1,15 @@
-import { Grade, Hold, Problem } from "@/lib/types";
+import { Grade, Hold, Problem, UUID } from "@/lib/types";
 
+export const DEFAULT_GRADE: Grade = "4a";
 export const DEFAULT_HOLD: Hold = "start";
 
 export const DEFAULT_PROBLEM: Problem = {
-  id: 0,
+  id: "" as UUID,
   name: "",
   author: "",
   date: "",
   grade: "4a",
-  feet: true,
+  feet: "feet-hand",
   holds: {},
 };
 
