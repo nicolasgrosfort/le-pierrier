@@ -106,14 +106,51 @@ export default function Wall() {
         // onClick={handleOnClick}
       >
         <g id="map" className="map">
-          <g id="wall" className="wall">
+          <g id="wall">
             <path
               id="wall_2"
+              d="M852 924.65L864.469 481M852 924.65L864.48 480.44L1453.5 924.65L852 924.65Z"
               stroke="#151515"
+              fill="#f5f5f5"
+              strokeWidth="1"
               strokeMiterlimit="10"
-              strokeWidth="2"
-              d="M113.7 10.35 56.2 537.04l24.5 289.01 23.7 37.6m9.3-853.3-9.3 853.3m9.3-853.3 15.8-4.6h606.7l135.4 221.5m-767.2 636.4 17.5 6.5 91.5 54.5H852m0 0L864.469 481M852 924.65l12.48-444.21M852 924.65h601.5m-581.9-697.4L939 307m-67.4-79.75L864.469 481M939 307l-7.5 18-67.031 156M939 307l514.5 323.55v294.1M939 307l-74.52 173.44m589.02 444.21L864.48 480.44"
-              className="wall"
+              strokeLinejoin="round"
+            />
+            <path
+              id="wall_3"
+              d="M939 307L931.5 325L864.469 481M939 307L1453.5 630.55V924.65L864.48 480.44L939 307Z"
+              stroke="#151515"
+              fill="#f5f5f5"
+              strokeWidth="1"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+            />
+            <path
+              id="wall_4"
+              d="M939 307L871.6 227.25L864.469 481L931.5 325L939 307ZM939 307L864.48 480.44"
+              stroke="#151515"
+              fill="#f5f5f5"
+              strokeWidth="1"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+            />
+            <path
+              id="wall_5"
+              d="M852 924.65H213.4L167.65 897.4L121.9 870.15L104.4 863.65L113.7 10.3501L129.5 5.75H736.2L871.6 227.25L864.469 481L852 924.65ZM852 924.65L864.48 480.44"
+              stroke="#151515"
+              fill="#f5f5f5"
+              strokeWidth="1"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
+            />
+            <path
+              id="wall_6"
+              d="M113.5 10L56 536.69L80.5 825.7L104.2 863.3L113.5 10Z"
+              stroke="#151515"
+              fill="#f5f5f5"
+              strokeWidth="1"
+              strokeMiterlimit="10"
+              strokeLinejoin="round"
             />
           </g>
           <g id="grips" className="grips">
@@ -121,30 +158,46 @@ export default function Wall() {
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M123 823.5 110.5 757 302 880l-179-56.5Z"
                 data-name="29"
               />
             </g>
             <g id="314" data-name="314">
-              <g data-name="314">
-                <path
-                  fill="#BFB6BB"
-                  d="m415 837 70.5-53.5 70 50.5-29 80.5-41-40.5-70.5-37Z"
-                />
-                <path
-                  stroke="#151515"
-                  strokeWidth="2"
-                  d="M485.5 783.5 415 837l70.5 37m0-90.5 70 50.5m-70-50.5V874m70-40-29 80.5-41-40.5m70-40-70 40"
-                />
-              </g>
+              <path
+                id="314-c"
+                d="M485.5 873.5L485 784L555 834.5L485.5 873.5Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="314-r"
+                d="M526.5 914.5L555 834.5L485.5 873.5L526.5 914.5Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                id="314-l"
+                d="M485 784L415 837L485.5 873.5L485 784Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </g>
             <g id="320" data-name="320">
               <path
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M732.209 6H708v18.51h24.209V6Z"
                 data-name="320"
               />
@@ -154,7 +207,7 @@ export default function Wall() {
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M668.209 6H644v18.51h24.209V6Z"
                 data-name="327"
               />
@@ -164,7 +217,7 @@ export default function Wall() {
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M546.209 6H522v18.51h24.209V6Z"
                 data-name="321"
               />
@@ -174,7 +227,7 @@ export default function Wall() {
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M167.209 6H143v18.51h24.209V6Z"
                 data-name="323"
               />
@@ -184,7 +237,7 @@ export default function Wall() {
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M302.209 6H278v18.51h24.209V6Z"
                 data-name="322"
               />
@@ -194,23 +247,43 @@ export default function Wall() {
                 fill="#BFB6BB"
                 stroke="#151515"
                 strokeLinecap="round"
-                strokeWidth="2"
+                strokeWidth="1"
                 d="M423.209 6H399v18.51h24.209V6Z"
                 data-name="326"
               />
             </g>
             <g id="193" data-name="193">
-              <g data-name="193">
-                <path
-                  fill="#BFB6BB"
-                  d="m762 798 42.5 28.5L766 857l-34.5 25.5-15-48.5 45.5-36Z"
-                />
-                <path
-                  stroke="#151515"
-                  strokeWidth="2"
-                  d="m762 798 42.5 28.5L766 857m-4-59-45.5 36m45.5-36 4 59m-49.5-23 15 48.5L766 857m-49.5-23 49.5 23"
-                />
-              </g>
+              <path
+                id="194"
+                d="M761.5 798L804 826.5L765.5 857L761.5 798Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinejoin="round"
+              />
+              <path
+                id="195"
+                d="M716 834L761.5 798L765.5 857L716 834Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinejoin="round"
+              />
+              <path
+                id="197"
+                d="M731 882.5L716 834L765.5 857L731 882.5Z"
+                fill="#BFB6BB"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinejoin="round"
+              />
+              <path
+                id="196"
+                d="M761.5 798L765.5 857"
+                stroke="#151515"
+                strokeWidth="1"
+                strokeLinejoin="round"
+              />
             </g>
           </g>
           <g id="holds" className="holds">
@@ -218,7 +291,7 @@ export default function Wall() {
               id="305"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M492.5 270c-.8-2-.333-10.5 0-14.5.243-3.5.876-5.157 4-7.5 4-3 5.5-2 9-2 4.5 0 7 2.5 8.5 3.5s2.5 9.5 2 15-3 11.5-5 12-9.5.5-12 0-5.5-4-6.5-6.5Z"
               data-name="305"
             />
@@ -226,7 +299,7 @@ export default function Wall() {
               id="46"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M263.5 501.5c-.5 4.167-1.8 13.5-3 17.5-1.5 5-4.5 8-3.5 10.5s16 14 19.5 15.5 15 2.5 20-5.5 3-15.5 1.5-20.5-12-21.5-16-22-15.5-3.5-18.5 4.5Z"
               data-name="46"
             />
@@ -234,7 +307,7 @@ export default function Wall() {
               id="129"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M627 597c-2.5 3.167-6 10.3 0 13.5 7.5 4 18.5 2 18.5-1.5s1-12-7.5-13.5-9 0-11 1.5Z"
               data-name="129"
             />
@@ -242,7 +315,7 @@ export default function Wall() {
               id="176"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M610 450.5c-2.5 1.667-7.6 5.7-8 8.5-.5 3.5 18.5 26 21 26s6.5-4.5 7.5-5.5 3.5-.5 4-3-21-27-24.5-26Z"
               data-name="176"
             />
@@ -250,7 +323,7 @@ export default function Wall() {
               id="181"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M595.5 426.5c-2.5.667-7.4 3.4-7 9 .5 7 7.5 11.5 9 11.5s16 1.5 22.5-2.5 9-10.5 7-14.5-26.5-6-31.5-3.5Z"
               data-name="181"
             />
@@ -258,7 +331,7 @@ export default function Wall() {
               id="210"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M476 365c-.167 4.833 1.6 14.9 10 16.5 10.5 2 7.5-17.5 3-20.5s-12.5-2-13 4Z"
               data-name="210"
             />
@@ -266,7 +339,7 @@ export default function Wall() {
               id="298"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M494.5 361.5c-4 4-4.1 19 3.5 25 9.5 7.5 18 9 23 5.5s11-14.5 7-18.5c-2.388-2.388-12.436-10.016-21-13-5.782-2.015-10.888-.612-12.5 1Z"
               data-name="298"
             />
@@ -274,7 +347,7 @@ export default function Wall() {
               id="209"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M445.211 372.514c-4.333 2.5-10.7 9-1.5 15 11.5 7.5 25 4 29-3s6-20-4.5-19.5-19.699 5-23 7.5Z"
               data-name="209"
             />
@@ -282,7 +355,7 @@ export default function Wall() {
               id="208"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M439 396c2.167-1.5 8.1-4.4 14.5-4 8 .5 16.5.5 17.5 8s-1 11.5-4.5 12-20.5 6.5-25 1-7.556-14.5-2.5-17Z"
               data-name="208"
             />
@@ -290,7 +363,7 @@ export default function Wall() {
               id="95"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M415 393c1 4.833 3.7 14.9 6.5 16.5 3.5 2 9.5.5 11.5 0s9.5-15 5.5-16.5-20.5-6.5-23.5 0Z"
               data-name="95"
             />
@@ -298,7 +371,7 @@ export default function Wall() {
               id="207"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M416 348.5c-3.167 2.333-9.7 9.4-10.5 19-1 12 3 20 9 21s18.5 2.5 23.5-4 5-22 2.5-29-16-15-24.5-7Z"
               data-name="207"
             />
@@ -306,7 +379,7 @@ export default function Wall() {
               id="300"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M448.5 343c-4.667 1.333-12.6 6.1-7 14.5 7 10.5 27 8 30.5 8s14.5-9 12.5-16-25-13-36-6.5Z"
               data-name="300"
             />
@@ -314,7 +387,7 @@ export default function Wall() {
               id="180"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M577 437c-4 5.5-11.9 17.9-11.5 23.5.5 7 12 11.5 16 12s16 1 19-5.5-6.5-22.5-7.5-23.5-10-12-16-6.5Z"
               data-name="180"
             />
@@ -322,7 +395,7 @@ export default function Wall() {
               id="177"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M545 454c2.667-3 8.6-9.1 11-9.5 3-.5 10.5 5.5 10.5 7.5s-3.5 10-8.5 12.5-10 3-12 .5-4.798-7-1-11Z"
               data-name="177"
             />
@@ -330,7 +403,7 @@ export default function Wall() {
               id="100"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M518.5 458.5c1.833-2.167 6-6.5 8-6.5 2.5 0 13.5 6.5 15 8s8 6 6 13.5-5 12-10 12-22.5-22-19-27Z"
               data-name="100"
             />
@@ -338,7 +411,7 @@ export default function Wall() {
               id="178"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M531.5 429.5c-2.833 5.167-8 16.3-6 19.5 2.5 4 12 7 14.5 7s9.5-6.5 10-10.5 3.5-13.5-2-17-13-4-16.5 1Z"
               data-name="178"
             />
@@ -346,7 +419,7 @@ export default function Wall() {
               id="179"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M555.5 425c-1.833 2.333-4.4 8.2 0 13 5.5 6 8 9 18.5 1s11-14.5 10-16.5-3.5-5-12.5-3.5-13 2-16 6Z"
               data-name="179"
             />
@@ -354,7 +427,7 @@ export default function Wall() {
               id="292"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M609 407c-2.167 1.667-5.3 6.6-.5 13 6 8 17 8 23.5 7.5s13-3 13-9.5-10-13.5-19.5-14-13 .5-16.5 3Z"
               data-name="292"
             />
@@ -362,7 +435,7 @@ export default function Wall() {
               id="294"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M585.5 376.5c-2.5 11.167-7.5 34.3-7.5 37.5 0 4 8 7.5 12 8.5s13.5.5 14.5 0 11.5-39.5 11-42.5-6.5-5.5-10.5-5.5-16.5-4.5-19.5 2Z"
               data-name="294"
             />
@@ -370,7 +443,7 @@ export default function Wall() {
               id="295"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M560.5 372c-1 1.833-3.5 5.7-5.5 6.5-2.5 1-10.5 11-10.5 16.5s10.5 22 14 23 11 1.5 18-9.5 2.5-29 1-31.5-12-10-17-5Z"
               data-name="295"
             />
@@ -378,7 +451,7 @@ export default function Wall() {
               id="296"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M516.5 397.5C517 400 526 424 528 426s5.5 2 7.5 2c2.5 0 15.5-5.5 16-7.5s-9.5-31-11.5-32-24 6.5-23.5 9Z"
               data-name="296"
             />
@@ -386,7 +459,7 @@ export default function Wall() {
               id="99"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M506.5 419c-5.333 10.333-16 32.1-16 36.5 0 5.5 14 9.5 17 10.5s15.5-5 18-14.5 8-23 4-27-18.5-9.5-23-5.5Z"
               data-name="99"
             />
@@ -394,7 +467,7 @@ export default function Wall() {
               id="212"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M498.5 393.5c-3.667.333-10.1 3-6.5 11 4.5 10 6 14 8.5 15s14.5-2.5 16-5.5-4.5-20.5-8.5-22.5-5.5 1.5-9.5 2Z"
               data-name="212"
             />
@@ -402,7 +475,7 @@ export default function Wall() {
               id="213"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M474.5 404c-4.333 6.833-13 21.3-13 24.5 0 4 11.5 17.5 18 18.5s13.5-2.5 17-8 2.5-21 1.5-25.5-15.5-18.5-23.5-9.5Z"
               data-name="213"
             />
@@ -410,7 +483,7 @@ export default function Wall() {
               id="211"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M475 382.5c-4 1.667-10.6 6.7-5 13.5 7 8.5 18 5.5 20 4.5s6.5-19-15-18Z"
               data-name="211"
             />
@@ -418,7 +491,7 @@ export default function Wall() {
               id="130"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M646 608.5c-2.5 1.667-7.6 5.9-8 9.5-.5 4.5-2 9 3 10.5s7.5 1.5 9 1 5.5-6 5.5-9-1.5-14.5-9.5-12Z"
               data-name="130"
             />
@@ -426,7 +499,7 @@ export default function Wall() {
               id="134"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M672.5 582.5c-1.833 3.167-4.2 10.5 1 14.5 6.5 5 14 5.5 15.5 0s-6-22.5-16.5-14.5Z"
               data-name="134"
             />
@@ -434,7 +507,7 @@ export default function Wall() {
               id="250"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M564.5 221c-2-4.8 2.167-8.667 4.5-10 3.5-4 12-3.5 16.5 1.5s-3 13-7 13.5-11.5 1-14-5Z"
               data-name="250"
             />
@@ -442,7 +515,7 @@ export default function Wall() {
               id="133"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M666.5 609.5c-1.5 3-3.5 7.6-3.5 10 0 3 2.5 11 10.5 11s15-12 15-17 .5-6.5-1.5-9c-.887-1.109-2.149-2.521-4-3.5-1.483-.785-3.422-1.254-5.272-1.348a10.26 10.26 0 0 0-3.228.348c-5.5 1.5-6.5 6.5-8 9.5Z"
               data-name="133"
             />
@@ -450,7 +523,7 @@ export default function Wall() {
               id="125"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M589.5 589.5c-1 5.167-2.4 16.6 0 21 3 5.5 21 11 27.5 8.5s7.5-24.5 7-28-8-14-18-11.5-15 3.5-16.5 10Z"
               data-name="125"
             />
@@ -458,7 +531,7 @@ export default function Wall() {
               id="123"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M568 569.5c-2.167 1.833-5.9 7.4-3.5 15 3 9.5 9.5 12 15 11s17-16 21.5-19 15-5.5 16-16.5-4-17-8-17-14-3-23 8-15.905 16-18 18.5Z"
               data-name="123"
             />
@@ -466,7 +539,7 @@ export default function Wall() {
               id="73"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M296.5 475c-6.5 5-14.3 7.6-9.5 24 6 20.5 19 30 22 31s22-2.5 31-22-23.5-35.5-24.5-35.5-12.5-2.5-19 2.5Z"
               data-name="73"
             />
@@ -474,7 +547,7 @@ export default function Wall() {
               id="81"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M335.5 456c-5.5 4.5-10.9 15.5-4.5 27.5 8 15 27 2.5 29.5-5s0-19.5-3-22-16.5-5-22-.5Z"
               data-name="81"
             />
@@ -482,7 +555,7 @@ export default function Wall() {
               id="82"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M341 416c-1.5 5-4.9 15.5-6.5 17.5-2 2.5-4 2-4 4s2 4.5 2 6.5-.5 8 1 8.5 12 3.5 19-3 11-15 10.5-23-16.5-17-22-10.5Z"
               data-name="82"
             />
@@ -490,7 +563,7 @@ export default function Wall() {
               id="89"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M355.5 346c-4 3.333-12.1 10.9-12.5 14.5-.5 4.5-8.5 13-8.5 15s-1.5 8.5 4 14 9.5 11.5 18.5 9 24.5-21 29-23 23.5-9 23.5-18.5 2.5-19-8-27-25-3-27.5-1.5-13.5 14.5-18.5 17.5Z"
               data-name="89"
             />
@@ -498,7 +571,7 @@ export default function Wall() {
               id="88"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M356.5 403.5c1-1.5 5.8-6.9 9-6.5 4 .5 10.5 6.5 7.5 14.5s-4 10-8.5 9-10-5-9.5-10 .5-5.5 1.5-7Z"
               data-name="88"
             />
@@ -506,7 +579,7 @@ export default function Wall() {
               id="87"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M376 416.5c3.5 0 9.9 4 11.5 8 2 5 1 7.5-2 8.5s-14 2.5-15.5-1.5-4.5-6.5-2.5-10.5 5-4.5 8.5-4.5Z"
               data-name="87"
             />
@@ -514,7 +587,7 @@ export default function Wall() {
               id="93"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M420.5 409.5s-31-1-32.5.5-1.6 30.6 0 31c2 .5 31.5 1 33.5.5s1-31.5-1-32Z"
               data-name="93"
             />
@@ -522,7 +595,7 @@ export default function Wall() {
               id="94"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M398 374c-10.333 4.833-31 14.9-31 16.5 0 2 10 22.5 11.5 22.5s30-15 32-17-10-22-12.5-22Z"
               data-name="94"
             />
@@ -530,7 +603,7 @@ export default function Wall() {
               id="96"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M437 413.5c1.5-.5 8.5 1.6 8.5 2 0 .5 21.5 22.5 21.5 23.5s-1 9-2 10-10 8.5-12 9-7 .5-8 0-24.5-26.5-24.5-27.5 3-6 3.5-6.5 11.5-10 13-10.5Z"
               data-name="96"
             />
@@ -538,7 +611,7 @@ export default function Wall() {
               id="169"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M529 495c-1.333 2-3.8 7-3 11 1 5 16 11 16.5 11s11.5-.5 11-7.5-12-14.5-13-15-8.5-4-11.5.5Z"
               data-name="169"
             />
@@ -546,7 +619,7 @@ export default function Wall() {
               id="98"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M487.5 466.5c-2.5 1-11.5 4.6-11.5 17 0 15.5-5 26 11.5 31.5s23 1.5 26.5-.5 16.5-20.5 16.5-29.5-10-15.5-14.5-17c-3.6-1.2-16.5-6-21-5.5s-5 3-7.5 4Z"
               data-name="98"
             />
@@ -554,7 +627,7 @@ export default function Wall() {
               id="328"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M591.5 526.5c-1 3-2.2 9.6 1 12 4 3 9.5 4 12.5 3s6.5-11.5 2.5-14.5-6.5-8.5-10.5-5.5-5.069 3.5-5.5 5Z"
               data-name="328"
             />
@@ -562,7 +635,7 @@ export default function Wall() {
               id="124"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M570 535.5c-1.5 3.333-3.9 11.1-1.5 15.5 3 5.5 8.5 5.5 13.5 3.5s9.5-15 8.5-19-4.5-7-7.5-7-10.763-.5-13 7Z"
               data-name="124"
             />
@@ -570,7 +643,7 @@ export default function Wall() {
               id="131"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M625 540c-5 8-9.8 13.3-3 20.5 8.5 9 23-2 27-4.5s15.5-18.5 6.5-24-25.5 0-30.5 8Z"
               data-name="131"
             />
@@ -578,7 +651,7 @@ export default function Wall() {
               id="106"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M412 723c-2 2.833-4.8 10.2 0 17 6 8.5 25 5 29 3.5s8-17 8.5-23.5 5.5-15-1.5-15-30 7.5-36 18Z"
               data-name="106"
             />
@@ -586,7 +659,7 @@ export default function Wall() {
               id="119"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M541 585c2.833 8.167 9.2 24.5 12 24.5 3.5 0 13-4.5 13-8.5s-2-21.5-6.5-23-17.5 1-18.5 7Z"
               data-name="119"
             />
@@ -594,7 +667,7 @@ export default function Wall() {
               id="118"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M529.5 572c-4.5 3.5-2.9 13.9-4.5 15.5-2 2-7.5 4.5-7.5 8.5s8 11 13.5 11 10-5 10-8 .5-11.5-.5-12.5-4-5.5-4-8-2.5-10-7-6.5Z"
               data-name="118"
             />
@@ -602,7 +675,7 @@ export default function Wall() {
               id="122"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M547 559.5c-2.5 3-7.1 7.9-1.5 11.5 7 4.5 12 7.5 14.5 7s13-12.5 13-15.5-9-15-11.5-15-12 9-14.5 12Z"
               data-name="122"
             />
@@ -610,7 +683,7 @@ export default function Wall() {
               id="166"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M526.5 554.5c-2.333 2.5-5.8 8.4-1 12 6 4.5 17.5 1 19.5-2.5s2.5-10.5-4-12-11.5-1-14.5 2.5Z"
               data-name="166"
             />
@@ -618,7 +691,7 @@ export default function Wall() {
               id="117"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M502.5 561c-1.667 7-4.5 21.7-2.5 24.5 2.5 3.5 11 9 18 7s8.5-19.5 8.5-23-6-18.5-12-18-9.5 2.5-12 9.5Z"
               data-name="117"
             />
@@ -626,7 +699,7 @@ export default function Wall() {
               id="114"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M461.5 576c-4 13.5 2.8 28.5 6 32.5 4 5 17 5.5 22.5-7s3.5-15 4-16.5 6.5-7 5.5-12.5-5-10-12-9.5-22-.5-26 13Z"
               data-name="114"
             />
@@ -634,7 +707,7 @@ export default function Wall() {
               id="157"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M405.5 586c4.167-1.5 13.1-3.8 15.5-1 3 3.5 4.5 9.5 2 12s-4.5 5-10.5 4.5-11.5-5-11-8 .835-6.5 4-7.5Z"
               data-name="157"
             />
@@ -642,7 +715,7 @@ export default function Wall() {
               id="329"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M428.5 570.5c-2.333 2.5-6.6 9.2-5 16 2 8.5 8 27 12 28.5s15-7 18.5-12 9-15 6-22.5-15.5-17-18.5-17-10.454 3.5-13 7Z"
               data-name="329"
             />
@@ -650,7 +723,7 @@ export default function Wall() {
               id="160"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M415 558c1.833-2.333 6.4-7.1 10-7.5 4.5-.5 12.5 2 12.5 5.5s.5 10.5-6.5 11.5-12.5 1.5-14.5-.5-2.5-6.5-1.5-9Z"
               data-name="160"
             />
@@ -658,7 +731,7 @@ export default function Wall() {
               id="173"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M585 494.5c-3.333 4-9.3 14-6.5 22 3.5 10 11 10 14.5 8.5s8.5-10 7-16.5-9.5-22-15-14Z"
               data-name="173"
             />
@@ -666,7 +739,7 @@ export default function Wall() {
               id="175"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M588.5 474c-1.333 6-3 18.4 1 20 5 2 18.5 2.5 21 2s5-19 3-21-22-4.5-25-1Z"
               data-name="175"
             />
@@ -674,7 +747,7 @@ export default function Wall() {
               id="174"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M547.5 478.5c-3.5 4-6.4 11.3-2 16.5 5.5 6.5 14 10.5 19 10.5s24-13 24-16.5-3-13.5-11.5-16.5-15-5.5-21.5-1-4.5 3-8 7Z"
               data-name="174"
             />
@@ -682,7 +755,7 @@ export default function Wall() {
               id="170"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M553.5 511.5c-2 3.167-5 10.9-1 16.5 5 7 15.5 6 19 4s7.5-10.5 7-14-5-11-9.5-11.5-13.5.672-15.5 5Z"
               data-name="170"
             />
@@ -690,7 +763,7 @@ export default function Wall() {
               id="165"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M516 539.5c-1.333 1.833-4 6-4 8 0 2.5 9 8 10.5 8s8-4.5 8-7-.5-5-1-5.5-10.5-6-13.5-3.5Z"
               data-name="165"
             />
@@ -698,7 +771,7 @@ export default function Wall() {
               id="167"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M527.454 526.566c-2.954 5.934-1.1 15 4.5 19 7 5 18 5.5 21 5s6-9.5 5-14-9.5-13-12.5-13.5-15.046-2.435-18 3.5Z"
               data-name="167"
             />
@@ -706,7 +779,7 @@ export default function Wall() {
               id="168"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M515.5 514.5c-2.833 2-7 7.2-1 12 7.5 6 18-2 18-5.5s2-11.5-3.5-11.5-10.5 2.5-13.5 5Z"
               data-name="168"
             />
@@ -714,7 +787,7 @@ export default function Wall() {
               id="164"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M476.5 535c-1.667 4.833-4 15.9 0 21.5 5 7 12 7 14.5 6s5.5-8 9-8.5 9-.5 10-3.5 5-7.5 3.5-13-8.5-16.5-15-17.5-18 3.5-22 15Z"
               data-name="164"
             />
@@ -722,7 +795,7 @@ export default function Wall() {
               id="162"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M427.5 525.5c-1.667 4.333-3.1 15.2 4.5 24 9.5 11 20 20.5 24 22s16-4 18-7.5 2.5-8 0-13-19.5-22.5-23-26.5-17.5-9-23.5 1Z"
               data-name="162"
             />
@@ -730,7 +803,7 @@ export default function Wall() {
               id="159"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M389 537.5c-3 4.333-7.9 14.7-3.5 21.5 5.5 8.5 20.5 4 23.5 3s17-14 17-21.5-9.5-17-15.5-16-16 3.5-21.5 13Z"
               data-name="159"
             />
@@ -738,7 +811,7 @@ export default function Wall() {
               id="78"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M340.429 503.634c-1.833 1.833-4.4 6.6 0 11 5.5 5.5 14.5 8 16.5 8s16 4.5 18 4.5 10.5-.5 11-5.5-9-17-19-18.5-21-6.5-26.5.5Z"
               data-name="78"
             />
@@ -746,7 +819,7 @@ export default function Wall() {
               id="79"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M357 485c-2.167 1.667-6.4 5.8-6 9 .5 4 6 6.5 11 6.5s11.5-4 11.5-8S372 477 357 485Z"
               data-name="79"
             />
@@ -754,7 +827,7 @@ export default function Wall() {
               id="83"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M410.5 506.5c-4.5 2-6.5 8.5-.5 14.5 7.5 7.5 15.5 4 15.5 2.5s5.5-14.5-4-16.5-6.5-2.5-11-.5Z"
               data-name="83"
             />
@@ -762,7 +835,7 @@ export default function Wall() {
               id="85"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M439.5 500.5c3 .5 9 2.3 9 5.5 0 4-3 12-8 12.5s-13.5-1.5-13.5-5 1-15.5 12.5-13Z"
               data-name="85"
             />
@@ -770,7 +843,7 @@ export default function Wall() {
               id="163"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M452 509c6-.5 19.6-.7 26 2.5 8 4 10.5 5 9 9s-10 14-17 13.5-23.5-12-23.5-16 1.5-8.774 5.5-9Z"
               data-name="163"
             />
@@ -778,7 +851,7 @@ export default function Wall() {
               id="80"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M379.5 487.5c-2.333 2.167-6.9 7.4-6.5 11 .5 4.5 9.5 15.5 14.5 18.5s11 3.5 15 .5 8-18 8-20.5-6-8.5-13-9.5-14-3-18 0Z"
               data-name="80"
             />
@@ -786,7 +859,7 @@ export default function Wall() {
               id="172"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M619.5 485c-5.5 3.5-6.2 10.6-9 13-3.5 3-11.5 12-9.5 18.5s12.5 18.5 21.5 19 13.5-6 14.5-11 5-19.5 6-21.5-3-8.5-6-11-12-10.5-17.5-7Z"
               data-name="172"
             />
@@ -794,7 +867,7 @@ export default function Wall() {
               id="48"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M282 425.5c-8.167 3.5-22.9 14.8-16.5 32 8 21.5 39 13.5 41.5 13.5s26.5-4.5 26-21-9.5-23.5-14.5-24.5-31-3.043-36.5 0Z"
               data-name="48"
             />
@@ -802,7 +875,7 @@ export default function Wall() {
               id="310"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M377.5 262.5c-3.167 9.167-9.5 27.9-9.5 29.5 0 2 2.5 4 4 5s15 6 17.5 6.5 6 0 8-2 10.5-28 10.5-28.5 1.5-6-2.5-7.5-20-6.5-22.5-7-4.639 1.5-5.5 4Z"
               data-name="310"
             />
@@ -810,7 +883,7 @@ export default function Wall() {
               id="222"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M564.5 708c-3.167 1.833-8.1 6.9-2.5 12.5 7 7 18-1 20-4s.5-18-17.5-8.5Z"
               data-name="222"
             />
@@ -818,7 +891,7 @@ export default function Wall() {
               id="132"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M641 576c-2.167.667-5.5 4.5-1.5 14.5 5 12.5 10.5 20 13.5 21s9-1 11.5-1.5 7.5-11.5 6-16.5-12-13.5-15-15.5-11.5-4-14.5-2Z"
               data-name="132"
             />
@@ -826,7 +899,7 @@ export default function Wall() {
               id="128"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M617.5 565.5c-2.5 2-6 3.2-6 8 0 6 1 12 6 12s15.5 1.5 18-2.5 3-11.5 0-14.5-15.5-5-18-3Z"
               data-name="128"
             />
@@ -834,7 +907,7 @@ export default function Wall() {
               id="221"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M605 660c-5.5 4-5.6 14.4-8 18-3 4.5-11 6.5-9.5 17.5s16.5 15.5 19 15.5 28-13.5 29-21.5-2-24-9.5-25.5-15.5-8-21-4Z"
               data-name="221"
             />
@@ -842,7 +915,7 @@ export default function Wall() {
               id="111"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M521 661c-3.5 4-10.5 13.9-10.5 21.5 0 9.5-.5 15 7.5 16s19 5.5 30-2 14-16 13.5-20.5-7-16.5-18.5-18.5-15.5-1.5-22 3.5Z"
               data-name="111"
             />
@@ -850,7 +923,7 @@ export default function Wall() {
               id="146"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M697.5 492.5c-4.333 3.833-11.5 13.2-5.5 20 7.5 8.5 28 4 32-1.5s6.5-18 1-19.5-21.766-6.085-27.5 1Z"
               data-name="146"
             />
@@ -858,7 +931,7 @@ export default function Wall() {
               id="145"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M691.5 524.5c-3 6-9 18.3-9 19.5 0 1.5 5.5 3 13 2.5s19.5-8 21-13.5 3-17-3.5-17-18 .5-21.5 8.5Z"
               data-name="145"
             />
@@ -866,7 +939,7 @@ export default function Wall() {
               id="183"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M644.5 481.5c-2 2.5-3.8 13.7-1 20.5 3.5 8.5 10 33.5 17 36s11 6.5 17 6 12.5-20 12.5-26.5-1-27.5-10.5-34-16-12.5-25.5-8-7.5 3.5-9.5 6Z"
               data-name="183"
             />
@@ -874,7 +947,7 @@ export default function Wall() {
               id="182"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M644 424.5c-5 2.5-21 14.1-21 22.5 0 10.5 11 28 11.5 28.5s9.5 7.5 18.5-2 13-9.5 14-10 4.5-5 0-11.5-18-30-23-27.5Z"
               data-name="182"
             />
@@ -882,7 +955,7 @@ export default function Wall() {
               id="135"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M657.5 547c-4.5 4-11.3 9-8.5 17 3.5 10 9 18.5 22 16s17-17 17-23.5-4-14-10.5-13.5-15.5 0-20 4Z"
               data-name="135"
             />
@@ -890,7 +963,7 @@ export default function Wall() {
               id="21"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M183.5 489c-3.333 1.333-9.4 5.5-7 11.5 3 7.5 14.5 6 18.5 3s8.5-6.5 5.5-10.5-12.5-8-17-4Z"
               data-name="21"
             />
@@ -898,7 +971,7 @@ export default function Wall() {
               id="35"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M250 441.5c-11.5.5-36.6 3.9-45 13.5-10.5 12-17.5 17-16 24.5s22.5 18.5 32 18.5 30-8 34.5-18.5 17.5-38-5.5-38Z"
               data-name="35"
             />
@@ -906,7 +979,7 @@ export default function Wall() {
               id="42"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M274 472.5c-8.333 1.833-24.6 7.6-23 16 2 10.5 8 9.5 13 9.5s18-7.5 21.5-11 3-18-11.5-14.5Z"
               data-name="42"
             />
@@ -914,7 +987,7 @@ export default function Wall() {
               id="39"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M229.5 501c-2.333 3.333-6 11.6-2 18 5 8 19.5 8.5 23.5 8.5s8-4 7.5-8.5 1-10 1-13.5S251 488 244 491s-11.465 3.5-14.5 10Z"
               data-name="39"
             />
@@ -922,7 +995,7 @@ export default function Wall() {
               id="34"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M206.5 496c-5.333 2.167-15.9 8.2-15.5 15 .5 8.5 8 15 14.5 15s17.5-9.5 18-15-6.223-21.5-17-15Z"
               data-name="34"
             />
@@ -930,7 +1003,7 @@ export default function Wall() {
               id="31"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M194.5 527.5c-3.667 3.5-10.5 11.6-8.5 16 2.5 5.5 9.5 9.5 14 7s7.5-11 5.5-17-8-8.5-11-6Z"
               data-name="31"
             />
@@ -938,7 +1011,7 @@ export default function Wall() {
               id="33"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M218 521.5c-4.167 2.667-11.9 9.8-9.5 17 3 9 16 8 18.5 7s10-11.5 6.5-17-13-8.835-15.5-7Z"
               data-name="33"
             />
@@ -946,7 +1019,7 @@ export default function Wall() {
               id="32"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M213 551.5c-2.5 4.167-5.2 12.5 4 12.5 11.5 0 19-2.5 19-5.5s1.5-11.5-4.5-12.5-17.034 2.5-18.5 5.5Z"
               data-name="32"
             />
@@ -954,7 +1027,7 @@ export default function Wall() {
               id="45"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M247.5 537c-5.5 4.667-15.2 16.5-10 26.5 6.5 12.5 14 14 23 12.5s14-16 16-23-9.5-29.5-29-16Z"
               data-name="45"
             />
@@ -962,7 +1035,7 @@ export default function Wall() {
               id="71"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M288.5 546.5c-5 1.5-16.1 11-12.5 21 4.5 12.5 9.5 17.5 21.5 16.5s23-19.5 24.5-23 2.5-7.5-4-11.5-13-8.5-18.5-7-6 2.5-11 4Z"
               data-name="71"
             />
@@ -970,7 +1043,7 @@ export default function Wall() {
               id="74"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M329.5 545.5c-2.833 2.667-7.9 9.3-5.5 14.5 3 6.5 6.5 6.5 9.5 6s8.5-7.5 8.5-10.5-3.5-20-12.5-10Z"
               data-name="74"
             />
@@ -978,7 +1051,7 @@ export default function Wall() {
               id="72"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M304 529.5c-1.833.333-5 2.1-3 6.5 2.5 5.5 15.5 13.5 20 13.5s11.5-7.5 9-12-19.5-12.5-26-8Z"
               data-name="72"
             />
@@ -986,7 +1059,7 @@ export default function Wall() {
               id="102"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M376.5 619.5c.167 4.5 1.5 14.2 5.5 17 5 3.5 20.5 1 24-2.5s7-16 4.5-20.5-5.5-8-8.5-9-6.5 1-10 4-6.5 2-9.5 3-6.227 5-6 8Z"
               data-name="102"
             />
@@ -994,7 +1067,7 @@ export default function Wall() {
               id="158"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M401.5 578.5c-1.2-3.6 4.5-11.833 7.5-15.5 4-4 9.5 2 12.5 6s0 13.5-3 14.5-15.5-.5-17-5Z"
               data-name="158"
             />
@@ -1002,7 +1075,7 @@ export default function Wall() {
               id="75"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M333 517.5c-3.833 3.167-10.9 10.5-8.5 14.5 3 5 11.5 5.5 16 3.5s7-9.5 7-12.5-8.5-10-14.5-5.5Z"
               data-name="75"
             />
@@ -1010,7 +1083,7 @@ export default function Wall() {
               id="77"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M369 556c-6.667 1.833-21 3.8-25-3-5-8.5 0-22 3.5-24.5s12-4 20-1.5 10.5 1 13.5 3 5 7 1.5 11-9 14.5-13.5 15Z"
               data-name="77"
             />
@@ -1018,7 +1091,7 @@ export default function Wall() {
               id="76"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M346 565c-2 2.5-7.1 6.4-5.5 12 2 7 11.5 11.5 16.5 10.5s13-14 14-16.5-3.5-14-11.5-13-11.5 4.5-13.5 7Z"
               data-name="76"
             />
@@ -1026,7 +1099,7 @@ export default function Wall() {
               id="155"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M343 593c-4.5 7-6.6 12.3 1 19.5 9.5 9 24 9 27 8s12.5-10 8-17.5-12.5-12.5-17.5-14-14-3-18.5 4Z"
               data-name="155"
             />
@@ -1034,7 +1107,7 @@ export default function Wall() {
               id="156"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M374.5 571c-3.5 2.5-10.8 6.6-10 11 1 5.5 16 21.5 19 23.5s4.5 4 7.5 3 11.5-14 11.5-19-1-15-4.5-17.5-12.5-7.5-16.5-5.5-3.5 2-7 4.5Z"
               data-name="156"
             />
@@ -1042,7 +1115,7 @@ export default function Wall() {
               id="204"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M322 333c-4.833 2.667-13.9 10.3-11.5 19.5 3 11.5 15 19.5 19 20.5s12.5-3 10-16.5S330 329 322 333Z"
               data-name="204"
             />
@@ -1050,7 +1123,7 @@ export default function Wall() {
               id="50"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M285 359c-5.833 6.5-15 21.4-5 29 12.5 9.5 28 1 32-9.5S299 341 285 359Z"
               data-name="50"
             />
@@ -1058,7 +1131,7 @@ export default function Wall() {
               id="40"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M263 345c-5.667 1.5-17 5.9-17 11.5 0 7 7 20 10 23.5s15 9.5 18.5 6-.5-15.5-1-19.5-.5-14.5-2-16.5-3-7.5-8.5-5Z"
               data-name="40"
             />
@@ -1066,7 +1139,7 @@ export default function Wall() {
               id="37"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M217.5 362c-2.333 1.833-7.3 7.3-8.5 14.5-1.5 9-4 19.5-3.5 21.5s6.5 4 11 5 7.5 2.5 12 1.5 16.5-13 20-21.5 0-17-8-21.5-17-4.5-23 .5Z"
               data-name="37"
             />
@@ -1074,7 +1147,7 @@ export default function Wall() {
               id="43"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M252.5 382.5c8.5 0 18.3 9.5 21.5 17.5 4 10 13 19.5 6.5 24.5s-19 4-25.5 0-18.5-22-16.5-28 5.5-14 14-14Z"
               data-name="43"
             />
@@ -1082,7 +1155,7 @@ export default function Wall() {
               id="49"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M291 403.5c3.667-2.667 12.8-7 20-3 9 5 13.5 8 13.5 9.5s-6.5 2-7 3.5-.5 7-3 9-21.5 4-24.5 2-13.5-12.5 1-21Z"
               data-name="49"
             />
@@ -1090,7 +1163,7 @@ export default function Wall() {
               id="201"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M315.5 380c-4.333 2.667-12.3 9.5-9.5 15.5 3.5 7.5 17 9 21 8.5s11.5-9.5 9.5-16-15-11-21-8Z"
               data-name="201"
             />
@@ -1098,7 +1171,7 @@ export default function Wall() {
               id="202"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M339 397.5c3-.333 9.5-.4 11.5 2 2.5 3 4.5 7 0 10.5s-7.5 6-11.5 5.5-11.5-4.5-10.5-9.5 7-8.332 10.5-8.5Z"
               data-name="202"
             />
@@ -1106,7 +1179,7 @@ export default function Wall() {
               id="203"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M320 415c-1.167 2.833-2.6 8.9 1 10.5 4.5 2 12.5 2 14 1s2.5-8.5-1.5-10.5-10.5-4.5-13.5-1Z"
               data-name="203"
             />
@@ -1114,7 +1187,7 @@ export default function Wall() {
               id="36"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M204.5 422.5c-2.667 6.167-7.3 19.3-4.5 22.5 3.5 4 41-1.5 43-5 .781-1.367 3.24-4.869 5.113-9.076 2.087-8.622 1.124-12.843-4.113-19.424-9.889-12.428-25-10-29-5s-8.519 11-10.5 16Z"
               data-name="36"
             />
@@ -1122,7 +1195,7 @@ export default function Wall() {
               id="107"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M470.5 696.5c-2.333 5.167-7 17.5-7 25.5 0 10 5.5 22 9.5 23.5s16.5 4.5 23-5 10-34 7-41-17.5-24.5-32.5-3Z"
               data-name="107"
             />
@@ -1130,7 +1203,7 @@ export default function Wall() {
               id="105"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M448 685c-2.167 2.167-5.5 7.7-1.5 12.5 5 6 14.5-.5 18-5s2.5-21-16.5-7.5Z"
               data-name="105"
             />
@@ -1138,7 +1211,7 @@ export default function Wall() {
               id="104"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M420 675.5c-4 4-4.8 8 0 12 6 5 17.5 1 20.5-2.5 1.368-1.596 1.453-9.079-3-11.5-5.311-2.888-13.5-2-17.5 2Z"
               data-name="104"
             />
@@ -1146,7 +1219,7 @@ export default function Wall() {
               id="103"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M433 616c-4.5.833-14.9 4.6-20.5 13-7 10.5 3 18 7 20s16.5 2.5 20-7.5 1.5-29-6.5-25.5Z"
               data-name="103"
             />
@@ -1154,7 +1227,7 @@ export default function Wall() {
               id="113"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M455 607c-4.167 2.667-11.6 9.8-8 17 4.5 9 13 2.5 15.5 0s6.5-21.5-7.5-17Z"
               data-name="113"
             />
@@ -1162,7 +1235,7 @@ export default function Wall() {
               id="112"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M470 616c-2 3.333-6.5 10.2-8.5 11-2.5 1-4 7.5-2.5 12.5s28 27.5 38 27 22.5-16 20.5-24-31-28-33-28.5-10-3-14.5 2Z"
               data-name="112"
             />
@@ -1170,7 +1243,7 @@ export default function Wall() {
               id="38"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M244.5 283.5c-3 3-28.9 29.5-28.5 33.5.5 5 22.5 22.5 25.5 22.5S271 312 271 305s-23.5-24.5-26.5-21.5Z"
               data-name="38"
             />
@@ -1178,7 +1251,7 @@ export default function Wall() {
               id="51"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M273.5 304.5c12 3.167 35 9.5 37.5 13.5s13 17 2.5 27.5-23 10.5-26 10S257 332 256 329s11-22 17.5-24.5Z"
               data-name="51"
             />
@@ -1186,7 +1259,7 @@ export default function Wall() {
               id="120"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M551.5 623c-2.667.833-7.3 3.9-4.5 9.5 3.5 7 9.5 7 14.5 6.5s8.5-7 6.5-11.5-12-7-16.5-4.5Z"
               data-name="120"
             />
@@ -1194,7 +1267,7 @@ export default function Wall() {
               id="116"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M537.5 618c-5 6.167-15 19.1-15 21.5 0 3 3.5 8 8.5 7s16.5-19 16.5-21-6-10-10-7.5Z"
               data-name="116"
             />
@@ -1202,7 +1275,7 @@ export default function Wall() {
               id="115"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M499.506 589.236c-2.5 3-14.1 19.5-14.5 21.5-.5 2.5 30.5 28 33.5 29s20.5-21 20-24-36.5-29.5-39-26.5Z"
               data-name="115"
             />
@@ -1210,7 +1283,7 @@ export default function Wall() {
               id="121"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M572.5 598c-3 1.5-14 9.6-10 20 5 13 19 11 20.5 7s9.5-17.5 2-23.5-9.5-5-12.5-3.5Z"
               data-name="121"
             />
@@ -1218,7 +1291,7 @@ export default function Wall() {
               id="126"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M600.5 618.5c-3.833-2.5-12.1-5.8-14.5 1-3 8.5 4 15.5 8 15.5s21-5.5 6.5-16.5Z"
               data-name="126"
             />
@@ -1226,7 +1299,7 @@ export default function Wall() {
               id="127"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M619 619.5c-15 1.5-19.9 11.3-11.5 20.5 10.5 11.5 29.5 9.5 32.5 3.5s2.712-11.688-1.5-17c-3.512-4.43-12.679-7.682-19.5-7Z"
               data-name="127"
             />
@@ -1234,7 +1307,7 @@ export default function Wall() {
               id="206"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M410 273c-4.5 5.167-13.1 18.6-11.5 31 2 15.5 3.5 28 7.5 33s13 9.5 18 9.5 11 0 14-4.5 2.5-9.5 0-16.5-8-41-7-47-4-10-7-10-10-.903-14 4.5Z"
               data-name="206"
             />
@@ -1242,7 +1315,7 @@ export default function Wall() {
               id="231"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M404.5 259c0-8 4.167-17.5 7-22.5 3.5-4.5 5.5-4 10.5-5.5s10.5 1.5 14.5 9-.836 19.504-2.5 22c-3 4.5-13.5 7.5-21.5 8s-8-3.351-8-11Z"
               data-name="231"
             />
@@ -1250,7 +1323,7 @@ export default function Wall() {
               id="147"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M715 475c1.333-2.833 4.4-8.9 6-10.5 2-2 11.5-8 14.5-8s12 2 10 9-5 18.5-11.5 22.5-13 2.5-16 .5-5.249-9-3-13.5Z"
               data-name="147"
             />
@@ -1258,7 +1331,7 @@ export default function Wall() {
               id="149"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M669.5 463c-1 2.5-3 8-3 10 0 2.5 8 9.5 11 9.5s8-7.5 9-9.5 3.5-5 3.5-7.5-.5-5.5-2-6-2.5 1.5-4 1.5-2.5-1-4-2-9.7-.4-10.5 4Z"
               data-name="149"
             />
@@ -1266,7 +1339,7 @@ export default function Wall() {
               id="289"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M681 418.5c-2.667 2.667-6.7 9.1-1.5 13.5 6.5 5.5 17.5-1 19-3s3-12.5-6-12.5-9 0-11.5 2Z"
               data-name="289"
             />
@@ -1274,7 +1347,7 @@ export default function Wall() {
               id="188"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M659 751.5c-1.667 1.333-4 5.1 0 9.5 5 5.5 14 2.5 16.5 0s4-6 4-10.5S671 743 667 745s-6.409 4.5-8 6.5Z"
               data-name="188"
             />
@@ -1282,7 +1355,7 @@ export default function Wall() {
               id="187"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M631 735.5c.667-2.167 2.9-6.5 6.5-6.5 4.5 0 16.5-1 15 5.5S650 744 645 744s-19 .5-14-8.5Z"
               data-name="187"
             />
@@ -1290,7 +1363,7 @@ export default function Wall() {
               id="194"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M609 761.5c-2.5 5-2 6.8 0 10 2.5 4 14 2 16.5-2.5s3-11.5-1.5-12.5-12.5 0-15 5Z"
               data-name="194"
             />
@@ -1298,7 +1371,7 @@ export default function Wall() {
               id="186"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M655.5 698.5c-3.333 2.5-9.1 9.1-5.5 15.5 4.5 8 13.5 11 18 7.5s11-12 9-16.5-12.5-15.5-21.5-6.5Z"
               data-name="186"
             />
@@ -1306,7 +1379,7 @@ export default function Wall() {
               id="139"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M675 672c-2.667 2.333-8.5 6-8 14.5s8 25.5 19.5 26.5 23-9 25.5-10.5 14.5-11.5 8-22.5-24.5-22.5-45-8Z"
               data-name="139"
             />
@@ -1314,7 +1387,7 @@ export default function Wall() {
               id="288"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M687.5 396.5c-3.167 1.333-9.4 4.9-9 8.5.5 4.5 3.5 8.5 9.5 10s11.5 2.5 13.5 6 5.5 3 8 .5 2.5-17-2-20-13.5-8-20-5Z"
               data-name="288"
             />
@@ -1322,7 +1395,7 @@ export default function Wall() {
               id="291"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M644 408c2-3 5-6.2 9-7 5-1 10-4.5 15.5-2s10 9 10.5 12 .5 16.5-5 18-12 6-17 3-10-9-11-12-4-9-2-12Z"
               data-name="291"
             />
@@ -1330,7 +1403,7 @@ export default function Wall() {
               id="233"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M465 336.5c3-5 4.3-22.4-6.5-28-13.5-7-19-5.5-21 1s3 23.5 9 27 15.5 5 18.5 0Z"
               data-name="233"
             />
@@ -1338,7 +1411,7 @@ export default function Wall() {
               id="150"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M714 413.5c6.333-3.5 21.3-7.5 30.5 4.5 11.5 15 18 17.5 14.5 26.5s-14 8-18.5 7.5-21.5-4.5-26-13-7-22-.5-25.5Z"
               data-name="150"
             />
@@ -1346,7 +1419,7 @@ export default function Wall() {
               id="184"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M737.5 722c-2.5 3.333-5.9 10.7.5 13.5 8 3.5 17-5 17-9s-.5-8.5-6.5-8.5-9.5 2.5-11 4Z"
               data-name="184"
             />
@@ -1354,7 +1427,7 @@ export default function Wall() {
               id="138"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M735.5 664c-1.667 2-4.3 6.9-1.5 10.5 3.5 4.5 11 5.5 16-.5s5-13 0-14-12 .5-14.5 4Z"
               data-name="138"
             />
@@ -1362,7 +1435,7 @@ export default function Wall() {
               id="137"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M709 647c-3.667 3.5-9.3 12.3-2.5 19.5 8.5 9 18.5 7 23.5 1.5s3.5-21-3-23-13.5-2.5-18 2Z"
               data-name="137"
             />
@@ -1370,7 +1443,7 @@ export default function Wall() {
               id="136"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M697 604c-2 4.333-4.5 15.3 1.5 24.5 7.5 11.5 12 17 30.5 13s26-11 26-17.5-4.5-28.5-8-30.5-7.5-6.5-25 0-21 4.5-25 10.5Z"
               data-name="136"
             />
@@ -1378,7 +1451,7 @@ export default function Wall() {
               id="270"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M710 361.5c-3 1.667-7.8 7.1-3 15.5 6 10.5 13 13.5 21 12.5s20-11 20-17 1-10-3.5-13.5-14-9.5-23-3-10.5 4.845-11.5 5.5Z"
               data-name="270"
             />
@@ -1386,7 +1459,7 @@ export default function Wall() {
               id="272"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M688.5 383c0-1.5 10-8.2 12-9 2.5-1 11 11 11 13.5s-12 9.5-13.5 9.5-9.5-12.5-9.5-14Z"
               data-name="272"
             />
@@ -1394,7 +1467,7 @@ export default function Wall() {
               id="287"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M712.5 389.5c4-.667 12.4-.6 14 5 2 7 2.5 11-.5 12.5s-7 3-9.5.5-8-7-7.5-11.5 1.5-6.27 3.5-6.5Z"
               data-name="287"
             />
@@ -1402,26 +1475,25 @@ export default function Wall() {
               id="290"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M663 374c-2 4-5.3 13.1-2.5 17.5 3.5 5.5 17.5 14 21.5 7s8.5-20.5 3-23.5-17-8.5-22-1Z"
               data-name="290"
             />
-            <g id="293" data-name="293">
-              <path
-                fill="#EFD6D2"
-                d="M617.5 374.5c4.167-5.167 14.6-15.1 23-13.5 10.5 2 19 3 20 6s1.5 10 0 15l-.035.116c-1.504 5.015-4.027 13.426-11.965 18.884-8 5.5-11.5 8.5-18 3.5s-16-12-16-15.5-1-11 3-14.5Z"
-              />
-              <path
-                stroke="#151515"
-                strokeWidth="2"
-                d="M660.5 382c1.5-5 1-12 0-15s-9.5-4-20-6c-8.4-1.6-18.833 8.333-23 13.5-4 3.5-3 11-3 14.5s9.5 10.5 16 15.5 10 2 18-3.5c7.938-5.458 10.461-13.869 11.965-18.884m.035-.116-.035.116m.035-.116-.035.116"
-              />
-            </g>
+
+            <path
+              id="293"
+              data-name="293"
+              fill="#EFD6D2"
+              stroke="#151515"
+              strokeWidth="1"
+              d="M660.5 382c1.5-5 1-12 0-15s-9.5-4-20-6c-8.4-1.6-18.833 8.333-23 13.5-4 3.5-3 11-3 14.5s9.5 10.5 16 15.5 10 2 18-3.5c7.938-5.458 10.461-13.869 11.965-18.884m.035-.116-.035.116m.035-.116-.035.116"
+            />
+
             <path
               id="286"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M731.5 393.5c2.167-3.667 7.9-11 13.5-11 7 0 16 3.5 14.5 9.5s-5.5 16.5-9 18-11 4-15 1-8-13-4-17.5Z"
               data-name="286"
             />
@@ -1429,7 +1501,7 @@ export default function Wall() {
               id="234"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M472.5 289.5c-3.333.167-10 2.9-10 12.5 0 12 1.5 13.5 5 16s14 2 18 0 13.5-10 10-16.5-14.5-14.5-23-12Z"
               data-name="234"
             />
@@ -1437,7 +1509,7 @@ export default function Wall() {
               id="297"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M520 348c1.5-4 3-12.9 11-10.5 10 3 27.5 10.5 29 20.5s-4 17.5-5.5 18.5-10.5 9.5-17 6.5-10-7-10-11-4.5-9-6-12.5-3-7.5-1.5-11.5Z"
               data-name="297"
             />
@@ -1445,7 +1517,7 @@ export default function Wall() {
               id="66"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M197.5 724c.167-3.333 2.1-9.6 8.5-8 8 2 14.5 4 14 12.5s-6.5 8.5-9 8.5-15-3.5-13.5-13Z"
               data-name="66"
             />
@@ -1453,7 +1525,7 @@ export default function Wall() {
               id="65"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M254.5 751c-1.333.5-3.9 2.4-3.5 6 .5 4.5 5 7.5 9 7.5s12.5-4.5 12.5-7.5-2-7-6.5-7.5-9-.472-11.5 1.5Z"
               data-name="65"
             />
@@ -1461,7 +1533,7 @@ export default function Wall() {
               id="236"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M469.5 221c-6.5-1.5-16.5 1.5-21.5 2.5-2.734.547-4.845 4.395-6.174 8a35.084 35.084 0 0 0-1.326 4.5c-1.326 4.5-4.5 11-1.5 19s8.877 7 13 7c6 0 29.266-7.106 34-9 5-2 7-7.959 7-11 0-4-5-12-7-14s-10-5.5-16.5-7Z"
               data-name="236"
             />
@@ -1469,7 +1541,7 @@ export default function Wall() {
               id="311"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M574.5 276.5c0 1.5 1.3 5.1 6.5 7.5 6.5 3 12 2 13 0s4.5-8 1-12-9.5-6.5-14.5-5-6 6.5-6 9.5Z"
               data-name="311"
             />
@@ -1477,7 +1549,7 @@ export default function Wall() {
               id="235"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M467.5 271c.667-3.667 3-11.4 7-13 5-2 13-2 16 6.5s7 16 5.5 22-6 6.5-10.5 3.5-14.5-10.5-16-12.5-2-3.5-2-6.5Z"
               data-name="235"
             />
@@ -1485,7 +1557,7 @@ export default function Wall() {
               id="232"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M442 267.5c-3.5 3.5-10.4 12.2-10 19 .5 8.5 5 12.5 8 14s15.5 6 26-7.5-4-26-6.5-27.5-11.5-5-17.5 2Z"
               data-name="232"
             />
@@ -1493,7 +1565,7 @@ export default function Wall() {
               id="271"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M669 351c.5-1.5 8.4-15.7 18-12.5 12 4 19 4.5 20 11.5s-1 13-1.5 15-4.5 12.5-16.5 10-20.5-10-21-16 .5-6.5 1-8Z"
               data-name="271"
             />
@@ -1501,7 +1573,7 @@ export default function Wall() {
               id="273"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M653 349c-2.167 2-6.1 7-4.5 11 2 5 11.5 7 15.5 1.5s6-11.5 1-14.5-9.5 0-12 2Z"
               data-name="273"
             />
@@ -1509,7 +1581,7 @@ export default function Wall() {
               id="281"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M551 338.5c-.833 1.667-1.6 5.9 2 9.5 4.5 4.5 10.5 5.5 14.5 4s6.5-13.5.5-16-14-3.5-17 2.5Z"
               data-name="281"
             />
@@ -1517,7 +1589,7 @@ export default function Wall() {
               id="278"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M577 340c-2 2.5-9.7 12.5-.5 22.5 11.5 12.5 29 13.5 35.5 12s20-13.5 20.5-16.5-2.5-13.5-17-17.5-18.5-12-27-8.5-9.5 5.5-11.5 8Z"
               data-name="278"
             />
@@ -1525,7 +1597,7 @@ export default function Wall() {
               id="279"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M596.5 276c-1.5-5-1-6 3-8 5-2.5 12-2.5 13.5.5s11 14.5 11.5 19.5 0 9-2 10.5-5.5 5-10 1.5-14.5-19-16-24Z"
               data-name="279"
             />
@@ -1533,7 +1605,7 @@ export default function Wall() {
               id="276"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M627.5 281c.667-2.833 3.6-8.4 10-8 8 .5 15.5 7 16.5 12.5s3 16.5 0 22.5-7 8.5-11.5 8-13.5-6-15-10-2.229-20.5 0-25Z"
               data-name="276"
             />
@@ -1541,7 +1613,7 @@ export default function Wall() {
               id="275"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M659 299.5c3-.5 9.5-.9 13.5 3.5 5 5.5 8 7.5 6.5 10.5s-4 6-12.5 3.5-11.5-7-11.5-10.5 1-6.5 4-7Z"
               data-name="275"
             />
@@ -1549,7 +1621,7 @@ export default function Wall() {
               id="274"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M654 328c2-4.5 5.9-13.536 13.5-11.5 9.5 2.545 20.193 4.362 18.5 10.681-1.693 6.319-4 12.819-12.5 15.319s-14 4-18 .5-3.5-10.5-1.5-15Z"
               data-name="274"
             />
@@ -1557,7 +1629,7 @@ export default function Wall() {
               id="277"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M618.5 312.5c-2.667 2-7.1 8.3-3.5 17.5 4.5 11.5 5.5 15 11 17s15.5 0 18.5-3.5 11.5-9.5 7-18-13.5-11.5-18.5-14-9-3-14.5 1Z"
               data-name="277"
             />
@@ -1565,7 +1637,7 @@ export default function Wall() {
               id="280"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M583 292.5c-2.333 2.667-6.3 9.3-3.5 14.5 3.5 6.5 15.5 15.5 21 16.5s14-3 14.5-7.5 1-15-5-21-12.5-9-15-9-9.5 1.5-12 6.5Z"
               data-name="280"
             />
@@ -1573,7 +1645,7 @@ export default function Wall() {
               id="285"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M548 274.5c-2 2.5-4.2 8.3 1 17.5 6.5 11.5 7 15 14 15s16.5-8 18.5-12 3-9-1-12-19.5-9-24.5-10.5c-5.29-1.587-6-.5-8 2Z"
               data-name="285"
             />
@@ -1581,7 +1653,7 @@ export default function Wall() {
               id="283"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M578 308.5c7.5 7 8.5 8 7.5 13s-6 10.5-8 11.5-13 3.5-17.5-3.5-3.5-14-1.5-16.5 12-11.5 19.5-4.5Z"
               data-name="283"
             />
@@ -1589,7 +1661,7 @@ export default function Wall() {
               id="313"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M613.5 249.5c-5.2 2.4-4.833 8.333-4 11 1.5 5.5 7.5 13.5 17.5 15s19.5-7.5 21-9 4-8 1-15.5-15-6-18-6-11 1.5-17.5 4.5Z"
               data-name="313"
             />
@@ -1597,7 +1669,7 @@ export default function Wall() {
               id="90"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M375 310.5c1.333-2.167 5.2-6.5 10-6.5 6 0 11 .5 12.5 3.5s2.5 8-1.5 10.5-6.5 6-11 4-12.5-7.5-10-11.5Z"
               data-name="90"
             />
@@ -1605,7 +1677,7 @@ export default function Wall() {
               id="205"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M333 297.5c-1.333.167-4.1 1.6-4.5 6-.5 5.5-1.5 22.5-1 26s6.5 9 9.5 10 14 4.5 18 2.5 11.5-18 11.5-22 1-18.5-7-20.5-23.5-3.868-26.5-2Z"
               data-name="205"
             />
@@ -1613,7 +1685,7 @@ export default function Wall() {
               id="52"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M295.5 277c3-2 13-6.4 21 0 10 8 16 12.5 13 22s-7 14-10 15.5-12 3.5-18.5-1-20-13.5-15-23 6.5-11.5 9.5-13.5Z"
               data-name="52"
             />
@@ -1621,7 +1693,7 @@ export default function Wall() {
               id="257"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M609 181.5c0-3.6 3-5.833 4.5-6.5 3.096-2.5 6.851-.737 8.5.5 2 1.5 6 7.5 6 9.5s.5 9.5-3.5 10.5-8.5-1-11-2.5-4.5-7-4.5-11.5Z"
               data-name="257"
             />
@@ -1629,7 +1701,7 @@ export default function Wall() {
               id="53"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M241 254c2-3.5 8.9-12.7 18.5-11.5 12 1.5 20 .5 23.5 2.5s6.5 7.5 8 12.5 2.5 4.5 2.5 11-7 14-9 17-15.5 9.5-28.5 3c-18.254-9.127-18-17-18-21.5s1-9.5 3-13Z"
               data-name="53"
             />
@@ -1637,7 +1709,7 @@ export default function Wall() {
               id="249"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M557 186.5c-2.8-2.4-7.833-.333-10 1-4 2.5-2.5 10-1.5 13 .791 2.372 4 6.5 6.5 8s5 .5 7.5 0 4.5-3.5 5-8-4-11-7.5-14Z"
               data-name="249"
             />
@@ -1645,7 +1717,7 @@ export default function Wall() {
               id="54"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M308.5 244.5c-10.4 1.6-12 6-13.5 9s-2.5 7-1.5 11 8.5 8.5 16.5 9 20-5 22.5-7 6-7.5 4.5-19-9.5-8.5-11-8-4.5 3-17.5 5Z"
               data-name="54"
             />
@@ -1653,7 +1725,7 @@ export default function Wall() {
               id="304"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M484.937 204.947c-.4.8-8.5 8.666-12.5 12.5-3.628 3.5 16.5 8.5 18 7.5s7.5-6.5 8.5-10.5-2.5-8-5-9.5-8.5-1-9 0Z"
               data-name="304"
             />
@@ -1661,7 +1733,7 @@ export default function Wall() {
               id="61"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M349.5 199c-9.2 0-17.167 11.5-20 17.5-5.5 13.5 0 17.5 5 22 4.846 4.361 42 19 47.5 19s7 1 15.5-6.5 13.5-14.5 11.5-22c-1.6-6-17.667-15.5-25.5-19.5-7.5-3.5-24.8-10.5-34-10.5Z"
               data-name="61"
             />
@@ -1669,7 +1741,7 @@ export default function Wall() {
               id="246"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M558.5 223c-7.2-2-19.333 5.5-24.5 9.5-4 2.82-6.5 7.5-8 11.5s-.5 9 1 14 19.5 11.5 22.5 13 15.5 3.5 20 2.5 17-13 18-20.5-5.5-14.5-7.5-18-12.5-9.5-21.5-12Z"
               data-name="246"
             />
@@ -1677,7 +1749,7 @@ export default function Wall() {
               id="312"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M595 252c-4.8 0-7.667 3.667-8.5 5.5-1.5 2.232-1.5 8 2.5 11.5s8.45 2.525 12.5.5c4-2 6.448-9.139 5-13-1.5-4-5.5-4.5-11.5-4.5Z"
               data-name="312"
             />
@@ -1685,7 +1757,7 @@ export default function Wall() {
               id="324"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M584 223.5c1.6-6.4 7.667-9.667 10.5-10.5 2.167-.833 7.3-2.5 10.5-2.5 4 0 10.5 2.5 14.5 5.5s4.5 13.5 4 20.5-12.5 16.5-22.5 16-14-7.5-16-10-3-11-1-19Z"
               data-name="324"
             />
@@ -1693,7 +1765,7 @@ export default function Wall() {
               id="302"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M400.5 214c-5.2-1.2-7.167-6.5-7.5-9 0-6 4.5-8.5 8.5-10.5s8 .5 12.5 3 2.5 10 .5 13-7.5 5-14 3.5Z"
               data-name="302"
             />
@@ -1701,7 +1773,7 @@ export default function Wall() {
               id="303"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M414.5 211.5c0-6.4 6.667-8.333 10-8.5 4 0 10 1 15.5 4s4.5 6.5 4.5 15.5-8.5 9-13 9-13.5-6-15.5-9-1.5-3-1.5-11Z"
               data-name="303"
             />
@@ -1709,7 +1781,7 @@ export default function Wall() {
               id="260"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M647 227.5c-5.2-.8-11.879 3.638-13 7-1 3 .5 4 2 7s13.5 8.5 15.5 8.5 6 1 10-2.5-.5-11-1.5-13-6.5-6-13-7Z"
               data-name="260"
             />
@@ -1717,7 +1789,7 @@ export default function Wall() {
               id="308"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M495.5 230c-2.4-6 2.667-11.5 5.5-13.5 2-1.705 6.5-3.5 11-3.5s7 0 14.5 3.5S531 231 531 233s-2 9.5-8.5 14.5-13-1-17-2-7-8-10-15.5Z"
               data-name="308"
             />
@@ -1725,7 +1797,7 @@ export default function Wall() {
               id="258"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M618.5 215c-3.2-6.4-2-11.333-1-13 .862-2.5 3.5-4.5 7-7s8.5 1.5 9.5 2.5 6 5.5 8 7 6.5 5 8.5 8.5-.5 10.5-4.5 13.5-13.5 2.5-16.5 2-7-5.5-11-13.5Z"
               data-name="258"
             />
@@ -1733,7 +1805,7 @@ export default function Wall() {
               id="299"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M502.5 306c-2.4 2-15 23.167-21 33.5-2.63 4.5 4.5 12 9 16.5s10 3.5 14 2 32.5-33 35.5-42-13-16-17-19-17.5 6.5-20.5 9Z"
               data-name="299"
             />
@@ -1741,7 +1813,7 @@ export default function Wall() {
               id="259"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M637.5 160c-3.2 0-11 7-14.5 10.5-2.075 2 .5 6 3.5 10.5s9.231 8.551 13.5 9.5c4.5 1 12.5-5.5 13.5-10.5s-2.5-8.5-6-14.5-6-5.5-10-5.5Z"
               data-name="259"
             />
@@ -1749,7 +1821,7 @@ export default function Wall() {
               id="307"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M516.5 287.5c-1.2-4-4.102-13.34-.5-19 3.5-5.5 9-5 14.5-4.5 4.482.408 10 3.5 13.5 6s-.5 16.5-1 18.5-11.5 10.5-14.5 10.5-10.5-6.5-12-11.5Z"
               data-name="307"
             />
@@ -1757,7 +1829,7 @@ export default function Wall() {
               id="255"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M582 172.5c-10.8-3.2-18.167 6.333-20.5 11.5-2.724 4.5 3.5 13.5 5 14.5s12.5 8 18.5 10.5 18.5 1.5 21 .5 5-4 6.5-5.5 1.5-6 0-9.5-5-9-7-11-10-7-23.5-11Z"
               data-name="255"
             />
@@ -1765,7 +1837,7 @@ export default function Wall() {
               id="238"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M429 189c-2-4 .833-10 2.5-12.5 12-13.5 19 2.5 18.5 5.5-.443 2.656-5.5 10-9 12s-9.5 0-12-5Z"
               data-name="238"
             />
@@ -1773,7 +1845,7 @@ export default function Wall() {
               id="245"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M528.5 216c-2.4-6 2.333-11.167 5-13 6.5-4.5 14.59 1.605 17.5 5 3 3.5 3.5 9.5 3 12.5s-10 5.5-14.5 5.5-8-2.5-11-10Z"
               data-name="245"
             />
@@ -1781,7 +1853,7 @@ export default function Wall() {
               id="248"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M543.5 152.5c-3.6-.4-9.167 2.833-11.5 4.5-2 1.5-3 4-4 6-1.414 2.828-5 15.5 7.5 20.5s19.5 2 22.5 1.5 9.5-9 10-15-4-11.5-8-16-12-1-16.5-1.5Z"
               data-name="248"
             />
@@ -1789,7 +1861,7 @@ export default function Wall() {
               id="247"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M523 117c-7.2.4-9.6 7.5-11 11-2 5 .5 16.5 1 17s4 9 15 9.5 13-3 18.5-6 4-13 4-14-.5-6 .5-6.5.5-4 0-5.5-4-3-4.5-3-4-1-5.5-1.5-9-1.5-18-1Z"
               data-name="247"
             />
@@ -1797,7 +1869,7 @@ export default function Wall() {
               id="57"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M325.5 115.5c-6.8.8-15.5 12-19 17.5-1.909 3-5.1 8.4-3.5 20 2 14.5 13 17 17 18s12.5 2 25-4 14-20 14.5-25.5-8.5-16-13-20.5-12.5-6.5-21-5.5Z"
               data-name="57"
             />
@@ -1805,7 +1877,7 @@ export default function Wall() {
               id="60"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M390 150c-7.2.4-16.667 12.167-20.5 18-2 3.5 0 6 0 9s5 15 8.5 17.5 20 1.5 22 1.5 17-.5 25-8.5 4-16.5 3.5-21-4.5-10.5-11.5-15-18-2-27-1.5Z"
               data-name="60"
             />
@@ -1813,7 +1885,7 @@ export default function Wall() {
               id="55"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M295.5 223c2.4-9.2 11-11.5 15-11.5 16 0 16.5 12.5 16.5 14s-2 15.5-13.5 16.5-21-7.5-18-19Z"
               data-name="55"
             />
@@ -1821,7 +1893,7 @@ export default function Wall() {
               id="141"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M788.5 588.5c-6-5.2-2.5-13.249-1.5-20 2-13.504 6.562-15.552 15.5-14.5 8.5 1 11 1.5 14.5 14.5s-1.5 20-3.5 23-17.5 3.5-25-3Z"
               data-name="141"
             />
@@ -1829,7 +1901,7 @@ export default function Wall() {
               id="56"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M303 199c-2.8-4.8-2.714-20-1-22 3-3.5 8.5-6.5 15.5-6s12 6.5 20 13.5 5 17.5 5 19-9 9.5-19.5 9.5-16.5-8-20-14Z"
               data-name="56"
             />
@@ -1837,7 +1909,7 @@ export default function Wall() {
               id="59"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M373.5 103.5c-3.6-.8-10.167 1-13 2-4 1.183-5 3.5-6 4.5s-2.5 6-2 13 7.5 15 9 16 8.5 7 13.5 9.5 10 3 13.5 2 9-8.5 10.5-14.5-3.5-13-7-20-14-11.5-18.5-12.5Z"
               data-name="59"
             />
@@ -1845,7 +1917,7 @@ export default function Wall() {
               id="58"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M357.5 167.5c-8-3.6-18 2-20.5 5-1.623 1.947 2 12.5 3.5 15.5s6 7.5 10.5 10 12.5 1 18.5-2.5.5-15.5 0-16.5-2-7-12-11.5Z"
               data-name="58"
             />
@@ -1853,7 +1925,7 @@ export default function Wall() {
               id="244"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M515 178c-5.2-1.2-10.249 1.208-13 3.5-3 2.5-1.5 3-3.5 9.5s1 10.5 2 15.5 7.5 6 12 6 14-6 22-9.5 12.5-13 11-16-12-3.5-15-4-9-3.5-15.5-5Z"
               data-name="244"
             />
@@ -1861,7 +1933,7 @@ export default function Wall() {
               id="237"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M470.5 163c9.2-7.6 19.833-4.5 24-2 4 1.745 6.5 8 6 17.5s-8 12.5-23.5 29.5-21 12.5-24.5 12-9.5-6-12-14 8-19 8-20 10.5-13.5 22-23Z"
               data-name="237"
             />
@@ -1869,7 +1941,7 @@ export default function Wall() {
               id="284"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M551 297.5c-4-6.5-11.278-4-13.5-1.5-4 4.5-1 7.5.5 10.5s5.5 7.5 9 8c2 .286 5.5 2 7.5-4s1.423-4.999-3.5-13Z"
               data-name="284"
             />
@@ -1877,7 +1949,7 @@ export default function Wall() {
               id="254"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M578 161.5c-3.6-2.8-3.833-7.167-3.5-9 0-2.837 5.5-7.5 11.5-10s17 6.5 27.5 12 2.5 13 2.5 15-4.5 9.5-16 8.5-17.5-13-22-16.5Z"
               data-name="254"
             />
@@ -1885,7 +1957,7 @@ export default function Wall() {
               id="306"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M498.5 291c-3.6-6.8-1.167-10.167.5-11 1.549-1.5 4-1 9-1s7 8.5 8.5 12-2.5 7.5-5 8.5-8.5 0-13-8.5Z"
               data-name="306"
             />
@@ -1893,7 +1965,7 @@ export default function Wall() {
               id="301"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M411 117c-2.8-1.6-5.5-.667-6.5 0-.833.5-3.1 2.8-5.5 8-3 6.5 1 16.5 3 18.5s5.5 6 9 6.5 4-1 9.5-2.5 8-6.5 9.5-9.5 2-8.5.5-12-10-3.5-12-3.5-4-3.5-7.5-5.5Z"
               data-name="301"
             />
@@ -1901,7 +1973,7 @@ export default function Wall() {
               id="242"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M510.5 141.5c-2.8-2-7.833-1.167-10-.5-.5.143-2.5 1-3.5 1.5s-4.5 4-5 6 .5 5.5 1.5 7.5 6 4.5 10 4.5 6.5-2 9.5-5 1-8 1-8.5 0-3-3.5-5.5Z"
               data-name="242"
             />
@@ -1909,7 +1981,7 @@ export default function Wall() {
               id="241"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M490 111.5c-3 0-10 1-11.5 2.5s-11 24-12.5 28c-1.2 3.2 1.833 7.333 3.5 9 4 1.833 12.7 5.8 15.5 7 2.8 1.2 4.5-.167 5-1l11-23.5c1.167-2.5 3.4-8.5 3-12.5-.4-4-11-9.5-14-9.5Z"
               data-name="241"
             />
@@ -1917,7 +1989,7 @@ export default function Wall() {
               id="144"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M791 493.5c-11 1.5-19.5 17-17.5 23.5 8 18.5 22 13 26 11 3.162-1.581 12-8.5 13-16s-8.61-20.258-21.5-18.5Z"
               data-name="144"
             />
@@ -1925,7 +1997,7 @@ export default function Wall() {
               id="26"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M193.5 617.5c-5.6-1.6-10.333 4.667-12 8-2.5 3.783 0 9.5 1.5 11.5s6.5 5.5 14.5-3 3-14.5-4-16.5Z"
               data-name="26"
             />
@@ -1933,7 +2005,7 @@ export default function Wall() {
               id="239"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M448.5 129.5c-6.8-1.6-12.167.333-14 1.5-5 2.5-5 14.5-5 19.5 0 4.955.982 6.473 6.353 14.772l.147.228c5.5 8.5 14 9 17 9s7 1 13.5-12S463 139 462 137s-5-5.5-13.5-7.5Z"
               data-name="239"
             />
@@ -1941,7 +2013,7 @@ export default function Wall() {
               id="265"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M724.5 216.5c1.6-7.2 10.667-10 15-10.5 4-.855 7.5 2.5 8 4s5.5 8 9 8 8 7 8.5 13-12.5 14.5-19.5 17-14.163-3.116-15-5c-2-4.5-7-7.5-8.5-13s.5-4.5 2.5-13.5Z"
               data-name="265"
             />
@@ -1949,7 +2021,7 @@ export default function Wall() {
               id="148"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M768.5 483c-6 3.2-14.833-4-18.5-8-2-6.5-2.5-9-1.5-16s7.664-10.955 15.5-12c7.5-1 12.5 4.5 16.5 9.5s-4.5 22.5-12 26.5Z"
               data-name="148"
             />
@@ -1957,7 +2029,7 @@ export default function Wall() {
               id="240"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M459 113.5c-3.6 0-7.5 2-9.5 4.5-1.127 1.409-.5 2-.5 6 0 5 4.5 8.5 6 9s12 2.5 15-1.5 1.5-7.5 1-10-7.5-8-12-8Z"
               data-name="240"
             />
@@ -1965,7 +2037,7 @@ export default function Wall() {
               id="84"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M414 490.5c.8-1.2 8-4.5 11.5-6 2.5-1.101 9 10 10 12.5s-.5 3.5-1.5 4.5-11.5 5.5-12.5 5.5-6-7.5-6.5-9-2-6-1-7.5Z"
               data-name="84"
             />
@@ -1973,7 +2045,7 @@ export default function Wall() {
               id="252"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M625 124c0-8.4 8.333-9.167 12.5-8.5.833 0 3.3.5 6.5 2.5 4 2.5 6 12.5 6.5 20.5s-13 9-16.5 8-9-12-9-22.5Z"
               data-name="252"
             />
@@ -1981,7 +2053,7 @@ export default function Wall() {
               id="251"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M583.5 116c1.2-.8 5.167-7.667 7-11 4-5 8-3.5 14-4.5s14 9.5 18 14.5-.5 14.5-4.5 22-14 9.5-19.5 10-15.5-13-18.5-19 2-11 3.5-12Z"
               data-name="251"
             />
@@ -1989,7 +2061,7 @@ export default function Wall() {
               id="282"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M553 317c-3.2-4-9.5 1-12.5 3.5-2.28 1.9-4.5 5-4.5 9s5.5 7 8 7 9-3 11.5-6S557 322 553 317Z"
               data-name="282"
             />
@@ -1997,7 +2069,7 @@ export default function Wall() {
               id="256"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M636.5 150.5c.4 2.8-3.833 10.167-6 13.5-2.957 5-9 1.5-11.5 0s-4.5-10.5-5.5-16.5 2.5-5.5 6-8.5 7.5 1.5 9 3.5 7.5 4.5 8 8Z"
               data-name="256"
             />
@@ -2005,7 +2077,7 @@ export default function Wall() {
               id="261"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M647 160.5c-.8-5.2 0-4 2.5-7.5 5.984-8.378 15-6 18.5-4s6 8.5 6 18.5-8 12.5-11 12.5-15-13-16-19.5Z"
               data-name="261"
             />
@@ -2013,7 +2085,7 @@ export default function Wall() {
               id="24"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M176 621c-13.206 0-14.75-6-15.5-9-2-8 5.985-21.805 17-18.5 10 3 13.5 14 15 18.5s-10 9-16.5 9Z"
               data-name="24"
             />
@@ -2021,7 +2093,7 @@ export default function Wall() {
               id="266"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M684 282c-1.2-8.4 4.833-16.167 8-19 2.768-3 4-2.5 14.5-2s11 14 11 21-10 15-17.5 15-14.5-4.5-16-15Z"
               data-name="266"
             />
@@ -2029,7 +2101,7 @@ export default function Wall() {
               id="262"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M697.5 158.5c-4-10.8-3.356-27.724-2-29 8.5-8 19-1 25.5 2.5 5.319 2.864 9.5 13 10.5 21.5S721 170 715.5 172s-13 0-18-13.5Z"
               data-name="262"
             />
@@ -2037,7 +2109,7 @@ export default function Wall() {
               id="264"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M674 201.5c0-2 7-7.833 10.5-10.5 3-2.387 20 15.5 20 19s-10 12-12 13-5-2.5-11-8-7.5-11-7.5-13.5Z"
               data-name="264"
             />
@@ -2045,7 +2117,7 @@ export default function Wall() {
               id="263"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M666 182c-6.8-2.4-14.833 3-18 6-4 4-2 10-2 17s8.5 10.5 13 12.5 7-2.5 7.5-4.5 7-12.5 10-15.5 2-5 2-7.5-4-5-12.5-8Z"
               data-name="263"
             />
@@ -2053,7 +2125,7 @@ export default function Wall() {
               id="27"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M143.5 695c-9.732 0-18.5 6-18.5 11.5 0 6 14 25.5 20 32.5s12.5 6 19 4c3.853-1.185 15.5-13.5 17-17.5s-.623-8.803-3.5-12c-4.5-5-25.5-18.5-34-18.5Z"
               data-name="27"
             />
@@ -2061,7 +2133,7 @@ export default function Wall() {
               id="253"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M670 109.5c-2.5.5-4.5 4-6.5 5.5-.989.742-9.165 1.665-12.5 5-4 4-2.5 8.5 0 13.5 1.628 3.256 18.543 20.471 24.5 16.5 4.5-3 8.5-21.5 8-31.5s-11.049-9.49-13.5-9Z"
               data-name="253"
             />
@@ -2069,7 +2141,7 @@ export default function Wall() {
               id="140"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M750.5 650c-1.6-12.4 15.871-26.175 21.5-25.5 12.5 1.5 62 44 68 50 3.482 3.482 5.5 24 0 28.5s-28.5-11.5-40.5-17-47-20.5-49-36Z"
               data-name="140"
             />
@@ -2077,7 +2149,7 @@ export default function Wall() {
               id="268"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M747 325c-4.4-2.4-7.5-10.333-8.5-14 0-5.5 4.5-8 8.5-11.5s11-6 20.5-6 17.5 13 22 19 6.5 18.5 6 23.5c-.398 3.98-9 12-12.5 12.5s-7.5-2.5-9-5-21.5-15.5-27-18.5Z"
               data-name="268"
             />
@@ -2085,7 +2157,7 @@ export default function Wall() {
               id="22"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M135.5 512.5c-12 6-9.333 19.833-6.5 26 1.565 4.5 10 12 20 12.5s18.5-4.5 32.5-12.5 10-17 8-25-15.5-10.5-21-11-18 2.5-33 10Z"
               data-name="22"
             />
@@ -2093,7 +2165,7 @@ export default function Wall() {
               id="12"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M237.297 199.564c-2.4-12.8 10.333-15 17-14.5 4.5 1 6.5 1.5 11 7.5s-1.5 14-6 17.5-19 5.5-22-10.5Z"
               data-name="12"
             />
@@ -2101,7 +2173,7 @@ export default function Wall() {
               id="9"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M198.224 180.226c1.6-15.6 27-21.5 33.5-20 10 3.5 12.5 12 8.5 26s-27 16-29.5 16-14.5-2.5-12.5-22Z"
               data-name="9"
             />
@@ -2109,7 +2181,7 @@ export default function Wall() {
               id="25"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M123 638.5c-8.4-4.8-6.72-17.67-4.5-21 1-1.5 4-4.5 14-6 14.399-2.16 38.5 10.5 44 16s-1 19-10.5 22.5-32.5-5.5-43-11.5Z"
               data-name="25"
             />
@@ -2117,7 +2189,7 @@ export default function Wall() {
               id="20"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M158 477c-8.4-4.4-27-26-23.5-29.5 18.791-18.792 29.5-14.5 33-12.5 3.039 1.737 12 22.5 15.5 26s3.5 14 0 17-14.5 4.5-25-1Z"
               data-name="20"
             />
@@ -2125,7 +2197,7 @@ export default function Wall() {
               id="23"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M118.5 586c-.4-14.8 15.833-24.167 24-27 20.5-1.5 28.5 17 29 27s-17 16-20.5 17-32 1.5-32.5-17Z"
               data-name="23"
             />
@@ -2133,7 +2205,7 @@ export default function Wall() {
               id="19"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M169 435c1.2 8.4 23.067 13 25 11 14.5-15-10-35-20.5-32-6.25 1.786-6 10.5-4.5 21Z"
               data-name="19"
             />
@@ -2141,7 +2213,7 @@ export default function Wall() {
               id="10"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M285.477 161.03c-1.819 21.822-18.5 25.333-25.5 24.5-13.5-3.5-21-6-18.5-32s46-16.5 44 7.5Z"
               data-name="10"
             />
@@ -2149,7 +2221,7 @@ export default function Wall() {
               id="269"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M824 388c-1.6-4.8-8-7.667-11-8.5-6 0-8 3.5-10 5.5s-5.5 13-2 15c2.8 1.6 5 12.5 7.5 17 1.389 2.5 6.2 1.9 7 1.5 1-.5 6.5-3.5 8.5-3.5s3 1.5 11-3.5-.5-14-1.5-16-7.5-1.5-9.5-7.5Z"
               data-name="269"
             />
@@ -2157,7 +2229,7 @@ export default function Wall() {
               id="17"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M115.189 394.177c-1.6-8.8 7.334-15 12-17 5.5-2 2-1 11.5-3s16 13.5 17 16.5.5 7-7.5 14-22.5 5-25 4.5-6-4-8-15Z"
               data-name="17"
             />
@@ -2165,7 +2237,7 @@ export default function Wall() {
               id="185"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M800.5 739c-1.5.5-3.957 2.415-4.5 3.5-1 2-1.5 7-2 10.5s2 5 3 5.5 8 2.5 13 2 5.5-5 7-10c1.2-4-1.5-7.667-3-9-1.5-1-1.5-.5-3.5-1-2.612-.653-8.577-1.974-10-1.5Z"
               data-name="185"
             />
@@ -2173,7 +2245,7 @@ export default function Wall() {
               id="18"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M157.364 391.5c-.5 7-4 10.5-6 14-3.119 4 14.5 9.5 26.5 8.5 11.632-.969 15.5-13 14.5-23.5s-19-12.5-24.5-12.5-9.894 5.022-10.5 13.5Z"
               data-name="18"
             />
@@ -2181,7 +2253,7 @@ export default function Wall() {
               id="267"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M789.5 262.5c-4.8-12.4 3-19.5 7.5-21.5 13-8 22.604 9.006 27 15 5.5 7.5 12.5 23.5 12 32.5s-11.5 9-17.5 9-23-19.5-29-35Z"
               data-name="267"
             />
@@ -2189,7 +2261,7 @@ export default function Wall() {
               id="223"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M547.878 766.5c-6.8-8.8 0-16.5 4.5-16.5 18.5 0 15.5 11 14.5 15s-10.5 12.5-19 1.5Z"
               data-name="223"
             />
@@ -2197,7 +2269,7 @@ export default function Wall() {
               id="5"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M557.5 32c-8 0-13 7.667-14.5 11.5-1.218 2.5 0 9 9.5 15s19 4 24 0 .5-16 0-20.5-9-6-19-6Z"
               data-name="5"
             />
@@ -2205,7 +2277,7 @@ export default function Wall() {
               id="4"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M518.5 57.5c-4-.8-7.333 3-8.5 5-1 1.43 0 4.5 1 8s10.5 5 13.5 5 8-3 8.5-9.5-9.5-7.5-14.5-8.5Z"
               data-name="4"
             />
@@ -2213,7 +2285,7 @@ export default function Wall() {
               id="190"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M746 790.5c-.8-7.2 5-10.667 8-11.5 5-1 7 4.5 7 11s-7 11-8.5 11-5.5-1.5-6.5-10.5Z"
               data-name="190"
             />
@@ -2221,7 +2293,7 @@ export default function Wall() {
               id="195"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M638 804c-1.5-3.5 1.133-6.133 4-9 2.5-2.5 4.56-4.625 13-3.5 7.5 1 4 12.5-1 17s-13.201 2.032-16-4.5Z"
               data-name="195"
             />
@@ -2229,7 +2301,7 @@ export default function Wall() {
               id="63"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M263.574 824c-1.6-4.4.5-8 2-9.5s1.999-2.5 7-2.5c5.024 0 7.499 1.5 11 3.5 3.16 1.806 3.5 8.5 1.5 12.5-1.6 3.2-7.334 3.667-10 3.5-3.167-.667-9.9-3.1-11.5-7.5Z"
               data-name="63"
             />
@@ -2237,7 +2309,7 @@ export default function Wall() {
               id="189"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M711.087 785.179c-4.4-5.2-.833-10.5 1.5-12.5 3-2.5 6-2.5 12.5 2s2 11 0 13.5-8.5 3.5-14-3Z"
               data-name="189"
             />
@@ -2245,7 +2317,7 @@ export default function Wall() {
               id="30"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M207 781.5c-1.6 0-5.5 2-7.5 4-2.186 2.186-2.406 4.514-3 6-1 2.5-3 6 4.5 11s11-3 12.5-5c1.082-1.442 4-7 3.5-11s-8-5-10-5Z"
               data-name="30"
             />
@@ -2253,7 +2325,7 @@ export default function Wall() {
               id="197"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M646.068 843.632c-.8-5.2 5.667-9.167 9-10.5 3-1.518 4.5-1.501 7.5 0 2.683 1.341 3 6 2 10.5s-9.5 7.5-12.5 7.5-5-1-6-7.5Z"
               data-name="197"
             />
@@ -2261,7 +2333,7 @@ export default function Wall() {
               id="196"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M684.5 827c-1 1-2.5 3.667-3.5 5-1.5 3.5 3.5 8 6 9.5s6 1.5 10-2.5 2-10.5 1-12c-.877-1.316-6.238-3.762-7.5-2.5-1.5 1.5-5.209 1.709-6 2.5Z"
               data-name="196"
             />
@@ -2269,7 +2341,7 @@ export default function Wall() {
               id="217"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M567 825.5c-2.8-4.4 1.5-8.5 4-10 1.684-1.227 4.5-1 7.5-1s9 5.5 9.5 9-3 7.5-8.5 9.5-9-2-12.5-7.5Z"
               data-name="217"
             />
@@ -2277,7 +2349,7 @@ export default function Wall() {
               id="108"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M459.319 788.864c-5.6-1.6-4.974-7.531-2.5-10.5 2.5-3.001 2.638-1.916 7.5-4 3.5-1.501 9.5 2 12.5 4s1 7.5-2 10.5-8.5 2-15.5 0Z"
               data-name="108"
             />
@@ -2285,7 +2357,7 @@ export default function Wall() {
               id="109"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M481.259 762.019c-6-.4-8.5 5.5-9 8.5-1.716 4.5 5.5 7.5 10 9.5s10-2 12.5-8.5-6-9-13.5-9.5Z"
               data-name="109"
             />
@@ -2293,7 +2365,7 @@ export default function Wall() {
               id="110"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M494.5 785c-5.2-5.2.5-13.167 4-16.5 5.5-4 7-2.5 13-3.5s8 8.5 8.5 15.5-7.5 10.5-12.5 11.5-6.5-.5-13-7Z"
               data-name="110"
             />
@@ -2301,7 +2373,7 @@ export default function Wall() {
               id="226"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M398.073 799.12c-8 1.6-8.666 12-8 17 0 6.274 8.5 11 17 14s12.5-1 15.5-4.5c2.183-2.547 4-9.5 3.5-14.5s-7.113-10.484-10.5-11.5c-5-1.5-7.5-2.5-17.5-.5Z"
               data-name="226"
             />
@@ -2309,7 +2381,7 @@ export default function Wall() {
               id="198"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M597.563 849.968c-2.8-3.2-1.225-5.867 0-7.5 1.5-2 1.5-2 5.5-4 4.123-2.062 6-1.5 9.5-1 2.97.424 4.5 3 5 8s-5 8-9 9-7.5-.5-11-4.5Z"
               data-name="198"
             />
@@ -2317,7 +2389,7 @@ export default function Wall() {
               id="200"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M594.463 869c-3.2 0-7.334 3.667-9 5.5-1.5 2.5 1 3.5 2.5 4.5s6.5 2 8.5 1.5 6-3.5 6.5-7-4.5-4.5-8.5-4.5Z"
               data-name="200"
             />
@@ -2325,7 +2397,7 @@ export default function Wall() {
               id="199"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M625.691 874.89c-4-4.4-3-9.125-.5-11 2-1.5 6.6-4.3 11-5.5 5.5-1.5 9 1.5 12.5 6s-1 9.5-5 13-13 3-18-2.5Z"
               data-name="199"
             />
@@ -2333,7 +2405,7 @@ export default function Wall() {
               id="216"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M698.016 886.97c-6.753-.468-10.158-8.673-11.016-12.717 0-2.485 1.558-3.417 5.866-5.263 4.435-1.9 12.59-.585 15.451 0 2.245.459 4.435 3.07 5.58 6.724 1.144 3.655-7.44 11.841-15.881 11.256Z"
               data-name="216"
             />
@@ -2341,7 +2413,7 @@ export default function Wall() {
               id="191"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M820 849c-.8-5.2 3.5-6.953 6.5-8 3-1.047 6.5-1 9 0 2.321.929 4.5 5.5 4.5 9s-7 7.5-10 8-9-2.5-10-9Z"
               data-name="191"
             />
@@ -2349,7 +2421,7 @@ export default function Wall() {
               id="331"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M922.343 667.343c-1.375-9.635 1.718-14.338 3.436-15.485 3.437-2.867 5.155 1.721 6.874 9.75 1.718 8.029-3.437 16.631-4.583 17.205-1.145.573-4.009.573-5.727-11.47Z"
               data-name="331"
             />
@@ -2357,7 +2429,7 @@ export default function Wall() {
               id="332"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M946.5 689.5c-1.375-9.635 2.841-15.71 6-16.5 4-1 4.782 1.971 6.5 10s-4.784 16.239-5.93 16.813c-1.145.573-4.852 1.731-6.57-10.313Z"
               data-name="332"
             />
@@ -2365,7 +2437,7 @@ export default function Wall() {
               id="330"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M986.067 520.968c-1.002 3.902-4.176 5.342-5.637 5.574-1.917.697-8.143.697-10.022-.697-1.879-1.393-2.124-4.29.792-7.92 3.116-3.877 6.417-3.925 11.735-3.925 5.188 0 4.385 2.09 3.132 6.968Z"
               data-name="330"
             />
@@ -2373,7 +2445,7 @@ export default function Wall() {
               id="214"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M742.957 863.724c-1.878-.357-2.46-6.934-1.503-7.843 1.128-1.069 1.428-.998 4.133-2.139 3.381-1.426 5.635-.713 9.017 1.426 3.078 1.947.375 6.06-1.503 7.486-1.879 1.426-7.338 1.602-10.144 1.07Z"
               data-name="214"
             />
@@ -2381,7 +2453,7 @@ export default function Wall() {
               id="215"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M731.448 871.897c-1.379-.773-1.666-6.212-.671-6.711 1.171-.586 1.889-1.384 4.317-1.624 3.036-.3 4.613 1.351 6.695 3.969 1.896 2.384-1.326 5.057-3.182 5.743-1.856.685-5.099-.221-7.159-1.377Z"
               data-name="215"
             />
@@ -2389,7 +2461,7 @@ export default function Wall() {
               id="62"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M213.733 843.696c-3.97-4.316 0-8.542.902-9.441.776-.773 2.881-1.798 3.343-1.97 2.071-.774 3.158 0 7.67 2.697 4.511 2.697 1.619 6.915-1.088 10.512-2.706 3.596-5.865 3.596-10.827-1.798Z"
               data-name="62"
             />
@@ -2397,7 +2469,7 @@ export default function Wall() {
               id="192"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M776.071 835.531c-2.8-2-2.166-5.833-1.5-7.5.424-1.5 1-3.5 3.5-6.5s6.5-2.5 10-2.5 4.5 5 5.5 8-3.5 8-6.5 10.5-7.5.5-11-2Z"
               data-name="192"
             />
@@ -2405,7 +2477,7 @@ export default function Wall() {
               id="28"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M123 808.5c-.4-5.6 3-7.5 5-9 3.5-2.5 6.5-1 11.5.5 4.813 1.444 5 7.5 3 16s-10.5 5-13.5 4.5-5.5-5-6-12Z"
               data-name="28"
             />
@@ -2413,7 +2485,7 @@ export default function Wall() {
               id="229"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M334 825.5c1.2 0 10.167-3.667 14.5-5.5 3 0 2.5 3.5 4.5 6.5.877 1.316 9 7.5 12 9s3 7.5 2.5 11-6.5 3.5-8.5 4.5-15 9.5-23.5 12-18-1.5-20-9 4-16.5 5.5-22 11.5-6.5 13-6.5Z"
               data-name="229"
             />
@@ -2421,7 +2493,7 @@ export default function Wall() {
               id="224"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M526.149 862.437c.757-4.917 7.564-8.667 10.874-9.927 2.836-1.31 5.2 0 6.618 2.836 1.418 2.836-1.719 7.939-3.309 9.927-1.891 2.363-7.564 4.727-9.455 4.727s-5.673-1.418-4.728-7.563Z"
               data-name="224"
             />
@@ -2429,7 +2501,7 @@ export default function Wall() {
               id="225"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M514.019 881.023c4.8-1.2 4.5-6.5 4.5-9 0-1.019 0-1.999-2.5-5-1.154-1.384-6-1.5-11.5.5s-5 7-5.5 12.5 9 2.5 15 1Z"
               data-name="225"
             />
@@ -2437,7 +2509,7 @@ export default function Wall() {
               id="230"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M304 876c0-6.4 8-10 12-11 4.131-1.5 7 0 11.5 2.5 3.734 2.075 8 6 3.5 17s-16.5 7.5-21 7.5-6-8-6-16Z"
               data-name="230"
             />
@@ -2445,7 +2517,7 @@ export default function Wall() {
               id="315"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M874 370.5c-1.2-8.4 1.083-11.681 3-12 3-.5 3.5 4.91 3.5 10.5 0 6-.5 10.5-3 11.5-1.914.766-2 .5-3.5-10Z"
               data-name="315"
             />
@@ -2453,7 +2525,7 @@ export default function Wall() {
               id="318"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M876 422c.448-4.478-2-10.5-1-12.5s2-4 4-4 1.5 15 2.5 17-1.5 9-4.5 10.5-1.5-6-1-11Z"
               data-name="318"
             />
@@ -2461,7 +2533,7 @@ export default function Wall() {
               id="316"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M874.292 334.682c-2.4-11.2-1.487-19.277 3-20.5 5.5-1.5 3.5 6.5 5 16 1.2 7.6 0 18.5-3.5 18.5-2.5 0-2.1-2.8-4.5-14Z"
               data-name="316"
             />
@@ -2469,7 +2541,7 @@ export default function Wall() {
               id="319"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M632.5 6H592l1.5 40.5H635L632.5 6Z"
               data-name="319"
             />
@@ -2477,7 +2549,7 @@ export default function Wall() {
               id="2"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M336 47.5 335 6h49l2 42.5-50-1Z"
               data-name="2"
             />
@@ -2485,7 +2557,7 @@ export default function Wall() {
               id="1"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M242 21.5c-9.6-1.2-15.333 11.167-17 17.5-1.754 5 3.5 15.5 5.5 17.5s11.5 3 16.5 3 4 3 16.5 9 14.5-5.5 18.5-9-2-13-5-21.5-23-15-35-16.5Z"
               data-name="1"
             />
@@ -2493,7 +2565,7 @@ export default function Wall() {
               id="8"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M228.5 96c0-7.2-1-13.5 6-17.5 10.5-3 28 1.5 34 6 5.727 4.295 7 23.5 8 31s-8.5 21.5-19 22-20-14.5-24-18-5-14.5-5-23.5Z"
               data-name="8"
             />
@@ -2501,7 +2573,7 @@ export default function Wall() {
               id="7"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M120 118c-1.2-6.4 4.833-14 8-17 5-2 6.219-3.977 16.5-2 13 2.5 16.5 7.5 19.5 12 1.776 2.664 3 15.5-5 23.5-7.984 7.984-16.466 4.514-27.434.027l-.066-.027c-11-4.5-10-8.5-11.5-16.5Z"
               data-name="7"
             />
@@ -2509,7 +2581,7 @@ export default function Wall() {
               id="317"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M874.5 294.5c-1.213-7.275.5-12.333 3-14 3-2 3 9 3 11.5 0 4-1 12.5-3 12.5s-1.5-1-3-10Z"
               data-name="317"
             />
@@ -2517,7 +2589,7 @@ export default function Wall() {
               id="228"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M370 878.5c2.4-4.4 6-5.833 7.5-6 6-1.5 11 0 13.5 8 2 6.4-3.5 7.333-6.5 7-5.833-1.167-16.9-4.6-14.5-9Z"
               data-name="228"
             />
@@ -2525,7 +2597,7 @@ export default function Wall() {
               id="3"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M438.5 22.5c-12.4 2.4-13.5 13-12.5 18 2 6.5 11.154 8.507 17.5 10 8.5 2 13 5.9 19 8.9 4.472 2.237 7 1.6 15 0 4.44-.887 13-12.9 12.5-20.9-.5-8-7.964-11.465-11.5-15-4.5-4.5-24.5-4-40-1Z"
               data-name="3"
             />
@@ -2533,7 +2605,7 @@ export default function Wall() {
               id="227"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M406 863.5c-.4-4.4 9.833-12.833 15-16.5 6.928-5.5 30 23.5 31 26.5s-6 11.5-13 14c-7.187 2.567-7.5 2.5-11 0-5.474-3.91-21.5-18.5-22-24Z"
               data-name="227"
             />
@@ -2541,7 +2613,7 @@ export default function Wall() {
               id="92"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M405 457c.4-.8 14.5-13.333 21.5-19.5 1.5 0 28.5 28 28 29.5s-19.5 19.5-22 20-28-29-27.5-30Z"
               data-name="92"
             />
@@ -2549,7 +2621,7 @@ export default function Wall() {
               id="91"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M445.5 503c-.4 0-7.5-7.667-11-11.5-.915-1-.5-4 0-5s22.5-21 24-21 3.5-.5 4.5 0 12.5 11.5 12.5 12.5-.5 9.5-1 10-16.5 15-18.5 15h-10.5Z"
               data-name="91"
             />
@@ -2557,7 +2629,7 @@ export default function Wall() {
               id="219"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M466.5 849.5c-.4-8 6.5-9.667 10-9.5 5.5 0 6.5 7.5 6 11s-5 14-10.5 12.5-5-4-5.5-14Z"
               data-name="219"
             />
@@ -2565,7 +2637,7 @@ export default function Wall() {
               id="97"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M466 460.5c-.5 1-.792 1.23-1.5 3-1 2.5.5 3.5 3.5 7s6.5 5.5 8.5 5.5 4.5-2 5.5-5.5-1-7-1.5-9.5 0-2 .5-8-6.5-7-9-7-5.5 4.5-5.5 7 .171 6.158-.5 7.5Z"
               data-name="97"
             />
@@ -2573,7 +2645,7 @@ export default function Wall() {
               id="218"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M506.638 827.654c-6-4.8-3-13-2-14.5 2.774-4.16 4-4.5 6.5-5 4.651-.931 6.5 2.5 9.5 6.5s0 10.5-3 14-3.5 5-11-1Z"
               data-name="218"
             />
@@ -2581,7 +2653,7 @@ export default function Wall() {
               id="6"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M653 55.5c-5.2-4.8-5.5-12-3.5-18.5.462-1.5 2-4.2 8-7 7.5-3.5 14.5 0 22.5 2s16 14 16 23.5-11 12-19 12-17.5-6-24-12Z"
               data-name="6"
             />
@@ -2589,7 +2661,7 @@ export default function Wall() {
               id="16"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M121 337c-4.4 1.2-5.5 5.5-5.5 7.5-.605 3 8 23.5 9 25.5s2.5 5.5 15.5 3 12.988-16.566 12-22c-1-5.5-7.605-10.859-11-13.5-4.5-3.5-14.5-2-20-.5Z"
               data-name="16"
             />
@@ -2597,7 +2669,7 @@ export default function Wall() {
               id="13"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M138.408 212.932c-13.6-5.2-20.5 12.5-22.244 24.823-1.087 7.677 3.5 22 6 33s20 19 27.5 19.5 18.212-4.627 15.5-32.5c-2.756-28.323-9.756-38.323-26.756-44.823Z"
               data-name="13"
             />
@@ -2605,7 +2677,7 @@ export default function Wall() {
               id="14"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M163 236.531c0-11.6 9.667-13.834 14.5-13.5 5-.334 15.4 2.1 17 14.5 2 15.5-12.5 15-14 15.5s-17.5-2-17.5-16.5Z"
               data-name="14"
             />
@@ -2613,7 +2685,7 @@ export default function Wall() {
               id="15"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M195.5 231.5c1.6-6 24.667-10.5 36-12 7.5-.5 13.5 17 11.5 26.5s-27.5 11.5-35.5 10.5-14-17.5-12-25Z"
               data-name="15"
             />
@@ -2621,7 +2693,7 @@ export default function Wall() {
               id="64"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M277.5 751c-4.5 3.667-12.4 13.8-8 25 5.5 14 13.5 24 25 23.5s26.5-11.5 26.5-18 0-26.5-5.5-32-24-12.5-38 1.5Z"
               data-name="64"
             />
@@ -2629,7 +2701,7 @@ export default function Wall() {
               id="151"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M333 739.5c-2.833 3.833-8.4 12.7-8 17.5.5 6 1.5 11 8 13.5s17.5 3.5 20-3 7-14.5 2-20.5-15.5-15-22-7.5Z"
               data-name="151"
             />
@@ -2637,7 +2709,7 @@ export default function Wall() {
               id="220"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M385 770c-2 2-5.1 8.8 2.5 12 9.5 4 16.5-.5 18-2.5s3.5-15-8-14S387 768 385 770Z"
               data-name="220"
             />
@@ -2645,7 +2717,7 @@ export default function Wall() {
               id="68"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M280 720.5c1.5-2.833 5.7-8.6 10.5-9 6-.5 14 .5 14 6s-5.5 12.5-11 13-17-4-13.5-10Z"
               data-name="68"
             />
@@ -2653,7 +2725,7 @@ export default function Wall() {
               id="67"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M233.5 706.5c5.667-5.333 15.5-15 22.5-16s14 6 16.5 9 7 10 3.5 16-17 20-24 20-19-5-20-11.5-3.5-12.998 1.5-17.5Z"
               data-name="67"
             />
@@ -2661,7 +2733,7 @@ export default function Wall() {
               id="69"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M243.5 672.5c3.833-1.167 12.2-2.6 15 1 3.5 4.5 6 10.5 3 14s-7 5-13 1.5-9-7-9-10.5 1.5-5.365 4-6Z"
               data-name="69"
             />
@@ -2669,7 +2741,7 @@ export default function Wall() {
               id="70"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M216.5 635.5c2.667-1.667 9-4.9 13-4.5 5 .5 16 10.5 18 15.5s10.5 19.5-3 26-22-2-25-7.5-15-23.5-3-29.5Z"
               data-name="70"
             />
@@ -2677,7 +2749,7 @@ export default function Wall() {
               id="152"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M277 621c-4.333 2.333-12.9 8.6-12.5 15 .5 8 11 16 19.5 15.5s15.5-14 15.5-19S291 619 277 621Z"
               data-name="152"
             />
@@ -2685,7 +2757,7 @@ export default function Wall() {
               id="153"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M280.5 603c-5 6-5.9 9-1.5 13 5.5 5 19 11.5 26.5 9s10-6 10-12-30-16-35-10Z"
               data-name="153"
             />
@@ -2693,7 +2765,7 @@ export default function Wall() {
               id="154"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M300 628c5.833-4.667 20.4-13.8 32-13 14.5 1 25.5 1 24 7s-19.5 37-33.5 37.5-18.5-10.5-20.5-15-4-12-2-16.5Z"
               data-name="154"
             />
@@ -2701,7 +2773,7 @@ export default function Wall() {
               id="142"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M722 574c0 5 1.9 15.1 9.5 15.5 9.5.5 18-8 16.5-13s-3.5-14-12-13-14.42 6-14 10.5Z"
               data-name="142"
             />
@@ -2709,7 +2781,7 @@ export default function Wall() {
               id="101"
               fill="#A26769"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M325.5 671.5c0-4.5 16-33 25.5-36.5s30-6.5 36.5 7 4.5 43.5-1.5 51.5-19 17.5-28.5 15.5-16-5-18.5-13-5.5-9.5-9.5-14.5-4-5.5-4-10Z"
               data-name="101"
             />
@@ -2717,7 +2789,7 @@ export default function Wall() {
               id="243"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M522.5 160.5c-2.8-2.8-9.833-1.167-13 0-7 1.514-5 9-4.5 12s7.5 5.5 13 5.5 8.5-5 9-8.5-1-5.5-4.5-9Z"
               data-name="243"
             />
@@ -2725,7 +2797,7 @@ export default function Wall() {
               id="143"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M746.5 513c-5.167 2.833-16.1 11-18.5 21-3 12.5-3.5 10.5-2.5 17s2.5 14 13 11.5 26-19.5 27.5-21.5 3.5-11.5-1.5-19-11-13-18-9Z"
               data-name="143"
             />
@@ -2733,7 +2805,7 @@ export default function Wall() {
               id="41"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M269.279 433.521c.5 7-8.5 8.5-10 8.5-12.665.452-14.849-3.142-9.668-15.812 1.281-1.894 3.699-2.301 5.168-2.188 2.5-.292 14 2.5 14.5 9.5Z"
               data-name="41"
             />
@@ -2741,7 +2813,7 @@ export default function Wall() {
               id="309"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M344.5 250.5c-5 3.5-10.9 13-10.5 23 .5 12.5.5 17 7.5 20.5s18 7 23.5 1 7.5-17.5 7.5-23.5S366 254 363 253s-13.5-6-18.5-2.5Z"
               data-name="309"
             />
@@ -2749,7 +2821,7 @@ export default function Wall() {
               id="86"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="M416 471c6 5.2 4.5 12.5 3 15.5-14 7.5-31-6.5-33.5-7.5s-23-16.5-24.5-19-5-10-2-18.5 14.5-7 20.5-7 12 8 13.5 11 15.5 19 23 25.5Z"
               data-name="86"
             />
@@ -2757,7 +2829,7 @@ export default function Wall() {
               id="11"
               fill="#EFD6D2"
               stroke="#151515"
-              strokeWidth="2"
+              strokeWidth="1"
               d="m291.06 159.457-.06.043c-3.751 2.679-6.5 9.5-6.5 12s3.5 7.5 7 8 5.5 0 11.5-4.5 4.5-8.5 4.5-11.5-6.5-5.5-9.5-6.5c-2.386-.796-3.487-.009-6.94 2.457Z"
               data-name="11"
             />
@@ -4070,47 +4142,6 @@ export default function Wall() {
             <path
               d="M673.488 43.428v1.19h-.093c-.465 0-.87.064-1.213.192a2.371 2.371 0 0 0-1.418 1.342 3.498 3.498 0 0 0-.241 1.02c.094-.106.204-.207.329-.305a2.35 2.35 0 0 1 .416-.27c.144-.074.304-.132.48-.175.176-.047.361-.07.557-.07.414 0 .773.078 1.078.234.308.156.562.367.762.633.203.265.351.57.445.914.098.344.146.701.146 1.072 0 .406-.062.787-.187 1.143a2.665 2.665 0 0 1-.533.92 2.55 2.55 0 0 1-.873.627c-.34.148-.729.222-1.166.222-.45 0-.85-.086-1.202-.258a2.652 2.652 0 0 1-.89-.697 3.134 3.134 0 0 1-.586-1.072 4.246 4.246 0 0 1-.199-1.307v-.58c0-.687.088-1.342.263-1.963a3.95 3.95 0 0 1 .891-1.611 3.476 3.476 0 0 1 1.301-.89c.515-.208 1.105-.311 1.769-.311h.164Zm-1.529 4.06a1.601 1.601 0 0 0-.902.287 1.86 1.86 0 0 0-.317.31 1.687 1.687 0 0 0-.234.393v.434c0 .34.037.639.111.897.078.257.184.472.317.644.132.172.287.303.462.393.176.09.364.135.563.135.219 0 .414-.044.586-.13.172-.09.318-.21.439-.363a1.67 1.67 0 0 0 .276-.55c.062-.215.094-.448.094-.698 0-.238-.032-.463-.094-.674a1.713 1.713 0 0 0-.264-.562 1.237 1.237 0 0 0-.439-.375 1.23 1.23 0 0 0-.598-.14Z"
               className="6"
-            />
-          </g>
-          <g id="legend" className="legend">
-            <path
-              fill="#151515"
-              d="M1211.01 948.6v-8.531h2.11c.37 0 .71.043 1.04.129.32.082.61.197.88.345.29.153.54.344.77.575.22.23.41.488.57.773.15.297.27.623.36.979.08.355.13.734.13 1.136v.668c0 .387-.04.754-.13 1.102-.07.344-.19.658-.33.943-.15.278-.33.53-.53.756-.21.227-.43.42-.68.58-.28.176-.6.311-.94.404-.34.094-.7.141-1.1.141h-2.15Zm1.42-7.383v6.241h.73c.25 0 .48-.03.69-.088.21-.063.4-.151.57-.264.17-.117.32-.264.46-.439.13-.18.24-.385.33-.616.07-.195.13-.408.17-.638.04-.231.06-.477.06-.739v-.679c0-.258-.02-.502-.06-.733-.04-.23-.1-.443-.17-.638a2.222 2.222 0 0 0-.38-.645 1.867 1.867 0 0 0-.55-.475 2.017 2.017 0 0 0-.53-.205c-.19-.05-.41-.078-.63-.082h-.69Zm8.84 7.5c-.46 0-.89-.078-1.28-.234a2.967 2.967 0 0 1-1-.65 2.973 2.973 0 0 1-.65-.967c-.14-.375-.22-.78-.22-1.213v-.24c0-.496.08-.946.24-1.348.15-.402.37-.746.64-1.031a2.897 2.897 0 0 1 2.11-.891c.46 0 .86.078 1.21.234.35.153.65.366.89.639.24.277.42.608.54.99.12.383.18.801.18 1.254v.604h-4.4v.029c.05.277.11.51.2.697.09.188.22.356.37.504.16.156.34.278.55.364.22.085.45.128.71.128.34 0 .67-.066.97-.199.3-.137.55-.33.74-.58l.75.727c-.21.304-.53.578-.97.82-.43.242-.96.363-1.58.363Zm-.17-5.437c-.19 0-.38.037-.55.111-.17.07-.32.172-.45.305-.14.137-.25.301-.34.492-.09.191-.15.408-.2.65h2.99v-.093c0-.184-.04-.366-.1-.545a1.404 1.404 0 0 0-.29-.481 1.159 1.159 0 0 0-.44-.316 1.46 1.46 0 0 0-.62-.123Zm.35-3.481h1.59l-1.6 1.6h-1.07l1.08-1.6Zm4.08 11.239v-8.778h1.29l.06.651c.08-.106.18-.202.28-.287a2.029 2.029 0 0 1 .83-.411c.18-.046.38-.07.58-.07.41 0 .77.078 1.08.234.31.157.57.377.78.663.21.285.37.627.48 1.025.11.394.16.83.16 1.307v.123c0 .457-.05.882-.16 1.277-.11.395-.27.734-.48 1.02-.21.289-.47.515-.78.679-.31.164-.66.246-1.06.246-.22 0-.43-.023-.62-.07a2.123 2.123 0 0 1-.53-.205 2.75 2.75 0 0 1-.27-.188c-.08-.07-.16-.146-.24-.228v3.012h-1.4Zm4.14-5.666c0-.286-.03-.553-.09-.803a1.895 1.895 0 0 0-.26-.662 1.326 1.326 0 0 0-.46-.446 1.315 1.315 0 0 0-.67-.164c-.15 0-.28.016-.41.047a1.349 1.349 0 0 0-.63.369c-.08.094-.15.2-.22.317v2.818c.06.11.13.209.2.299.08.09.17.168.27.234.11.063.23.114.36.153.13.035.28.052.44.052.26 0 .48-.054.67-.164.19-.113.34-.265.45-.457.13-.195.21-.418.27-.668.05-.254.08-.521.08-.802v-.123Zm7.11 3.228a1.47 1.47 0 0 1-.11-.281l-.06-.352c-.1.102-.21.2-.34.293-.12.09-.25.168-.41.235-.15.07-.31.125-.49.164-.17.039-.36.058-.57.058-.32 0-.63-.047-.9-.14a2.12 2.12 0 0 1-.69-.399c-.2-.164-.35-.361-.46-.592-.1-.234-.16-.486-.16-.755 0-.348.07-.655.21-.92.14-.27.34-.493.61-.668.25-.164.55-.289.91-.375.36-.086.77-.129 1.23-.129h1.02v-.428a1.069 1.069 0 0 0-.33-.791 1.093 1.093 0 0 0-.42-.223 1.702 1.702 0 0 0-.55-.082c-.2 0-.36.024-.51.071a.98.98 0 0 0-.35.193.762.762 0 0 0-.21.275.954.954 0 0 0-.06.34h-1.41c0-.254.06-.498.18-.732.12-.235.29-.442.52-.621.22-.184.48-.328.81-.434a3.42 3.42 0 0 1 1.1-.164c.37 0 .72.047 1.04.141.32.09.6.224.84.404.23.18.42.408.55.686.13.273.2.589.2.949v2.818c0 .285.02.543.06.774.04.226.1.421.18.585v.1h-1.43Zm-1.71-1.008c.19 0 .36-.023.51-.07.16-.047.31-.107.44-.182a1.436 1.436 0 0 0 .55-.545v-1.171h-.91c-.3 0-.56.029-.79.087-.22.055-.4.135-.53.241-.12.09-.2.197-.26.322a.964.964 0 0 0-.09.422c0 .129.03.25.08.363.04.109.11.203.2.281.09.078.2.141.33.188.14.043.29.064.47.064Zm9.25-5.449c.23 0 .44.016.66.047.21.031.38.068.5.111l-.2 1.383a5.924 5.924 0 0 0-1.26-.141c-.23 0-.45.024-.63.071-.19.047-.36.119-.5.217-.16.093-.29.212-.4.357-.11.145-.2.311-.27.498v3.914h-1.4v-6.34h1.31l.06.879v.147c.26-.356.57-.635.93-.838a2.4 2.4 0 0 1 1.2-.305Zm5.64-1.43v1.547h2.38v1.049h-2.38v3.029c0 .235.02.432.08.592a.94.94 0 0 0 .24.369c.1.094.22.16.36.2.14.039.3.058.46.058a4.391 4.391 0 0 0 .75-.064 6.06 6.06 0 0 0 .6-.112l.15.967c-.1.063-.23.117-.37.164a5.025 5.025 0 0 1-.97.182c-.18.019-.35.029-.53.029-.32 0-.62-.043-.89-.129-.26-.09-.49-.228-.68-.416a1.91 1.91 0 0 1-.45-.709c-.11-.289-.16-.636-.16-1.043v-3.117h-1.54v-1.049h1.54v-1.547h1.41Z"
-              className="D&#xc3;&#xa9;part"
-            />
-            <path
-              fill="#F51AA4"
-              stroke="#151515"
-              strokeMiterlimit="10"
-              strokeWidth="2"
-              d="M1192.2 948.59c3.31 0 6-2.686 6-6s-2.69-6-6-6-6 2.686-6 6 2.69 6 6 6Z"
-              className="Vector"
-            />
-            <path
-              fill="#151515"
-              d="m1314.75 940.069 1.06 3.65 1.16-3.65h1.76v8.531h-1.33v-2.894l.08-3.809-1.31 4.072h-.73l-1.19-3.931.08 3.668v2.894h-1.32v-8.531h1.74Zm9.62 8.531a1.494 1.494 0 0 1-.1-.281c-.02-.113-.05-.231-.07-.352-.09.102-.2.2-.33.293a2.496 2.496 0 0 1-1.47.457c-.33 0-.63-.047-.9-.14a2.12 2.12 0 0 1-.69-.399 1.691 1.691 0 0 1-.62-1.347c0-.348.07-.655.21-.92.14-.27.34-.493.6-.668.25-.164.55-.289.91-.375.37-.086.78-.129 1.23-.129h1.02v-.428c0-.164-.03-.312-.08-.445a1.007 1.007 0 0 0-.25-.346 1.125 1.125 0 0 0-.41-.223 1.766 1.766 0 0 0-.56-.082c-.19 0-.36.024-.5.071a.98.98 0 0 0-.35.193.592.592 0 0 0-.21.275.782.782 0 0 0-.07.34h-1.4c0-.254.06-.498.18-.732.11-.235.29-.442.51-.621.22-.184.49-.328.81-.434.33-.109.69-.164 1.11-.164.37 0 .72.047 1.04.141.32.09.6.224.83.404.24.18.42.408.55.686.14.273.2.589.2.949v2.818c0 .285.02.543.06.774.05.226.11.421.18.585v.1h-1.43Zm-1.7-1.008c.18 0 .35-.023.51-.07.16-.047.3-.107.43-.182.13-.074.24-.158.34-.252.09-.093.16-.191.21-.293v-1.171h-.9c-.3 0-.57.029-.79.087-.22.055-.4.135-.53.241a.872.872 0 0 0-.27.322c-.05.125-.08.266-.08.422 0 .129.02.25.07.363a.82.82 0 0 0 .21.281c.09.078.2.141.33.188.13.043.29.064.47.064Zm5.18-5.332h3.37v5.18h1.86v1.16h-5.23v-1.16h1.96v-4.014h-1.96v-1.166Zm1.83-1.64c0-.114.02-.217.06-.311a.55.55 0 0 1 .17-.252.686.686 0 0 1 .25-.152c.1-.039.21-.059.34-.059.21 0 .38.055.51.164.13.106.21.242.23.41a.684.684 0 0 1-.09.452.636.636 0 0 1-.38.252.606.606 0 0 1-.29.146.77.77 0 0 1-.38-.029.594.594 0 0 1-.32-.229.727.727 0 0 1-.1-.392Zm5.06 7.98v-6.34h1.26l.09.903c.09-.121.18-.233.28-.334a2.334 2.334 0 0 1 .95-.58c.23-.071.46-.106.71-.106.32 0 .62.047.89.141.27.093.5.242.69.445.19.203.34.463.44.779.11.313.16.692.16 1.137v3.955h-1.4v-3.932c0-.261-.03-.48-.09-.656a.933.933 0 0 0-.25-.422.999.999 0 0 0-.41-.222 2.01 2.01 0 0 0-.56-.071 1.597 1.597 0 0 0-.88.258c-.09.063-.18.139-.26.229-.09.09-.16.187-.22.293v4.523h-1.4Zm11.35-1.717a.576.576 0 0 0-.08-.293.631.631 0 0 0-.24-.246c-.12-.07-.28-.136-.47-.199-.2-.062-.44-.121-.73-.176a7 7 0 0 1-1.01-.275c-.3-.11-.56-.242-.78-.399a1.76 1.76 0 0 1-.51-.527 1.366 1.366 0 0 1-.18-.709c0-.258.06-.502.18-.732.13-.235.31-.44.54-.616.22-.175.5-.314.82-.416a3.58 3.58 0 0 1 1.08-.152c.42 0 .8.053 1.13.158.34.102.62.242.86.422.23.18.41.393.53.639.13.246.19.512.19.797h-1.4a.774.774 0 0 0-.08-.334.701.701 0 0 0-.21-.293 1.158 1.158 0 0 0-.42-.24 1.726 1.726 0 0 0-.6-.094c-.21 0-.4.023-.56.07-.16.043-.29.104-.39.182-.1.07-.18.154-.23.252a.726.726 0 0 0-.01.597c.05.086.12.162.23.229.1.07.24.135.42.193.19.059.42.112.69.158.39.071.74.157 1.06.258.33.102.6.227.83.375.22.156.4.34.52.551.13.211.19.461.19.75 0 .281-.07.539-.2.773-.13.235-.31.436-.55.604-.24.168-.53.299-.87.393-.33.093-.71.14-1.12.14-.45 0-.86-.06-1.22-.181a2.803 2.803 0 0 1-.88-.481 1.96 1.96 0 0 1-.55-.674 1.674 1.674 0 0 1-.19-.773h1.36c.01.195.06.361.15.498.1.133.21.24.36.322.13.086.29.149.46.188.18.035.36.052.54.052.24 0 .45-.025.63-.076s.33-.119.44-.205a.68.68 0 0 0 .2-.228c.05-.086.07-.18.07-.282Z"
-              className="Mains"
-            />
-            <path
-              fill="#FCF300"
-              stroke="#151515"
-              strokeMiterlimit="10"
-              strokeWidth="2"
-              d="M1294.21 948.59c3.31 0 6-2.686 6-6s-2.69-6-6-6-6 2.686-6 6 2.69 6 6 6Z"
-              className="Vector"
-            />
-            <path
-              fill="#151515"
-              d="M1407.18 945.348v3.252h-1.4v-8.531h2.85c.43.004.83.068 1.19.193s.67.303.93.533c.26.231.47.51.61.838.15.328.22.698.22 1.108 0 .394-.07.752-.22 1.072-.14.316-.35.588-.61.814a2.73 2.73 0 0 1-.93.534c-.36.125-.76.187-1.19.187h-1.45Zm0-1.148h1.45c.24-.004.45-.041.64-.112.19-.074.35-.175.49-.304.13-.129.23-.282.3-.457.07-.176.1-.368.1-.575 0-.226-.03-.431-.1-.615a1.42 1.42 0 0 0-.3-.486c-.14-.137-.3-.242-.49-.317-.19-.074-.4-.113-.64-.117h-1.45v2.983Zm6.06-1.94h3.36v5.18h1.86v1.16h-5.22v-1.16h1.95v-4.014h-1.95v-1.166Zm1.82-1.64c0-.114.02-.217.06-.311a.686.686 0 0 1 .42-.404c.1-.039.22-.059.34-.059.21 0 .38.055.51.164.13.106.21.242.23.41.03.172 0 .323-.09.452a.643.643 0 0 1-.37.252.64.64 0 0 1-.3.146.725.725 0 0 1-.37-.029.56.56 0 0 1-.32-.229.655.655 0 0 1-.11-.392Zm8.02 8.097c-.47 0-.9-.078-1.29-.234a2.924 2.924 0 0 1-.99-.65c-.28-.274-.5-.596-.65-.967-.15-.375-.22-.78-.22-1.213v-.24c0-.496.08-.946.23-1.348.16-.402.37-.746.65-1.031a2.897 2.897 0 0 1 2.11-.891c.45 0 .86.078 1.21.234.35.153.65.366.88.639.24.277.42.608.54.99.13.383.19.801.19 1.254v.604h-4.4v.029c.04.277.11.51.2.697.09.188.21.356.37.504.16.156.34.278.55.364.22.085.45.128.7.128.35 0 .68-.066.98-.199.3-.137.54-.33.74-.58l.75.727c-.21.304-.54.578-.97.82-.44.242-.96.363-1.58.363Zm-.17-5.437c-.2 0-.38.037-.56.111-.16.07-.31.172-.45.305-.13.137-.24.301-.33.492-.09.191-.16.408-.2.65h2.98v-.093c0-.184-.03-.366-.1-.545a1.382 1.382 0 0 0-.28-.481 1.242 1.242 0 0 0-.44-.316 1.46 1.46 0 0 0-.62-.123Zm4.23 2.103c0-.48.06-.918.17-1.312.12-.399.29-.74.51-1.026.21-.285.47-.505.78-.662.31-.16.66-.24 1.06-.24.35 0 .65.063.92.188.26.121.5.294.7.521V939.6h1.4v9h-1.27l-.07-.662c-.2.25-.44.443-.72.58-.28.133-.61.199-.98.199-.38 0-.73-.08-1.04-.24a2.262 2.262 0 0 1-.78-.68 2.956 2.956 0 0 1-.5-1.013 4.377 4.377 0 0 1-.18-1.278v-.123Zm1.4.123c0 .282.03.547.08.797.06.25.14.467.26.651.12.191.27.341.45.451.19.105.41.158.67.158.31 0 .57-.068.78-.205.21-.141.37-.33.5-.568v-2.725c-.13-.234-.29-.42-.5-.557-.2-.14-.46-.211-.77-.211-.26 0-.49.055-.68.164-.18.11-.33.26-.44.452-.12.191-.21.414-.27.668-.05.25-.08.517-.08.802v.123Zm10.14 1.377a.576.576 0 0 0-.08-.293.631.631 0 0 0-.24-.246c-.12-.07-.28-.136-.47-.199-.2-.062-.44-.121-.73-.176a7 7 0 0 1-1.01-.275c-.3-.11-.56-.242-.78-.399a1.76 1.76 0 0 1-.51-.527 1.366 1.366 0 0 1-.18-.709c0-.258.06-.502.18-.732.13-.235.31-.44.54-.616.22-.175.5-.314.82-.416a3.58 3.58 0 0 1 1.08-.152c.42 0 .8.053 1.13.158.34.102.62.242.86.422.23.18.41.393.53.639.13.246.19.512.19.797h-1.4a.774.774 0 0 0-.08-.334.701.701 0 0 0-.21-.293 1.158 1.158 0 0 0-.42-.24 1.726 1.726 0 0 0-.6-.094c-.21 0-.4.023-.56.07-.16.043-.29.104-.39.182a.81.81 0 0 0-.23.252.726.726 0 0 0-.01.597c.05.086.12.162.23.229.1.07.24.135.42.193.19.059.42.112.69.158.39.071.74.157 1.06.258.33.102.6.227.83.375.22.156.4.34.52.551.13.211.19.461.19.75 0 .281-.07.539-.2.773-.13.235-.31.436-.55.604-.24.168-.53.299-.87.393-.33.093-.71.14-1.12.14-.45 0-.86-.06-1.22-.181a2.803 2.803 0 0 1-.88-.481 1.96 1.96 0 0 1-.55-.674 1.674 1.674 0 0 1-.19-.773h1.36c.01.195.06.361.15.498.1.133.21.24.36.322.13.086.29.149.46.188.18.035.36.052.54.052.24 0 .45-.025.63-.076s.33-.119.44-.205a.68.68 0 0 0 .2-.228c.05-.086.07-.18.07-.282Z"
-              className="Pieds"
-            />
-            <path
-              fill="#75DDDD"
-              stroke="#151515"
-              strokeMiterlimit="10"
-              strokeWidth="2"
-              d="M1386.8 948.59c3.31 0 6-2.686 6-6s-2.69-6-6-6-6 2.686-6 6 2.69 6 6 6Z"
-              className="Vector"
             />
           </g>
         </g>
