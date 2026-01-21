@@ -62,7 +62,7 @@ const ExploreProblems = () => {
       id: createUUID(),
       name: "",
       author: "",
-      date: "",
+      date: new Date(Date.now()).toISOString().split("T")[0],
       feet: "feet-hand",
       holds: {},
       grade: DEFAULT_GRADE,
