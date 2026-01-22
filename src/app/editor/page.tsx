@@ -17,37 +17,45 @@ export default function Page() {
   const [currentPolygon, setCurrentPolygon] = useState<Point[]>([]);
   const [hoveringFirstPoint, setHoveringFirstPoint] = useState(false);
 
-  const nextHoldId =
-    holds.reduce((maxId, hold) => {
-      return hold.id > maxId ? hold.id : maxId;
-    }, 0) + 1;
+  const getNextHoldId = useCallback(() => {
+    return holds.reduce((maxId, hold) => hold.id > maxId ? hold.id : maxId, 0) + 1;
+  }, [holds]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setDimensions({
-        width: window.visualViewport?.width || window.innerWidth,
-        height: window.visualViewport?.height || window.innerHeight,
-      });
-    }, 0);
-
-    const handleResize = () => {
-      setDimensions({
-        width: window.visualViewport?.width || window.innerWidth,
-        height: window.visualViewport?.height || window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+  const updateDimensions = useCallback(() => {
+    setDimensions({
+      width: window.visualViewport?.width || window.innerWidth,
+      height: window.visualViewport?.height || window.innerHeight,
+    });
   }, []);
 
+  const savePolygon = useCallback(() => {
+    if (currentPolygon.length < 3) return;
+    
+    const socket = getSocket();
+    socket.emit("addHold", {
+      id: getNextHoldId(),
+      x: 0,
+      y: 0,
+      w: 0,
+      h: 0,
+      a: 0,
+      fill: "white",
+      stroke: "white",
+      pxs: currentPolygon.map((p) => p.x),
+      pys: currentPolygon.map((p) => p.y),
+    });
+    setCurrentPolygon([]);
+    setHoveringFirstPoint(false);
+  }, [currentPolygon, getNextHoldId]);
+
+  useEffect(() => {
+    setTimeout(updateDimensions, 0);
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [updateDimensions]);
+
   const handleSvgClick = (e: React.MouseEvent<SVGSVGElement>) => {
-    if ((e.target as SVGElement).tagName === "circle") {
-      return;
-    }
+    if ((e.target as SVGElement).tagName === "circle") return;
 
     const svg = e.currentTarget;
     const rect = svg.getBoundingClientRect();
@@ -59,43 +67,14 @@ export default function Page() {
 
   const handleFirstPointClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (currentPolygon.length >= 3) {
-      setCurrentPolygon([]);
-      const socket = getSocket();
-      socket.emit("addHold", {
-        id: nextHoldId,
-        x: 0,
-        y: 0,
-        w: 0,
-        h: 0,
-        a: 0,
-        fill: "white",
-        stroke: "white",
-        pxs: currentPolygon.map((p) => p.x),
-        pys: currentPolygon.map((p) => p.y),
-      });
-      setHoveringFirstPoint(false);
-    }
+    savePolygon();
   };
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === "Enter" && currentPolygon.length >= 3) {
         e.preventDefault();
-        const socket = getSocket();
-        socket.emit("addHold", {
-          id: nextHoldId,
-          x: 0,
-          y: 0,
-          w: 0,
-          h: 0,
-          a: 0,
-          fill: "white",
-          stroke: "white",
-          pxs: currentPolygon.map((p) => p.x),
-          pys: currentPolygon.map((p) => p.y),
-        });
-        setCurrentPolygon([]);
+        savePolygon();
       }
 
       if (e.key === "Escape") {
@@ -103,7 +82,7 @@ export default function Page() {
         setCurrentPolygon([]);
       }
     },
-    [currentPolygon, nextHoldId],
+    [currentPolygon, savePolygon],
   );
 
   useEffect(() => {
