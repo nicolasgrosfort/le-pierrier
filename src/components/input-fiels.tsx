@@ -1,5 +1,5 @@
 type InputFieldProps = {
-  type: "text" | "date";
+  type: "text" | "date" | "search";
   value?: string;
   onChange?: (value: string) => void;
   label: string;
@@ -16,14 +16,14 @@ export const InputField = ({
   placeholder,
 }: InputFieldProps) => {
   return (
-    <label className="flex flex-col gap-1 text-xs">
+    <label className="flex flex-col gap-1 text-xs font-medium">
       {label}
       <input
         type={type}
         value={value}
         autoFocus={autofocus}
         onChange={(e) => onChange && onChange(e.target.value)}
-        className="border p-2 text-sm font-medium"
+        className="border p-2 text-sm font-medium outline-0"
         placeholder={placeholder}
       />
     </label>

@@ -13,7 +13,7 @@ export const Grade = ({
 }: GradeProps) => {
   return (
     <div
-      className={`w-8 h-8 ${inverse ? "bg-background text-foreground" : "bg-foreground text-background"} flex items-center justify-center border`}
+      className={`w-8 h-8 ${inverse ? "bg-background text-foreground" : "bg-foreground text-background"} flex items-center justify-center border shrink-0`}
       style={{ borderRadius: blobFromSeed(grade) }}
     >
       <span className="font-medium text-sm">{grade}</span>

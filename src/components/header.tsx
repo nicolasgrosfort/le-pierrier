@@ -1,8 +1,12 @@
+"use client";
+
+import { GenericTitle } from "@/components/generic-title";
+import { ProblemTitle } from "@/components/problem-title";
+import { _problem } from "@/lib/store";
+import { useAtom } from "jotai";
+
 export const Header = () => {
-  return (
-    <header className="p-6 z-10">
-      <h1 className="font-bold text-2xl font-serif">Le Pierrier</h1>
-      <p className="font-mono">Topographie interactive</p>
-    </header>
-  );
+  const [problem] = useAtom(_problem);
+
+  return problem ? <ProblemTitle problem={problem} /> : <GenericTitle />;
 };

@@ -20,7 +20,7 @@ export function ToggleGroup<T extends string>({
 }: ToggleGroupProps<T>) {
   return (
     <div className="flex flex-col gap-2">
-      {label && <span className="text-xs">{label}</span>}
+      {label && <span className="text-xs font-medium">{label}</span>}
       <div
         className={`grid  gap-1`}
         style={{
@@ -38,7 +38,7 @@ export function ToggleGroup<T extends string>({
               aria-pressed={isActive}
               className={`
               border flex flex-col items-center gap-1 p-2
-              cursor-pointer transition-colors
+              cursor-pointer transition-colors font-medium
               ${isActive ? "bg-foreground text-background" : ""}
             `}
             >

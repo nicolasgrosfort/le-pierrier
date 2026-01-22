@@ -1,6 +1,5 @@
 "use client";
 
-import { Grade } from "@/components/grade";
 import { GradeSelector } from "@/components/grade-selector";
 import { InputField } from "@/components/input-fiels";
 import { ProblemItem } from "@/components/problem-item";
@@ -22,10 +21,8 @@ import {
   Footprints,
   HandMetal,
   MountainSnow,
-  Pencil,
   Plus,
   Save,
-  Trash2,
   Undo2,
   X,
 } from "lucide-react";
@@ -38,32 +35,35 @@ export const Sidebar = () => {
   if (!isConnected) return;
 
   return (
-    <nav className="lg:border-l sborder-black w-full lg:w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
+    <nav className="md:border-l sborder-black w-full md:w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
       {mode === "explore" ? <ExploreProblems /> : <HandleProblem />}
     </nav>
   );
 };
 
 const ExploreProblems = () => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [gradesFilter, setGradesFilter] = useState<GradeType[]>([]);
-  const [wantDelete, setWantDelete] = useState<boolean>(false);
 
   const [problems] = useAtom<Problem[]>(_problems);
   const [problem, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setMode] = useAtom<Mode>(_mode);
 
+  const lowercasedSearchTerm = searchTerm.toLowerCase();
+
+  const filteredBySearchTerm = problems.filter(
+    (p) =>
+      p.name.toLowerCase().includes(lowercasedSearchTerm) ||
+      p.author.toLowerCase().includes(lowercasedSearchTerm),
+  );
+
   const filteredProblems = gradesFilter.length
-    ? problems.filter((p) => gradesFilter.includes(p.grade))
-    : problems;
+    ? filteredBySearchTerm.filter((p) => gradesFilter.includes(p.grade))
+    : filteredBySearchTerm;
 
   const sortedProblems = [...filteredProblems].sort(
     (a, b) => GRADES.indexOf(a.grade!) - GRADES.indexOf(b.grade!),
   );
-
-  useEffect(() => {
-    const id = setTimeout(() => setWantDelete(false), 0);
-    return () => clearTimeout(id);
-  }, [problem, gradesFilter]);
 
   const handleCreate = () => {
     const socket = getSocket();
@@ -82,19 +82,9 @@ const ExploreProblems = () => {
     socket.emit("create", newProblem);
   };
 
-  const handleConfirm = () => {
-    if (!wantDelete) {
-      setWantDelete(true);
-      return;
-    }
-  };
-
-  const handleDelete = (id: Problem["id"]) => {
-    const socket = getSocket();
-    socket.connect();
-    socket.emit("delete", id);
-    setWantDelete(false);
-    setMode("explore");
+  const handleResetFilters = () => {
+    setGradesFilter([]);
+    setSearchTerm("");
   };
 
   if (!problem) {
@@ -123,6 +113,7 @@ const ExploreProblems = () => {
             </button>
           </div>
         </div>
+
         <div className="flex justify-between gap-4 p-4 shrink-0">
           <span className="font-medium text-sm p-2 flex gap-2 items-center">
             {problems.length} blocs <MountainSnow size={18} />
@@ -140,94 +131,54 @@ const ExploreProblems = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
-        <div className="flex flex-row gap-2 items-center justify-between">
-          <h2 className="font-serif text-xl truncate w-full">
-            {problem?.name || "Bloc sans nom"}
-          </h2>
-          <Grade grade={problem.grade} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <div className="flex gap-2 items-center justify-between">
-            <span className="text-sm font-medium">{problem.author || "-"}</span>
-            <span className="text-sm font-medium">
-              {FEET_LABEL[problem.feet] || "-"}
-            </span>
-          </div>
-          <div className="flex gap-2 items-center justify-between">
-            <span className="text-xs">{problem.date || "-"}</span>
-            <span className="text-xs">
-              {Object.keys(problem.holds).length} prises
-            </span>
-          </div>
-        </div>
+      <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
+        <span className="font-medium text-sm p-2 flex gap-2 items-center">
+          {problems.length} blocs <MountainSnow size={18} />
+        </span>
+        <button
+          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+          onClick={handleCreate}
+        >
+          Nouveau bloc <Plus size={18} />
+        </button>
       </div>
+
       <div className="flex flex-col gap-2 border-b p-6 shrink-0">
-        <div className="flex gap-2 items-center justify-between">
-          {wantDelete ? (
-            <>
-              <span className="text-xs font-semibold ">T&apos;es sûr ?</span>
-              <div className="flex gap-4">
-                <button
-                  className="text-xs underline cursor-pointer flex gap-2 items-center"
-                  onClick={() => setWantDelete(false)}
-                >
-                  Annuler
-                  <Undo2 size={14} />
-                </button>
-                <button
-                  className="text-xs underline cursor-pointer flex gap-2 items-center"
-                  onClick={() => handleDelete(problem.id)}
-                >
-                  Supprimer
-                  <Trash2 size={14} />
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              <button
-                className="text-xs underline cursor-pointer flex gap-2 items-center"
-                onClick={() => handleConfirm()}
-              >
-                Supprimer
-                <Trash2 size={14} />
-              </button>
-              <button
-                className="text-xs underline cursor-pointer flex gap-2 items-center"
-                onClick={() => setMode("handle")}
-              >
-                Modifier
-                <Pencil size={14} />
-              </button>
-            </>
-          )}
-        </div>
-      </div>
-      <div className="flex flex-col gap-2 border-b p-6 shrink-0">
-        <div className="flex justify-between">
-          <h3 className="font-medium text-sm">Filtres</h3>
-          {gradesFilter.length > 0 && (
+        <div className="flex justify-between ">
+          <h3 className="font-bold text-sm">Filtres</h3>
+          {
             <button
-              className="text-xs underline cursor-pointer flex items-center gap-2"
-              onClick={() => setGradesFilter([])}
+              className="text-xs underline cursor-pointer flex items-center gap-2 font-medium disabled:opacity-40 disabled:cursor-default"
+              onClick={handleResetFilters}
+              disabled={gradesFilter.length === 0 && searchTerm.length === 0}
             >
               Réinitialiser
               <X size={14} />
             </button>
-          )}
+          }
         </div>
-        <GradeSelector
-          label="Cotations"
-          mode="multiple"
-          value={gradesFilter}
-          onChange={setGradesFilter}
-        />
+        <div className="flex flex-col gap-4">
+          <InputField
+            type="text"
+            label="Recherche"
+            value={searchTerm}
+            onChange={setSearchTerm}
+            placeholder="Nom du bloc, auteur..."
+          />
+          <GradeSelector
+            label="Cotations"
+            mode="multiple"
+            value={gradesFilter}
+            onChange={setGradesFilter}
+          />
+        </div>
       </div>
-      <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-3">
+      <div className="flex-1 flex flex-col p-6 min-h-0 gap-3">
         <div className="flex justify-between items-center">
-          <h3 className="font-medium text-sm shrink-0">Blocs</h3>
-          <span className="text-xs">[{sortedProblems.length}]</span>
+          <h3 className="font-bold text-sm shrink-0">Blocs</h3>
+          <span className="text-xs font-medium">
+            [{sortedProblems.length}/{problems.length}]
+          </span>
         </div>
         <div className="flex flex-col gap-2 overflow-y-auto">
           {sortedProblems.length > 0 ? (
@@ -242,17 +193,6 @@ const ExploreProblems = () => {
             <span className="text-sm italic">Aucun bloc pour le moment...</span>
           )}
         </div>
-      </div>
-      <div className="flex justify-between gap-4 p-4 shrink-0">
-        <span className="font-medium text-sm p-2 flex gap-2 items-center">
-          {problems.length} blocs <MountainSnow size={18} />
-        </span>
-        <button
-          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
-          onClick={handleCreate}
-        >
-          Nouveau bloc <Plus size={18} />
-        </button>
       </div>
     </>
   );
@@ -280,44 +220,23 @@ const HandleProblem = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
-        <div className="flex flex-row gap-2 items-center justify-between">
-          <h2 className="font-serif text-xl truncate w-full">
-            {problem.name || "Bloc sans nom"}
-          </h2>
-          <Grade grade={problem.grade} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <div className="flex gap-2 items-center justify-between">
-            <span className="text-sm font-medium">{problem.author || "-"}</span>
-            <span className="text-sm font-medium">
-              {FEET_LABEL[problem.feet] || "-"}
-            </span>
-          </div>
-          <div className="flex gap-2 items-center justify-between">
-            <span className="text-xs">{problem.date || "-"}</span>
-            <span className="text-xs">
-              {Object.keys(problem.holds).length} prises
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2 border-b p-6 shrink-0">
-        <div className="flex gap-2 items-center justify-end">
-          <button
-            className="text-xs underline cursor-pointer flex gap-2 items-center ml-4"
-            onClick={() => setMode("explore")}
-          >
-            Retour
-            <Undo2 size={14} />
-          </button>
-        </div>
+      <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
+        <button
+          className="font-medium text-sm flex gap-2 items-center cursor-pointer p-2 underline"
+          onClick={() => setMode("explore")}
+        >
+          Retour <Undo2 size={18} />
+        </button>
+        <button
+          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+          onClick={() => setMode("explore")}
+        >
+          Terminer <Save size={18} />
+        </button>
       </div>
 
       <div className="flex flex-col gap-4 border-b p-6 shrink-0">
         <h3 className="font-semibold text-sm">Prises</h3>
-
         <ToggleGroup
           value={hold}
           onChange={setHold}
@@ -377,20 +296,6 @@ const HandleProblem = () => {
             }
           />
         </div>
-      </div>
-      <div className="flex justify-between gap-4 p-4 shrink-0">
-        <button
-          className="font-medium text-sm flex gap-2 items-center cursor-pointer p-2"
-          onClick={() => setMode("explore")}
-        >
-          Retour <Undo2 size={18} />
-        </button>
-        <button
-          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
-          onClick={() => setMode("explore")}
-        >
-          Terminer <Save size={18} />
-        </button>
       </div>
     </>
   );
