@@ -29,6 +29,7 @@ yarn dev:all
 ### Setup the environment variables
 
 Copy the `exemple.env` file to a new `.env` file and change the `SOCKET_KEY` value to a secret key of your choice.
+During development, add a `NEXT_PUBLIC_SOCKET_KEY` entry that contains the same value as `SOCKET_KEY` to bypass security.
 
 ```bash
 cp exemple.env .env

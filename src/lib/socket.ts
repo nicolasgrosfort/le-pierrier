@@ -10,7 +10,7 @@ export const getSocket = () => {
 
     socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
       auth: {
-        key: key ?? "client",
+        key: process.env.NEXT_PUBLIC_SOCKET_KEY ?? key,
       },
     });
   }
