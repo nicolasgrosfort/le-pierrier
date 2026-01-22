@@ -297,7 +297,6 @@ const HandleProblem = () => {
           <div className="flex gap-2 items-center justify-between">
             <span className="text-xs">{problem.date || "-"}</span>
             <span className="text-xs">
-              {" "}
               {Object.keys(problem.holds).length} prises
             </span>
           </div>
@@ -306,7 +305,6 @@ const HandleProblem = () => {
 
       <div className="flex flex-col gap-2 border-b p-6 shrink-0">
         <div className="flex gap-2 items-center justify-end">
-          {" "}
           <button
             className="text-xs underline cursor-pointer flex gap-2 items-center ml-4"
             onClick={() => setMode("explore")}
