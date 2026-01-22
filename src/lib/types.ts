@@ -68,19 +68,21 @@ export type Problem = {
 export type ServerToClientEvents = {
   problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
-  holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
   transform: (transform: WallTransform) => void;
+  holds: (holds: Hold[]) => void;
+  addHold: (hold: Hold) => void;
 };
 
 export type ClientToServerEvents = {
   problem: (problem?: Problem) => void;
   problems: (problems: Problem[]) => void;
-  holds: (holds: Hold[]) => void;
   create: (problem: Problem) => void;
   delete: (id: Problem["id"]) => void;
   transform: (transform: WallTransform) => void;
+  holds: (holds: Hold[]) => void;
+  addHold: (hold: Hold) => void;
 };
 
 export type Db = {

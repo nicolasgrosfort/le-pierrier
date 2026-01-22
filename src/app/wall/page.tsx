@@ -19,6 +19,7 @@ export default function Page() {
   const [transform, setTransform] = useAtom(_wallTransform);
 
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [showAllHolds, setShowAllHolds] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,6 +39,10 @@ export default function Page() {
     const handleKeydown = (e: KeyboardEvent) => {
       const socket = getSocket();
       let nextTransform = { ...transform };
+
+      if (e.key === "a") {
+        setShowAllHolds(!showAllHolds);
+      }
 
       if (e.key === "ArrowDown") {
         nextTransform = {
@@ -109,7 +114,7 @@ export default function Page() {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("keydown", handleKeydown);
     };
-  }, [setTransform, transform]);
+  }, [setTransform, showAllHolds, transform]);
 
   const problemHolds = holds
     .filter((hold) =>
@@ -135,7 +140,7 @@ export default function Page() {
             transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale}) rotate(${transform.rotate}deg)`,
           }}
         >
-          {problemHolds.map((hold) => {
+          {(showAllHolds ? holds : problemHolds).map((hold) => {
             return (
               <polygon
                 key={hold.id}

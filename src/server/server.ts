@@ -60,6 +60,14 @@ io.on("connection", (socket) => {
     socket.emit("problem", currentProblem);
   }
 
+  socket.on("addHold", (newHold) => {
+    db.data.holds.push(newHold);
+    db.write();
+
+    io.emit("addHold", newHold);
+    io.emit("holds", db.data.holds);
+  });
+
   socket.on("problems", () => {
     socket.emit("problems", db.data.problems);
   });

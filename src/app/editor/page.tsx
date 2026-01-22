@@ -1,5 +1,8 @@
 "use client";
 
+import { getSocket } from "@/lib/socket";
+import { _holds } from "@/lib/store";
+import { useAtom } from "jotai";
 import { useCallback, useEffect, useState } from "react";
 
 type Point = {
@@ -7,16 +10,17 @@ type Point = {
   y: number;
 };
 
-type Polygon = {
-  id: string;
-  points: Point[];
-};
-
 export default function Page() {
+  const [holds] = useAtom(_holds);
+
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [polygons, setPolygons] = useState<Polygon[]>([]);
   const [currentPolygon, setCurrentPolygon] = useState<Point[]>([]);
   const [hoveringFirstPoint, setHoveringFirstPoint] = useState(false);
+
+  const nextHoldId =
+    holds.reduce((maxId, hold) => {
+      return hold.id > maxId ? hold.id : maxId;
+    }, 0) + 1;
 
   useEffect(() => {
     setTimeout(() => {
@@ -56,12 +60,20 @@ export default function Page() {
   const handleFirstPointClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (currentPolygon.length >= 3) {
-      const newPolygon: Polygon = {
-        id: Date.now().toString(),
-        points: currentPolygon,
-      };
-      setPolygons([...polygons, newPolygon]);
       setCurrentPolygon([]);
+      const socket = getSocket();
+      socket.emit("addHold", {
+        id: nextHoldId,
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0,
+        a: 0,
+        fill: "white",
+        stroke: "white",
+        pxs: currentPolygon.map((p) => p.x),
+        pys: currentPolygon.map((p) => p.y),
+      });
       setHoveringFirstPoint(false);
     }
   };
@@ -70,11 +82,19 @@ export default function Page() {
     (e: KeyboardEvent) => {
       if (e.key === "Enter" && currentPolygon.length >= 3) {
         e.preventDefault();
-        const newPolygon: Polygon = {
-          id: Date.now().toString(),
-          points: currentPolygon,
-        };
-        setPolygons([...polygons, newPolygon]);
+        const socket = getSocket();
+        socket.emit("addHold", {
+          id: nextHoldId,
+          x: 0,
+          y: 0,
+          w: 0,
+          h: 0,
+          a: 0,
+          fill: "white",
+          stroke: "white",
+          pxs: currentPolygon.map((p) => p.x),
+          pys: currentPolygon.map((p) => p.y),
+        });
         setCurrentPolygon([]);
       }
 
@@ -83,7 +103,7 @@ export default function Page() {
         setCurrentPolygon([]);
       }
     },
-    [currentPolygon, polygons],
+    [currentPolygon, nextHoldId],
   );
 
   useEffect(() => {
@@ -106,12 +126,11 @@ export default function Page() {
           points)
         </p>
         <p>
-          Ou appuyez sur <strong>Enter</strong> pour terminer
+          Ou appuyez sur <strong>Enter</strong> pour enregistrer
         </p>
         <p>
           Appuyez sur <strong>Escape</strong> pour annuler
         </p>
-        <p className="mt-2">Polygones créés: {polygons.length}</p>
       </div>
       <svg
         width={dimensions.width}
@@ -120,32 +139,8 @@ export default function Page() {
         onClick={handleSvgClick}
         className="cursor-crosshair"
       >
-        {/* Afficher les polygones terminés */}
-        {polygons.map((polygon) => (
-          <g key={polygon.id}>
-            <polygon
-              points={getPolygonPoints(polygon.points)}
-              fill="rgba(59, 130, 246, 0.3)"
-              stroke="rgb(59, 130, 246)"
-              strokeWidth="2"
-            />
-            {/* Afficher les points */}
-            {polygon.points.map((point, idx) => (
-              <circle
-                key={idx}
-                cx={point.x}
-                cy={point.y}
-                r="4"
-                fill="rgb(59, 130, 246)"
-              />
-            ))}
-          </g>
-        ))}
-
-        {/* Afficher le polygone en cours de création */}
         {currentPolygon.length > 0 && (
           <g>
-            {/* Ligne reliant les points */}
             {currentPolygon.length > 1 && (
               <polyline
                 points={getPolygonPoints(currentPolygon)}
@@ -154,7 +149,7 @@ export default function Page() {
                 strokeWidth="2"
               />
             )}
-            {/* Ligne de prévisualisation vers le premier point si plus de 2 points */}
+
             {currentPolygon.length >= 3 && (
               <line
                 x1={currentPolygon[currentPolygon.length - 1].x}
@@ -166,7 +161,7 @@ export default function Page() {
                 strokeDasharray="5,5"
               />
             )}
-            {/* Points */}
+
             {currentPolygon.map((point, idx) => {
               const isFirstPoint = idx === 0;
               const canClose = currentPolygon.length >= 3 && isFirstPoint;

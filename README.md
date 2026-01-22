@@ -55,6 +55,7 @@ yarn prod:all
 
 The `/` page is the wall-control interface.
 The `/wall` page is the wall display interface.
+The `/editor` page is the wall editor interface.
 
 ### Transforming the wall view
 
@@ -62,3 +63,4 @@ The `/wall` page is the wall display interface.
 - Use the `+` and `-` keys to zoom in and out.
 - Use the `r` and `l` keys to rotate the view.
 - Use the `0` key to reset the view.
+- Use the `a` key to toggle display of all holds.
