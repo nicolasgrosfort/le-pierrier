@@ -23,15 +23,15 @@ export default function Page() {
   useEffect(() => {
     setTimeout(() => {
       setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window.visualViewport?.width || window.innerWidth,
+        height: window.visualViewport?.height || window.innerHeight,
       });
     }, 0);
 
     const handleResize = () => {
       setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window.visualViewport?.width || window.innerWidth,
+        height: window.visualViewport?.height || window.innerHeight,
       });
     };
 
