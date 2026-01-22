@@ -7,7 +7,7 @@ import { _mode } from "@/lib/store";
 import { Problem } from "@/lib/types";
 import { useAtom } from "jotai";
 import { Pencil, Save, Trash2, Undo2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type ProblemTitleProps = {
   problem: Problem;
@@ -40,6 +40,16 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
     setMode("explore");
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setWantDelete(false);
+    }, 0);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [problem]);
+
   const amountHolds = Object.keys(problem.holds).length;
 
   return (
@@ -52,7 +62,7 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
           <Grade grade={problem.grade} />
         </div>
 
-        <div className="flex items-center gap-4 justify-end">
+        <div className="flex items-center gap-6 justify-end">
           {mode === "handle" ? (
             <>
               <button onClick={handleDone} className="cursor-pointer">

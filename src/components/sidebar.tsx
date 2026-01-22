@@ -87,47 +87,46 @@ const ExploreProblems = () => {
     setSearchTerm("");
   };
 
-  if (!problem) {
-    return (
-      <>
-        <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
-          <div className="flex flex-row gap-2 items-center justify-between">
-            <h2 className="font-serif text-xl truncate w-full">Bienvenue !</h2>
-          </div>
-          <div className="flex flex-col gap-1">
-            <div className="flex gap-2 items-center justify-between">
-              <span className="text-sm font-medium">
-                Créé un nouveau bloc pour commencer à utiliser le pierrier.
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-4">
-          <div className="flex gap-2 overflow-y-auto justify-end">
-            <button
-              className="text-xs underline cursor-pointer flex gap-2 items-center"
-              onClick={handleCreate}
-            >
-              Créer un nouveau bloc
-              <Plus size={14} />
-            </button>
-          </div>
-        </div>
-
-        <div className="flex justify-between gap-4 p-4 shrink-0">
-          <span className="font-medium text-sm p-2 flex gap-2 items-center">
-            {problems.length} blocs <MountainSnow size={18} />
-          </span>
-          <button
-            className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
-            onClick={handleCreate}
-          >
-            Nouveau bloc <Plus size={18} />
-          </button>
-        </div>
-      </>
-    );
-  }
+  // if (!problem) {
+  //   return (
+  //     <>
+  //       <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
+  //         <span className="font-medium text-sm p-2 flex gap-2 items-center">
+  //           {problems.length} blocs <MountainSnow size={18} />
+  //         </span>
+  //         <button
+  //           className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+  //           onClick={handleCreate}
+  //         >
+  //           Nouveau bloc <Plus size={18} />
+  //         </button>
+  //       </div>
+  //       <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
+  //         <div className="flex flex-row gap-2 items-center justify-between">
+  //           <h2 className="font-serif text-xl truncate w-full">Bienvenue !</h2>
+  //         </div>
+  //         <div className="flex flex-col gap-1">
+  //           <div className="flex gap-2 items-center justify-between">
+  //             <span className="text-sm font-medium">
+  //               Créé un nouveau bloc pour commencer à utiliser le pierrier.
+  //             </span>
+  //           </div>
+  //         </div>
+  //       </div>
+  //       <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-4">
+  //         <div className="flex gap-2 overflow-y-auto justify-end">
+  //           <button
+  //             className="text-xs underline cursor-pointer flex gap-2 items-center"
+  //             onClick={handleCreate}
+  //           >
+  //             Créer un nouveau bloc
+  //             <Plus size={14} />
+  //           </button>
+  //         </div>
+  //       </div>
+  //     </>
+  //   );
+  // }
 
   return (
     <>
@@ -173,6 +172,7 @@ const ExploreProblems = () => {
           />
         </div>
       </div>
+
       <div className="flex-1 flex flex-col p-6 min-h-0 gap-3">
         <div className="flex justify-between items-center">
           <h3 className="font-bold text-sm shrink-0">Blocs</h3>
@@ -186,11 +186,30 @@ const ExploreProblems = () => {
               <ProblemItem
                 problem={_problem}
                 key={_problem.id}
-                selected={_problem.id === problem.id}
+                selected={_problem.id === problem?.id}
               />
             ))
           ) : (
-            <span className="text-sm italic">Aucun bloc pour le moment...</span>
+            <div className="flex flex-col gap-1 items-center justify-center">
+              <span className="text-sm">Aucun bloc trouvé</span>
+              {problem ? (
+                <>
+                  <button
+                    className="text-xs font-medium underline cursor-pointer flex gap-2 items-center"
+                    onClick={handleResetFilters}
+                  >
+                    Réinitialiser les filtres
+                  </button>
+                </>
+              ) : (
+                <button
+                  className="text-xs font-medium underline cursor-pointer flex gap-2 items-center"
+                  onClick={handleCreate}
+                >
+                  Créer un nouveau bloc
+                </button>
+              )}
+            </div>
           )}
         </div>
       </div>
