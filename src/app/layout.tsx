@@ -17,13 +17,13 @@ const geistMono = Geist_Mono({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#f5f5f5",
 };
 
 export const metadata: Metadata = {
   title: "Le Pierrier",
   description: "Topographie interactive",
   manifest: "/manifest.webmanifest",
-  themeColor: "#f5f5f5",
 };
 
 export default function RootLayout({

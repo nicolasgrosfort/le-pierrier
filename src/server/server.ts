@@ -16,7 +16,6 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
       "http://localhost:3001",
       "https://pierrier.panstructure.ch",
     ],
-    credentials: true,
   },
 });
 
@@ -28,22 +27,6 @@ app.get("/", (_, res) => {
 
 app.get("/wall", (_, res) => {
   res.sendFile("dist/wall/index.html");
-});
-
-io.use((socket, next) => {
-  const key = socket.handshake.auth?.key;
-
-  if (!key) {
-    return next(new Error("Missing auth key"));
-  }
-
-  if (key !== process.env.SOCKET_KEY) {
-    return next(new Error("Invalid auth key"));
-  }
-
-  socket.data.key = key;
-
-  next();
 });
 
 io.on("connection", (socket) => {
