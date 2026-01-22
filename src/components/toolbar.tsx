@@ -31,9 +31,9 @@ export const Toolbar = () => {
   }, [panzoomRef]);
 
   return (
-    <div className="z-10 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 p-4">
+    <div className="z-10 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 p-4">
       <div />
-      <div className="p-2 px-4 border flex gap-8  bg-background/80 overflow-hidden backdrop-blur">
+      <div className="p-2 px-4 border flex gap-6 bg-background/80 overflow-hidden backdrop-blur">
         {isConnected ? <Wifi size={18} /> : <WifiOff size={18} />}
         <button className="cursor-pointer" onClick={() => setIsId(!isId)}>
           {isId ? <Bug size={18} /> : <BugOff size={18} />}
@@ -61,7 +61,7 @@ export const Toolbar = () => {
         </button>
       </div>
       <div className="">
-        <span className="font-medium text-xs p-2 flex items-center gap-6">
+        <span className="font-medium text-xs p-2 flex items-center gap-4">
           <span className="flex gap-2 items-center">
             Départ <span className="h-3 w-3 rounded-lg border bg-start" />
           </span>

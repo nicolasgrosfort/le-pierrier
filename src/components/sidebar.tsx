@@ -38,7 +38,7 @@ export const Sidebar = () => {
   if (!isConnected) return;
 
   return (
-    <nav className="md:border-l sborder-black w-full md:w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
+    <nav className="lg:border-l sborder-black w-full lg:w-90 h-full flex flex-col z-10 bg-background/80 backdrop-blur overflow-hidden snap-start">
       {mode === "explore" ? <ExploreProblems /> : <HandleProblem />}
     </nav>
   );
@@ -204,7 +204,7 @@ const ExploreProblems = () => {
           )}
         </div>
       </div>
-      <div className="flex flex-col gap-4 border-b p-6 shrink-0">
+      <div className="flex flex-col gap-2 border-b p-6 shrink-0">
         <div className="flex justify-between">
           <h3 className="font-medium text-sm">Filtres</h3>
           {gradesFilter.length > 0 && (
@@ -224,7 +224,7 @@ const ExploreProblems = () => {
           onChange={setGradesFilter}
         />
       </div>
-      <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-4">
+      <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-3">
         <div className="flex justify-between items-center">
           <h3 className="font-medium text-sm shrink-0">Blocs</h3>
           <span className="text-xs">[{sortedProblems.length}]</span>

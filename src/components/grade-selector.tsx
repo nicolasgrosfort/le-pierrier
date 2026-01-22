@@ -38,7 +38,7 @@ export function GradeSelector(props: GradeSelectorProps) {
   return (
     <div className="flex flex-col gap-2">
       {props.label && <span className="text-xs">{props.label}</span>}
-      <div className="grid grid-cols-8 gap-1">
+      <div className="flex flex-wrap justify-start gap-1">
         {GRADES.map((grade) => {
           const selected = isSelected(grade);
 
