@@ -22,6 +22,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Le Pierrier",
   description: "Topographie interactive",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#f5f5f5",
 };
 
 export default function RootLayout({
