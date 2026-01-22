@@ -11,7 +11,11 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
   cors: {
-    origin: ["http://localhost:3000", "http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://pierrier.panstructure.ch",
+    ],
     credentials: true,
   },
 });

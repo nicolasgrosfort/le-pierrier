@@ -7,9 +7,13 @@ let socket: Socket<ServerToClientEvents, ClientToServerEvents>;
 export const getSocket = () => {
   if (!socket) {
     const key = getKeyFromUrl();
-    socket = io("http://localhost:3000", {
-      auth: { key: key ?? "client" },
+
+    socket = io(process.env.NEXT_PUBLIC_SOCKET_URL, {
+      auth: {
+        key: key ?? "client",
+      },
     });
   }
+
   return socket;
 };
