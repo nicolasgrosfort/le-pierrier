@@ -1,0 +1,30 @@
+{
+  "currentProblemId": "867cbf1f-0722-440b-8e9d-080c2c293d57",
+  "problems": [
+    {
+      "id": "867cbf1f-0722-440b-8e9d-080c2c293d57",
+      "name": "Premier bloc",
+      "author": "Nicolas Grosfort",
+      "date": "2026-01-22",
+      "feet": "feet-hand",
+      "holds": {
+        "3": "start",
+        "64": "start",
+        "80": "hold",
+        "107": "start",
+        "123": "foot",
+        "164": "hold",
+        "206": "hold",
+        "207": "hold",
+        "226": "foot",
+        "229": "foot",
+        "236": "hold",
+        "251": "hold",
+        "253": "hold",
+        "274": "foot",
+        "295": "foot"
+      },
+      "grade": "6c"
+    }
+  ]
+}

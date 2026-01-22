@@ -1,12 +1,36 @@
-import { DEFAULT_DATA } from "@/lib/config";
-import { ClientToServerEvents, Db, ServerToClientEvents } from "@/lib/types";
+import {
+  DEFAULT_DB_CONFIG,
+  DEFAULT_DB_HOLDS,
+  DEFAULT_DB_PROBLEMS,
+} from "@/lib/config";
+import {
+  ClientToServerEvents,
+  DbConfig,
+  DbHolds,
+  DbProblems,
+  ServerToClientEvents,
+} from "@/lib/types";
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
-const db = await JSONFilePreset<Db>("src/db/db.json", DEFAULT_DATA);
+const problems = await JSONFilePreset<DbProblems>(
+  "src/db/problems.json",
+  DEFAULT_DB_PROBLEMS,
+);
+
+const config = await JSONFilePreset<DbConfig>(
+  "src/db/config.json",
+  DEFAULT_DB_CONFIG,
+);
+
+const holds = await JSONFilePreset<DbHolds>(
+  "src/db/holds.json",
+  DEFAULT_DB_HOLDS,
+);
+
 const app = express();
 const httpServer = createServer(app);
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
@@ -32,32 +56,32 @@ app.get("/wall", (_, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
-  socket.emit("holds", db.data.holds);
-  socket.emit("problems", db.data.problems);
-  socket.emit("transform", db.data.transform);
+  socket.emit("holds", holds.data);
+  socket.emit("problems", problems.data.problems);
+  socket.emit("transform", config.data.transform);
 
-  const currentProblem = db.data.problems.find(
-    (p) => p.id === db.data.currentProblemId,
+  const currentProblem = problems.data.problems.find(
+    (p) => p.id === problems.data.currentProblemId,
   );
   if (currentProblem) {
     socket.emit("problem", currentProblem);
   }
 
   socket.on("addHold", (newHold) => {
-    db.data.holds.push(newHold);
-    db.write();
+    holds.data.push(newHold);
+    holds.write();
 
     io.emit("addHold", newHold);
-    io.emit("holds", db.data.holds);
+    io.emit("holds", holds.data);
   });
 
   socket.on("problems", () => {
-    socket.emit("problems", db.data.problems);
+    socket.emit("problems", problems.data.problems);
   });
 
   socket.on("transform", (transform) => {
-    db.data.transform = transform;
-    db.write();
+    config.data.transform = transform;
+    config.write();
 
     io.emit("transform", transform);
   });
@@ -67,51 +91,51 @@ io.on("connection", (socket) => {
       return;
     }
 
-    db.data.currentProblemId = nextProblem?.id;
-    db.write();
+    problems.data.currentProblemId = nextProblem?.id;
+    problems.write();
 
-    const index = db.data.problems.findIndex(
-      (p) => p.id === db.data.currentProblemId,
+    const index = problems.data.problems.findIndex(
+      (p) => p.id === problems.data.currentProblemId,
     );
 
     if (index !== -1) {
-      db.data.problems[index] = nextProblem;
-      db.write();
+      problems.data.problems[index] = nextProblem;
+      problems.write();
     }
 
     io.emit("problem", nextProblem);
-    io.emit("problems", db.data.problems);
+    io.emit("problems", problems.data.problems);
   });
 
   socket.on("create", (newProblem) => {
-    db.data.problems.push(newProblem);
-    db.data.currentProblemId = newProblem.id;
-    db.write();
+    problems.data.problems.push(newProblem);
+    problems.data.currentProblemId = newProblem.id;
+    problems.write();
 
     io.emit("create", newProblem);
     io.emit("problem", newProblem);
-    io.emit("problems", db.data.problems);
+    io.emit("problems", problems.data.problems);
   });
 
   socket.on("delete", (id) => {
-    const index = db.data.problems.findIndex((p) => p.id === id);
+    const index = problems.data.problems.findIndex((p) => p.id === id);
     if (index !== -1) {
-      db.data.problems.splice(index, 1);
-      db.write();
+      problems.data.problems.splice(index, 1);
+      problems.write();
 
       io.emit("delete", id);
-      io.emit("problems", db.data.problems);
+      io.emit("problems", problems.data.problems);
 
-      if (db.data.problems.length > 0) {
-        const newCurrentProblem = db.data.problems[0];
-        db.data.currentProblemId = newCurrentProblem.id;
+      if (problems.data.problems.length > 0) {
+        const newCurrentProblem = problems.data.problems[0];
+        problems.data.currentProblemId = newCurrentProblem.id;
         io.emit("problem", newCurrentProblem);
       } else {
-        db.data.currentProblemId = undefined;
+        problems.data.currentProblemId = undefined;
         io.emit("problem", undefined);
       }
 
-      db.write();
+      problems.write();
     }
   });
 

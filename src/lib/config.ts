@@ -1,4 +1,12 @@
-import { Db, Grade, HoldType, Mode, Problem } from "@/lib/types";
+import {
+  DbConfig,
+  DbHolds,
+  DbProblems,
+  Grade,
+  HoldType,
+  Mode,
+  Problem,
+} from "@/lib/types";
 
 export const TRANSLATE_STEP = 0.1;
 export const SCALE_STEP = 0.001;
@@ -37,13 +45,6 @@ export const GRADES: Grade[] = [
   "8c+",
 ];
 
-export const DEFAULT_DATA: Db = {
-  holds: [],
-  problems: [],
-  transform: { x: 0, y: 0, scale: 1, rotate: 0 },
-  currentProblemId: undefined,
-};
-
 export const FEET_LABEL: Record<Problem["feet"], string> = {
   "feet-hand": "Pieds-mains",
   "free-feet": "Pieds-libres",
@@ -54,3 +55,13 @@ export const HOLD_TYPE_COLORS: Record<HoldType, string> = {
   hold: "yellow",
   foot: "cyan",
 };
+
+export const DEFAULT_DB_PROBLEMS: DbProblems = {
+  problems: [],
+  currentProblemId: undefined,
+};
+
+export const DEFAULT_DB_CONFIG: DbConfig = {
+  transform: { x: 0, y: 0, scale: 1, rotate: 0 },
+};
+export const DEFAULT_DB_HOLDS: DbHolds = [];

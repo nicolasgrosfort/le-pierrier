@@ -85,9 +85,13 @@ export type ClientToServerEvents = {
   addHold: (hold: Hold) => void;
 };
 
-export type Db = {
-  holds: Hold[];
+export type DbHolds = Hold[];
+
+export type DbProblems = {
   problems: Problem[];
-  transform: WallTransform;
   currentProblemId?: UUID;
+};
+
+export type DbConfig = {
+  transform: WallTransform;
 };
