@@ -1,4 +1,4 @@
-name: Deploy via SFTP
+name: Deploy on production
 
 on:
   push:
@@ -24,23 +24,14 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Debug workspace
+      - name: Deploy with rsync
         run: |
-          echo "ROOT:"
-          ls -la
+          sudo apt-get update
+          sudo apt-get install -y sshpass
 
-          echo "DIST:"
-          ls -la dist || true
-
-          echo "SRC:"
-          ls -la src || true
-
-      - name: Upload files via SFTP
-        uses: appleboy/scp-action@v1
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
-          source: "dist/**,package.json"
-          target: /srv/customer/sites/test.pierrier.panstructure.ch/
+          sshpass -p "${{ secrets.SFTP_PASSWORD }}" \
+            rsync -avz --delete \
+            -e "ssh -p ${{ secrets.SFTP_PORT }} -o StrictHostKeyChecking=no" \
+            --exclude='.env' \
+            dist/ package.json \
+            ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/test.pierrier.panstructure.ch/
