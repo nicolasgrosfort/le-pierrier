@@ -11,6 +11,7 @@ import { getSocket } from "@/lib/socket";
 import { _holds, _problem, _wallTransform } from "@/lib/store";
 import { HoldType } from "@/lib/types";
 import { useAtom } from "jotai";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -140,19 +141,31 @@ export default function Page() {
             transform: `translate(${transform.x}px, ${transform.y}px) scale(${transform.scale}) rotate(${transform.rotate}deg)`,
           }}
         >
-          {(showAllHolds ? holds : problemHolds).map((hold) => {
-            return (
-              <polygon
-                key={hold.id}
-                points={hold
-                  .pxs!.map((px, i) => `${px},${hold.pys![i]}`)
-                  .join(" ")}
-                fill={hold.fill}
-                stroke={hold.stroke}
-                strokeWidth={8}
-              />
-            );
-          })}
+          <AnimatePresence mode="wait">
+            {(showAllHolds ? holds : problemHolds).map((hold, id) => {
+              const delay = (id % 10) * 0.03;
+
+              return (
+                <motion.polygon
+                  key={hold.id}
+                  points={hold
+                    .pxs!.map((px, i) => `${px},${hold.pys![i]}`)
+                    .join(" ")}
+                  fill={hold.fill}
+                  stroke={hold.stroke}
+                  strokeWidth={8}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: delay,
+                    ease: "easeInOut",
+                  }}
+                />
+              );
+            })}
+          </AnimatePresence>
         </g>
       </svg>
 
