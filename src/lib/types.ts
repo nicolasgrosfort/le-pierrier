@@ -83,6 +83,8 @@ export type ClientToServerEvents = {
   transform: (transform: WallTransform) => void;
   holds: (holds: Hold[]) => void;
   addHold: (hold: Hold) => void;
+  updateHold: (hold: Hold) => void;
+  deleteHold: (holdId: number) => void;
 };
 
 export type DbHolds = Hold[];

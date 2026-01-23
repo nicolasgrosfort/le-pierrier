@@ -53,6 +53,10 @@ app.get("/wall", (_, res) => {
   res.sendFile("dist/wall/index.html");
 });
 
+app.get("/editor", (_, res) => {
+  res.sendFile("dist/wall/editor.html");
+});
+
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
@@ -73,6 +77,26 @@ io.on("connection", (socket) => {
 
     io.emit("addHold", newHold);
     io.emit("holds", holds.data);
+  });
+
+  socket.on("updateHold", (hold) => {
+    const index = holds.data.findIndex((h) => h.id === hold.id);
+    if (index !== -1) {
+      holds.data[index] = hold;
+      holds.write();
+
+      io.emit("holds", holds.data);
+    }
+  });
+
+  socket.on("deleteHold", (holdId) => {
+    const index = holds.data.findIndex((h) => h.id === holdId);
+    if (index !== -1) {
+      holds.data.splice(index, 1);
+      holds.write();
+
+      io.emit("holds", holds.data);
+    }
   });
 
   socket.on("problems", () => {
