@@ -41,6 +41,7 @@ async function importProblems(folderPath: string) {
       } else {
         delete problem.rate;
         problem.name = problem.name.trim();
+        problem.grade = problem.grade.toLowerCase();
         problem.author = problem.author.trim();
         problem.date = problem.date
           ? new Date(
@@ -71,5 +72,5 @@ async function importProblems(folderPath: string) {
   );
 }
 
-const folderPath = process.argv[2] || "src/server/problems";
+const folderPath = process.argv[2] || "problems";
 importProblems(folderPath).catch(console.error);
