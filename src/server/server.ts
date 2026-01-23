@@ -20,7 +20,7 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 const problems = await JSONFilePreset<DbProblems>(
   "db/problems.json",
@@ -40,7 +40,7 @@ const httpServer = createServer(app);
 const allowedOrigins =
   process.env.NODE_ENV === "production"
     ? ["https://pierrier.panstructure.ch"]
-    : ["http://localhost:3000", "http://localhost:3001"];
+    : ["http://localhost:3000"];
 
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
   cors: {

@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint",
-    "dev:client": "next dev -p 3001",
+    "dev:client": "next dev",
     "dev:server": "nodemon",
     "dev:all": "yarn && concurrently \"yarn dev:server\" \"yarn dev:client\"",
     "build:client": "next build",
