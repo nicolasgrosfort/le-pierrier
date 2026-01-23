@@ -335,11 +335,14 @@ export default function Page() {
                 onClick={handleToggleFill}
                 className="bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded text-sm"
               >
-                {holds.find((h) => h.id === selectedHoldId)?.fill === "transparent"
+                {holds.find((h) => h.id === selectedHoldId)?.fill ===
+                "transparent"
                   ? "Rendre opaque"
                   : "Rendre transparent"}
               </button>
-              <span className="text-xs text-gray-400">ou touche <strong>T</strong></span>
+              <span className="text-xs text-gray-400">
+                ou touche <strong>T</strong>
+              </span>
             </div>
           </div>
         )}
