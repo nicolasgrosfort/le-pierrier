@@ -5,6 +5,7 @@ import { FEET_LABEL } from "@/lib/config";
 import { getSocket } from "@/lib/socket";
 import { _mode } from "@/lib/store";
 import { Problem } from "@/lib/types";
+import { formatDate } from "@/lib/utils";
 import { useAtom } from "jotai";
 import { Pencil, Save, Trash2, Undo2 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -114,7 +115,7 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
           <span className="truncate whitespace-nowrap">
             {problem.author || "Inconnu"}
           </span>
-          <span className="text-sm">{problem.date}</span>
+          <span className="text-sm">{formatDate(problem.date)}</span>
         </div>
         <div className="flex flex-col">
           <span className="whitespace-nowrap">{FEET_LABEL[problem.feet]}</span>
