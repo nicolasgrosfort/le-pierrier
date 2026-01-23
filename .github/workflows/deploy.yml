@@ -42,9 +42,6 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
           port: ${{ secrets.SFTP_PORT }}
-          source: |
-            dist/**
-            src/server/**
-            package.json
+          source: "dist/**,public/**,package.json,yarn.lock"
           target: /sites/test.pierrier.panstructure.ch
           strip_components: 0
