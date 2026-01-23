@@ -39,7 +39,7 @@ cp exemple.env .env
 Use : `http://localhost:3000`
 
 ```bash
-yarn build:all
+yarn prod:all
 ```
 
 ### Deploy on the server
