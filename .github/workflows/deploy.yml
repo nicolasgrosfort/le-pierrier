@@ -35,11 +35,11 @@ jobs:
             --exclude='.env' \
             --exclude='node_modules' \
             dist/ package.json yarn.lock \
-            ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/test.pierrier.panstructure.ch/
+            ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/pierrier.panstructure.ch/
 
       - name: Install production dependencies
         run: |
           sshpass -p "${{ secrets.SFTP_PASSWORD }}" \
             ssh -p ${{ secrets.SFTP_PORT }} -o StrictHostKeyChecking=no \
             ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }} \
-            "cd /srv/customer/sites/test.pierrier.panstructure.ch && yarn install --production --frozen-lockfile"
+            "cd /srv/customer/sites/pierrier.panstructure.ch && yarn install --production --frozen-lockfile"
