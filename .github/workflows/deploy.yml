@@ -24,6 +24,17 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Debug workspace
+        run: |
+          echo "ROOT:"
+          ls -la
+
+          echo "DIST:"
+          ls -la dist || true
+
+          echo "SRC:"
+          ls -la src || true
+
       - name: Upload files via SFTP
         uses: appleboy/scp-action@v1
         with:
