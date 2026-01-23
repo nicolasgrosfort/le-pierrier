@@ -14,8 +14,12 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
+import { dirname, join } from "path";
 import { Server } from "socket.io";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const port = process.env.PORT || 3000;
 
 const problems = await JSONFilePreset<DbProblems>(
@@ -48,15 +52,15 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
 app.use(express.static("dist"));
 
 app.get("/", (_, res) => {
-  res.sendFile("dist/index.html");
+  res.sendFile(join(__dirname, "../index.html"));
 });
 
 app.get("/wall", (_, res) => {
-  res.sendFile("dist/wall/index.html");
+  res.sendFile(join(__dirname, "../wall/index.html"));
 });
 
 app.get("/editor", (_, res) => {
-  res.sendFile("dist/wall/editor.html");
+  res.sendFile(join(__dirname, "../wall/editor.html"));
 });
 
 io.on("connection", (socket) => {
