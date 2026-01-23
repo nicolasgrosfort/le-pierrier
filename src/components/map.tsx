@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { useAtom } from "jotai";
 import { useEffect, useLayoutEffect } from "react";
 
-export default function Wall() {
+export const Map = () => {
   const [problem, setProblem] = useAtom(_problem);
 
   const [isId] = useAtom(_isId);
@@ -4331,4 +4331,4 @@ export default function Wall() {
       </svg>
     </div>
   );
-}
+};
