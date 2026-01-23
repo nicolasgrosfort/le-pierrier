@@ -19,19 +19,16 @@ import { Server } from "socket.io";
 const port = process.env.PORT || 3000;
 
 const problems = await JSONFilePreset<DbProblems>(
-  "src/db/problems.json",
+  "db/problems.json",
   DEFAULT_DB_PROBLEMS,
 );
 
 const config = await JSONFilePreset<DbConfig>(
-  "src/db/config.json",
+  "db/config.json",
   DEFAULT_DB_CONFIG,
 );
 
-const holds = await JSONFilePreset<DbHolds>(
-  "src/db/holds.json",
-  DEFAULT_DB_HOLDS,
-);
+const holds = await JSONFilePreset<DbHolds>("db/holds.json", DEFAULT_DB_HOLDS);
 
 const app = express();
 const httpServer = createServer(app);

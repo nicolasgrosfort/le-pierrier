@@ -22,7 +22,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run: yarn build
+        run: yarn build:all
 
       - name: Deploy with rsync
         run: |
@@ -33,5 +33,5 @@ jobs:
             rsync -avz --delete \
             -e "ssh -p ${{ secrets.SFTP_PORT }} -o StrictHostKeyChecking=no" \
             --exclude='.env' \
-            dist/ package.json \
+            dist/ \
             ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/test.pierrier.panstructure.ch/
