@@ -1,7 +1,8 @@
 type InputFieldProps = {
-  type: "text" | "date" | "search";
+  type: "text" | "date" | "password";
   value?: string;
   onChange?: (value: string) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   label: string;
   autofocus?: boolean;
   placeholder?: string;
@@ -12,6 +13,7 @@ export const InputField = ({
   label,
   value,
   onChange,
+  onKeyDown,
   autofocus,
   placeholder,
 }: InputFieldProps) => {
@@ -23,6 +25,7 @@ export const InputField = ({
         value={value}
         autoFocus={autofocus}
         onChange={(e) => onChange && onChange(e.target.value)}
+        onKeyDown={onKeyDown}
         className="border p-2 text-sm font-medium outline-0"
         placeholder={placeholder}
       />

@@ -16,6 +16,8 @@ import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
 import { Server } from "socket.io";
 
+const port = process.env.PORT || 3000;
+
 const problems = await JSONFilePreset<DbProblems>(
   "src/db/problems.json",
   DEFAULT_DB_PROBLEMS,
@@ -33,13 +35,16 @@ const holds = await JSONFilePreset<DbHolds>(
 
 const app = express();
 const httpServer = createServer(app);
+
+const allowedOrigins =
+  process.env.NODE_ENV === "production"
+    ? ["https://pierrier.panstructure.ch"]
+    : ["http://localhost:3000", "http://localhost:3001"];
+
 const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
   cors: {
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "https://pierrier.panstructure.ch",
-    ],
+    origin: allowedOrigins,
+    credentials: true,
   },
 });
 
@@ -60,16 +65,15 @@ app.get("/editor", (_, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected:", socket.id);
 
+  const currentProblem = problems.data.problems.find(
+    (p) => p.id === problems.data.currentProblemId,
+  );
+
   socket.emit("holds", holds.data);
   socket.emit("problems", problems.data.problems);
   socket.emit("transform", config.data.transform);
 
-  const currentProblem = problems.data.problems.find(
-    (p) => p.id === problems.data.currentProblemId,
-  );
-  if (currentProblem) {
-    socket.emit("problem", currentProblem);
-  }
+  if (currentProblem) socket.emit("problem", currentProblem);
 
   socket.on("addHold", (newHold) => {
     holds.data.push(newHold);
@@ -99,10 +103,6 @@ io.on("connection", (socket) => {
     }
   });
 
-  socket.on("problems", () => {
-    socket.emit("problems", problems.data.problems);
-  });
-
   socket.on("transform", (transform) => {
     config.data.transform = transform;
     config.write();
@@ -111,9 +111,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("problem", (nextProblem) => {
-    if (!nextProblem) {
-      return;
-    }
+    if (!nextProblem) return;
 
     problems.data.currentProblemId = nextProblem?.id;
     problems.write();
@@ -143,6 +141,7 @@ io.on("connection", (socket) => {
 
   socket.on("delete", (id) => {
     const index = problems.data.problems.findIndex((p) => p.id === id);
+
     if (index !== -1) {
       problems.data.problems.splice(index, 1);
       problems.write();
@@ -168,6 +167,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(3000, "0.0.0.0", () => {
-  console.log("Server (HTTP + Socket.IO) running on port 3000");
+httpServer.listen(port, () => {
+  console.log(`Server (HTTP + Socket.IO) running on port ${port}`);
 });

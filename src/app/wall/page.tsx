@@ -157,7 +157,7 @@ export default function Page() {
       </svg>
 
       {problem && (
-        <div className="absolute top-10 right-0 text-white flex flex-col gap-1 text-center rotate-45">
+        <div className="absolute top-10 right-0 text-white flex flex-col gap-1 text-left rotate-45 origin-top-left">
           <span className="text-3xl font-serif">
             {problem.name || "Bloc sans nom"}
           </span>

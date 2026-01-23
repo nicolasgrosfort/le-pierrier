@@ -87,47 +87,6 @@ const ExploreProblems = () => {
     setSearchTerm("");
   };
 
-  // if (!problem) {
-  //   return (
-  //     <>
-  //       <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
-  //         <span className="font-medium text-sm p-2 flex gap-2 items-center">
-  //           {problems.length} blocs <MountainSnow size={18} />
-  //         </span>
-  //         <button
-  //           className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
-  //           onClick={handleCreate}
-  //         >
-  //           Nouveau bloc <Plus size={18} />
-  //         </button>
-  //       </div>
-  //       <div className="flex flex-col gap-2 border-b border-dashed p-6 shrink-0">
-  //         <div className="flex flex-row gap-2 items-center justify-between">
-  //           <h2 className="font-serif text-xl truncate w-full">Bienvenue !</h2>
-  //         </div>
-  //         <div className="flex flex-col gap-1">
-  //           <div className="flex gap-2 items-center justify-between">
-  //             <span className="text-sm font-medium">
-  //               Créé un nouveau bloc pour commencer à utiliser le pierrier.
-  //             </span>
-  //           </div>
-  //         </div>
-  //       </div>
-  //       <div className="flex-1 flex flex-col border-b p-6 min-h-0 gap-4">
-  //         <div className="flex gap-2 overflow-y-auto justify-end">
-  //           <button
-  //             className="text-xs underline cursor-pointer flex gap-2 items-center"
-  //             onClick={handleCreate}
-  //           >
-  //             Créer un nouveau bloc
-  //             <Plus size={14} />
-  //           </button>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // }
-
   return (
     <>
       <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
@@ -135,7 +94,7 @@ const ExploreProblems = () => {
           {problems.length} blocs <MountainSnow size={18} />
         </span>
         <button
-          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2"
+          className="font-medium text-sm flex gap-2 items-center cursor-pointer bg-foreground text-background p-2 disabled:opacity-40 disabled:cursor-default"
           onClick={handleCreate}
         >
           Nouveau bloc <Plus size={18} />
