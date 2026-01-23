@@ -149,7 +149,7 @@ export default function Page() {
                   .join(" ")}
                 fill={hold.fill}
                 stroke={hold.stroke}
-                strokeWidth={2}
+                strokeWidth={8}
               />
             );
           })}
