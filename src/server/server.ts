@@ -49,7 +49,7 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
   },
 });
 
-app.use(express.static("dist"));
+app.use(express.static(__dirname));
 
 app.get("/", (_, res) => {
   res.sendFile(join(__dirname, "../index.html"));
