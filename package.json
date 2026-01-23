@@ -10,7 +10,7 @@
     "lint": "eslint",
     "server": "nodemon",
     "dev:all": "yarn && concurrently \"yarn server\" \"yarn dev\"",
-    "prod:all": "yarn && yarn build && tsx src/server/server.ts"
+    "prod:all": "yarn && yarn build && NODE_ENV=production tsx src/server/server.ts"
   },
   "dependencies": {
     "@panzoom/panzoom": "^4.6.1",
