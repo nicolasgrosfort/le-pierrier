@@ -14,6 +14,7 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import { JSONFilePreset } from "lowdb/node";
+import next from "next";
 import { dirname, join } from "path";
 import { Server } from "socket.io";
 import { fileURLToPath } from "url";
@@ -21,6 +22,10 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const port = process.env.PORT || 4000;
+
+const dev = process.env.NODE_ENV !== "production";
+const nextApp = next({ dev, dir: join(__dirname, "../..") });
+const handle = nextApp.getRequestHandler();
 
 const problems = await JSONFilePreset<DbProblems>(
   "db/problems.json",
@@ -33,6 +38,8 @@ const config = await JSONFilePreset<DbConfig>(
 );
 
 const holds = await JSONFilePreset<DbHolds>("db/holds.json", DEFAULT_DB_HOLDS);
+
+await nextApp.prepare();
 
 const app = express();
 const httpServer = createServer(app);
@@ -47,24 +54,6 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
     origin: allowedOrigins,
     credentials: true,
   },
-});
-
-app.use(
-  express.static(
-    process.env.NODE_ENV === "production" ? join(__dirname, "..") : "dist",
-  ),
-);
-
-app.get("/", (_, res) => {
-  res.sendFile(join(__dirname, "../index.html"));
-});
-
-app.get("/wall", (_, res) => {
-  res.sendFile(join(__dirname, "../wall/index.html"));
-});
-
-app.get("/editor", (_, res) => {
-  res.sendFile(join(__dirname, "../wall/editor.html"));
 });
 
 io.on("connection", (socket) => {
@@ -170,6 +159,10 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("User disconnected:", socket.id);
   });
+});
+
+app.use((req, res) => {
+  return handle(req, res);
 });
 
 httpServer.listen(port, () => {
