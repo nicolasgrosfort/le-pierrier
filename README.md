@@ -2,53 +2,59 @@
 
 Topographie interactive.
 
-![Le Pierrier](./docs/2026-01-21-le-pierrier.png)
+![Le Pierrier](./docs/2026-01-24-le-pierrier.png)
 
 ## Requirements
 
-- Node.js >= 22
-- yarn
+- `node.js` >= 22
+- `yarn`
 
-### Installation
+## Installation
 
-Node.js and yarn can be installed via Homebrew:
+`node.js` and `yarn` can be installed via Homebrew:
 
 ```bash
 brew install node
 brew install yarn
 ```
 
-## Development
+## Setup
 
-Use : `http://localhost:3001`
+Copy the `exemple.env` file to a new `.env` file.
+
+```bash
+yarn init:env
+```
+
+Copy the `exemple.db` folder to a new `db` folder.
+
+```bash
+yarn init:db
+```
+
+## Development
 
 ```bash
 yarn dev:all
 ```
 
-### Setup the environment variables
-
-Copy the `exemple.env` file to a new `.env` file.
-
-```bash
-cp exemple.env .env
-```
+It starts a server on `http://localhost:3000`
 
 ## Production
 
-Use : `http://localhost:3000`
+To text the production build locally:
 
 ```bash
-yarn prod:all
+yarn build:all && yarn prod:start
 ```
 
-### Deploy on the server
+It starts a server on `http://localhost:4000`
 
-Copy files on the server and run:
+## Deployement
 
-```bash
-yarn prod:all
-```
+1. Run the `Deploy on production` GitHub action
+2. On Infomaniak server, build the application
+3. On Infomaniak server, restart the production server
 
 ## Usage
 
@@ -56,7 +62,7 @@ The `/` page is the wall-control interface.
 The `/wall` page is the wall display interface.
 The `/editor` page is the wall editor interface.
 
-### Transforming the wall view
+### Shortcuts
 
 - Use the arrow keys to translate the view.
 - Use the `+` and `-` keys to zoom in and out.
