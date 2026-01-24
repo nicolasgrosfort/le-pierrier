@@ -11,7 +11,8 @@
     "build:client": "next build",
     "build:server": "yarn && yarn tsup src/server/server.ts --format esm --target es2022 --out-dir dist/server",
     "build:all": "yarn && yarn build:client && yarn build:server",
-    "prod:start": "NODE_ENV=production node dist/server/server.js"
+    "prod:start": "NODE_ENV=production node dist/server/server.js",
+    "init:db": "mkdir -p db && cp -n db/.gitkeep.example/*.json db/ || true"
   },
   "dependencies": {
     "@panzoom/panzoom": "^4.6.1",
