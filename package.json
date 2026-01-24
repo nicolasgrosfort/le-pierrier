@@ -11,7 +11,7 @@
     "build:client": "next build",
     "build:server": "yarn && yarn tsup src/server/server.ts --format esm --target es2022 --out-dir dist/server",
     "build:all": "yarn && yarn build:client && yarn build:server",
-    "prod:start": "node dist/server/server.js"
+    "prod:start": "NODE_ENV=production node dist/server/server.js"
   },
   "dependencies": {
     "@panzoom/panzoom": "^4.6.1",
