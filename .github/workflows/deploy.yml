@@ -29,13 +29,3 @@ jobs:
             --exclude='.github' \
             ./ \
             ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/pierrier.panstructure.ch/
-
-      - name: Build and restart on server
-        run: |
-          sshpass -p "${{ secrets.SFTP_PASSWORD }}" \
-            ssh -p ${{ secrets.SFTP_PORT }} -o StrictHostKeyChecking=no \
-            ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }} \
-            "cd /srv/customer/sites/pierrier.panstructure.ch && \
-            yarn install --frozen-lockfile && \
-            yarn build:all && \
-            touch tmp/restart.txt"
