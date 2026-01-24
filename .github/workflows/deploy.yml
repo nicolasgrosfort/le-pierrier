@@ -34,7 +34,10 @@ jobs:
             -e "ssh -p ${{ secrets.SFTP_PORT }} -o StrictHostKeyChecking=no" \
             --exclude='.env' \
             --exclude='node_modules' \
-            dist/ package.json yarn.lock \
+            --exclude='.next/cache' \
+            --exclude='.git' \
+            --exclude='.github' \
+            ./ \
             ${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}:/srv/customer/sites/pierrier.panstructure.ch/
 
       - name: Install production dependencies
