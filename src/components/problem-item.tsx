@@ -20,6 +20,7 @@ export const ProblemItem = ({ problem, selected }: ProblemItemProps) => {
       key={problem.id}
       className={`border p-2 cursor-pointer ${selected ? "bg-foreground text-background" : ""}`}
       onClick={handleOnClick}
+      id={`problem-item-${problem.id}`}
     >
       <div className="flex justify-between leading-none items-center gap-2">
         <div className="flex flex-col text-left gap-1 flex-1 min-w-0">

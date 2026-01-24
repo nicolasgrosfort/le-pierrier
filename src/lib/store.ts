@@ -20,6 +20,9 @@ export const _holds = atom<Hold[]>([]);
 export const _isConnected = atom<boolean>(false);
 export const _isId = atom<boolean>(false);
 
+export const _blocListRef = atom<RefObject<HTMLDivElement | null>>({
+  current: null,
+});
 export const _panzoomRef = atom<RefObject<PanZoom | null>>({ current: null });
 export const _wallRef = atom<RefObject<SVGSVGElement | null>>({
   current: null,

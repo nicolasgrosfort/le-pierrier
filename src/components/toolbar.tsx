@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import {
   Bug,
   BugOff,
-  Maximize2,
+  Focus,
   Wifi,
   WifiOff,
   ZoomIn,
@@ -30,7 +30,7 @@ export const Toolbar = () => {
   }, [panzoomRef]);
 
   return (
-    <div className="p-2 px-4 border flex gap-6 bg-background/80 overflow-hidden backdrop-blur">
+    <div className="p-2 px-4 border flex gap-6 bg-background/80 overflow-hidden backdrop-blur pointer-events-auto">
       {isConnected ? <Wifi size={18} /> : <WifiOff size={18} />}
       <button className="cursor-pointer" onClick={() => setIsId(!isId)}>
         {isId ? <Bug size={18} /> : <BugOff size={18} />}
@@ -52,9 +52,11 @@ export const Toolbar = () => {
       </div>
       <button
         className="cursor-pointer"
-        onClick={() => panzoomRef.current?.reset()}
+        onClick={() => {
+          panzoomRef.current?.reset();
+        }}
       >
-        <Maximize2 size={18} />
+        <Focus size={18} />
       </button>
     </div>
   );

@@ -7,6 +7,7 @@ import { ToggleGroup } from "@/components/toggle-group";
 import { DEFAULT_GRADE, FEET_LABEL, GRADES } from "@/lib/config";
 import { getSocket } from "@/lib/socket";
 import {
+  _blocListRef,
   _holdType,
   _isConnected,
   _mode,
@@ -26,7 +27,7 @@ import {
   Undo2,
   X,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const Sidebar = () => {
   const [mode] = useAtom(_mode);
@@ -48,6 +49,7 @@ const ExploreProblems = () => {
   const [problems] = useAtom<Problem[]>(_problems);
   const [problem, setProblem] = useAtom<Problem | undefined>(_problem);
   const [, setMode] = useAtom<Mode>(_mode);
+  const [blocListRef] = useAtom(_blocListRef);
 
   const lowercasedSearchTerm = searchTerm.toLowerCase();
 
@@ -87,9 +89,21 @@ const ExploreProblems = () => {
     setSearchTerm("");
   };
 
+  const scrollToProblem = useCallback(() => {
+    blocListRef.current
+      ?.querySelector(`#problem-item-${problem?.id}`)
+      ?.scrollIntoView({ behavior: "smooth" });
+  }, [blocListRef, problem?.id]);
+
+  useEffect(() => {
+    if (problem?.id && blocListRef.current) {
+      scrollToProblem();
+    }
+  }, [blocListRef, problem?.id, scrollToProblem]);
+
   return (
     <>
-      <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b">
+      <div className="flex justify-between gap-4 p-4 py-6 shrink-0 border-b overflow-hidden">
         <span className="font-medium text-sm p-2 flex gap-2 items-center">
           {problems.length} blocs <MountainSnow size={18} />
         </span>
@@ -132,14 +146,14 @@ const ExploreProblems = () => {
         </div>
       </div>
 
-      <div className="flex-1 flex flex-col p-6 min-h-0 gap-3">
+      <div className="flex-1 flex flex-col p-6 min-h-0 gap-3 overflow-hidden">
         <div className="flex justify-between items-center">
           <h3 className="font-bold text-sm shrink-0">Blocs</h3>
           <span className="text-xs font-medium">
             [{sortedProblems.length}/{problems.length}]
           </span>
         </div>
-        <div className="flex flex-col gap-2 overflow-y-auto">
+        <div className="flex flex-col gap-2 overflow-y-auto" ref={blocListRef}>
           {sortedProblems.length > 0 ? (
             sortedProblems.map((_problem) => (
               <ProblemItem

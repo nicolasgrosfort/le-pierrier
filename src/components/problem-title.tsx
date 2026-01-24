@@ -54,8 +54,8 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
   const amountHolds = Object.keys(problem.holds).length;
 
   return (
-    <header className="p-6 z-10 flex flex-col gap-1 overflow-hidden">
-      <div className="flex gap-6 items-center w-full justify-start min-w-0">
+    <header className="p-6 z-10 flex flex-col gap-1 overflow-hidden pointer-events-none">
+      <div className="flex gap-6 items-center w-full justify-between min-w-0">
         <div className="flex items-center gap-6 min-w-0">
           <h1 className="font-bold text-2xl font-serif truncate whitespace-nowrap">
             {problem.name || "Bloc sans nom"}
@@ -63,7 +63,7 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
           <Grade grade={problem.grade} />
         </div>
 
-        <div className="flex items-center gap-6 justify-end border-l p-2 px-4">
+        <div className="flex items-center gap-6 justify-end border p-2 px-4 pointer-events-auto  bg-background/80 overflow-hidden backdrop-blur">
           {mode === "handle" ? (
             <>
               <button
@@ -77,18 +77,18 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
           ) : wantDelete ? (
             <>
               <button
-                onClick={handleCancelDelete}
-                className="cursor-pointer flex items-center gap-2 text-sm underline font-medium "
-              >
-                Annuler
-                <Undo2 size={18} />
-              </button>
-              <button
                 onClick={handleDelete}
                 className="cursor-pointer flex items-center gap-2 text-sm underline font-medium disabled:cursor-default disabled:opacity-40 text-red-600"
               >
                 Supprimer
                 <Trash2 size={18} />
+              </button>
+              <button
+                onClick={handleCancelDelete}
+                className="cursor-pointer flex items-center gap-2 text-sm underline font-medium"
+              >
+                Annuler
+                <Undo2 size={18} />
               </button>
             </>
           ) : (
@@ -97,11 +97,12 @@ export const ProblemTitle = ({ problem }: ProblemTitleProps) => {
                 onClick={handleEdit}
                 className="cursor-pointer disabled:cursor-default disabled:opacity-40 underline flex items-center gap-2 text-sm font-medium"
               >
+                Modifier
                 <Pencil size={18} />
               </button>
               <button
                 onClick={handleWantDelete}
-                className="cursor-pointer disabled:cursor-default disabled:opacity-40"
+                className="cursor-pointer flex items-center gap-2 text-sm underline font-medium disabled:cursor-default disabled:opacity-40 text-red-600"
               >
                 <Trash2 size={18} />
               </button>
