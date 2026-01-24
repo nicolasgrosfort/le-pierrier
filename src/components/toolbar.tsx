@@ -1,5 +1,6 @@
 "use client";
 
+import { useScrollToProblem } from "@/hooks/use-scroll-to-problem";
 import { _isConnected, _isId, _panzoomRef } from "@/lib/store";
 import { useAtom } from "jotai";
 import {
@@ -19,6 +20,8 @@ export const Toolbar = () => {
   const [isId, setIsId] = useAtom<boolean>(_isId);
 
   const [scale, setScale] = useState<number>(100);
+
+  const scrollToProblem = useScrollToProblem();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,6 +57,7 @@ export const Toolbar = () => {
         className="cursor-pointer"
         onClick={() => {
           panzoomRef.current?.reset();
+          scrollToProblem();
         }}
       >
         <Focus size={18} />

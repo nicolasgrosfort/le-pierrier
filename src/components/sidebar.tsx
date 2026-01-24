@@ -27,7 +27,7 @@ import {
   Undo2,
   X,
 } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Sidebar = () => {
   const [mode] = useAtom(_mode);
@@ -88,18 +88,6 @@ const ExploreProblems = () => {
     setGradesFilter([]);
     setSearchTerm("");
   };
-
-  const scrollToProblem = useCallback(() => {
-    blocListRef.current
-      ?.querySelector(`#problem-item-${problem?.id}`)
-      ?.scrollIntoView({ behavior: "smooth" });
-  }, [blocListRef, problem?.id]);
-
-  useEffect(() => {
-    if (problem?.id && blocListRef.current) {
-      scrollToProblem();
-    }
-  }, [blocListRef, problem?.id, scrollToProblem]);
 
   return (
     <>
