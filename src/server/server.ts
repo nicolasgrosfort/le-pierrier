@@ -51,7 +51,7 @@ const io = new Server<ServerToClientEvents, ClientToServerEvents>(httpServer, {
 
 app.use(
   express.static(
-    process.env.NODE_ENV === "production" ? join(__dirname, "../..") : "dist",
+    process.env.NODE_ENV === "production" ? join(__dirname, "..") : "dist",
   ),
 );
 
