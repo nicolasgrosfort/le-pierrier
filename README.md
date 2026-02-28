@@ -42,7 +42,7 @@ It starts a server on `http://localhost:3000`
 
 ## Production
 
-To text the production build locally:
+To test the production build locally:
 
 ```bash
 yarn build:all && yarn prod:start
