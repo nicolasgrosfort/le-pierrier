@@ -16,21 +16,21 @@
     "init:db": "mkdir -p db && cp -r exemple.db/ db/ || true"
   },
   "dependencies": {
-    "@panzoom/panzoom": "^4.6.1",
+    "@panzoom/panzoom": "^4.6.2",
     "@types/express": "^5.0.6",
     "@types/ws": "^8.18.1",
     "clsx": "^2.1.1",
     "concurrently": "^9.2.1",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
-    "jotai": "^2.19.0",
+    "jotai": "^2.19.1",
     "lowdb": "^7.0.1",
     "lucide-react": "^1.7.0",
     "motion": "^12.38.0",
-    "next": "16.2.1",
+    "next": "16.2.4",
     "nodemon": "^3.1.14",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "socket.io": "^4.8.3",
     "socket.io-client": "^4.8.3",
     "tsup": "^8.5.1",
@@ -38,13 +38,13 @@
     "uuid": "^13.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.2.4",
     "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19",
     "eslint": "^10.1.0",
-    "eslint-config-next": "16.2.1",
-    "tailwindcss": "^4.2.2",
-    "typescript": "^6.0.2"
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4.2.4",
+    "typescript": "^6.0.3"
   }
 }
