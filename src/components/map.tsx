@@ -358,7 +358,7 @@ export const Map = () => {
             />
             <path
               id="333"
-              data-name="305"
+              data-name="333"
               d="M121 681L130 649L174 661L164 693.5L121 681Z"
               fill="#A26769"
               stroke="#151515"
